@@ -13,15 +13,17 @@
     
     <style>
         :root {
-            --primary-green: #059669;
-            --secondary-green: #047857;
-            --accent-gold: #F59E0B;
-            --dark-gold: #D97706;
+            --primary-green: #22C55E;
+            --secondary-green: #16A34A;
+            --accent-green: #15803D;
+            --dark-green: #166534;
             --pure-white: #FFFFFF;
             --off-white: #FEFEFE;
             --light-gray: #F9FAFB;
             --medium-gray: #6B7280;
             --dark-gray: #1F2937;
+            --charcoal: #374151;
+            --black: #111827;
             --forest: #064E3B;
             --text-light: #9CA3AF;
             --border-light: #E5E7EB;
@@ -81,7 +83,7 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-gold) 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--black) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -122,22 +124,24 @@
         }
 
         .nav-cta {
-            background: var(--primary-green);
+            background: var(--black);
             color: var(--pure-white) !important;
-            padding: 16px 40px;
-            border-radius: 25px;
+            padding: 12px 24px;
+            border-radius: 8px;
             font-weight: 600;
             transition: var(--transition);
             font-size: 14px;
             white-space: nowrap;
-            box-shadow: var(--shadow-subtle);
+            box-shadow: 0 2px 8px rgba(17, 24, 39, 0.15);
             letter-spacing: 0.3px;
+            border: 2px solid var(--black);
         }
 
         .nav-cta:hover {
-            background: var(--secondary-green);
+            background: var(--primary-green);
+            border-color: var(--primary-green);
             transform: translateY(-1px);
-            box-shadow: var(--shadow-medium);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
             letter-spacing: 0.5px;
         }
 
@@ -163,7 +167,7 @@
 
         /* Hero Section - Improved */
         .hero {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--forest) 100%);
+            background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
             color: var(--pure-white);
             padding: 160px 0 140px;
             text-align: center;
@@ -241,17 +245,17 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--dark-gold) 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
             color: var(--pure-white);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
             font-weight: 700;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, var(--dark-gold) 0%, #B45309 100%);
+            background: linear-gradient(135deg, var(--secondary-green) 0%, var(--accent-green) 100%);
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(245, 158, 11, 0.5);
+            box-shadow: 0 12px 35px rgba(34, 197, 94, 0.5);
             letter-spacing: 0.5px;
         }
 
@@ -271,20 +275,20 @@
         }
 
         .btn-accent {
-            background: var(--accent-gold);
+            background: var(--primary-green);
             color: var(--pure-white);
             box-shadow: var(--shadow-medium);
         }
 
         .btn-accent:hover {
-            background: var(--dark-gold);
+            background: var(--secondary-green);
             transform: translateY(-2px);
             box-shadow: var(--shadow-large);
         }
 
         /* Scrolling Reviews Marquee */
         .reviews-marquee {
-            background: var(--forest);
+            background: var(--black);
             padding: 20px 0;
             overflow: hidden;
             position: relative;
@@ -307,7 +311,7 @@
         }
 
         .review-stars {
-            color: var(--accent-gold);
+            color: var(--primary-green);
             font-size: 18px;
             filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
         }
@@ -360,7 +364,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+            background: linear-gradient(90deg, var(--primary-green), var(--black));
             border-radius: 2px;
         }
 
@@ -371,7 +375,7 @@
             font-weight: 800;
             letter-spacing: -1.5px;
             line-height: 1.15;
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-gold) 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--black) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -441,7 +445,7 @@
             font-size: 24px;
             color: var(--pure-white);
             font-weight: 700;
-            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -502,7 +506,7 @@
         .feature-number {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--accent-gold), var(--dark-gold));
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
             color: var(--pure-white);
             border-radius: 20px;
             display: flex;
@@ -511,7 +515,7 @@
             margin: 0 auto 32px;
             font-size: 24px;
             font-weight: 800;
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -600,7 +604,7 @@
             top: -20px;
             left: 32px;
             font-size: 80px;
-            color: var(--accent-yellow);
+            color: var(--primary-green);
             font-family: Georgia, serif;
             font-weight: 700;
         }
@@ -623,7 +627,7 @@
 
 
         .rating {
-            color: var(--accent-gold);
+            color: var(--primary-green);
             margin-bottom: 20px;
             font-size: 16px;
         }
@@ -822,7 +826,7 @@
 
         /* Footer */
         footer {
-            background: var(--forest);
+            background: var(--black);
             color: var(--pure-white);
             padding: 80px 0 40px;
         }
@@ -835,7 +839,7 @@
         }
 
         .footer-section h4 {
-            color: var(--accent-gold);
+            color: var(--primary-green);
             margin-bottom: 20px;
             font-weight: 600;
             font-size: 16px;
@@ -852,7 +856,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--accent-gold);
+            color: var(--primary-green);
         }
 
         .footer-bottom {
@@ -1095,7 +1099,7 @@
                     <p>Family-owned business committed to treating every customer fairly with honest pricing and quality work you can count on.</p>
                 </div>
                 <div class="business-photo">
-                    <div class=\"business-photo-placeholder\">\n                        <strong>Your Image Here</strong>\n                    </div>
+                    <img src="logo.jpg" alt="Raymundo's Roofing LLC Logo" style="width: 100%; height: 100%; object-fit: contain; background: var(--primary-green); border-radius: var(--border-radius-large);">
                 </div>
             </div>
         </section>
@@ -1184,7 +1188,7 @@
                     <div>
                         <h3 style="color: var(--dark-gray); margin-bottom: 24px; font-size: 24px;">Our Legacy</h3>
                         <p style="margin-bottom: 24px; line-height: 1.7; color: var(--medium-gray); font-size: 16px;">
-                            Raymundo's Roofing LLC has earned a perfect 5.0-star rating with 162 glowing reviews from satisfied customers. Our family business combines three generations of roofing expertise with modern techniques to deliver exceptional results every time.
+                            Raymundo's Roofing LLC has earned a perfect 5.0-star rating with 162 glowing reviews from satisfied customers. Our family business combines experienced craftsmanship with modern techniques to deliver exceptional results every time.
                         </p>
                         <p style="margin-bottom: 24px; line-height: 1.7; color: var(--medium-gray); font-size: 16px;">
                             Our commitment to honest pricing and reliable service has earned us positive customer reviews and repeat business. We focus on delivering quality workmanship without the price gouging often seen in the industry.
@@ -1223,37 +1227,31 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Craftsmanship Gallery</h2>
-                    <p>Explore examples of our recent projects throughout North Florida. Each represents our unwavering commitment to excellence.</p>
+                    <p>Explore examples of our recent projects throughout Central Alabama. Each represents our unwavering commitment to excellence.</p>
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item">
+                        <img src="before1.jpg" alt="Residential Roofing Project - Before" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="after1.jpg" alt="Residential Roofing Project - After (Aerial View)" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="before2.jpg" alt="Commercial Roofing Project - Before" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
                         <div class="gallery-placeholder">
-                            <strong>Your Image Here</strong>
+                            <strong>Additional Project Photos Available Upon Request</strong>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-placeholder">
-                            <strong>Your Image Here</strong>
+                            <strong>Professional Workmanship Gallery</strong>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-placeholder">
-                            <strong>Your Image Here</strong>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <strong>Your Image Here</strong>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <strong>Your Image Here</strong>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <strong>Your Image Here</strong>
+                            <strong>Contact Us for Full Portfolio</strong>
                         </div>
                     </div>
                 </div>
@@ -1344,8 +1342,7 @@
                 <div class="footer-section">
                     <h4>Contact Information</h4>
                     <a href="tel:(334) 782-8086">Phone: (334) 782-8086</a>
-                    <p>Serving North Florida</p>
-                    <p>Central Alabama</p>
+                    <p>Serving Central Alabama</p>
                     <p>24/7 Emergency Service Available</p>
                 </div>
                 <div class="footer-section">
