@@ -1,0 +1,12 @@
+{
+  "name": "exterior-specialties-inc",
+  "version": "1.0.0",
+  "description": "GAF Master Elite Roofing Contractors - Tallahassee, FL",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": ["roofing", "tallahassee", "gaf", "contractors"],
+  "author": "Your Company"
+}
