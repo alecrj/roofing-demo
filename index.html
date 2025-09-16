@@ -51,7 +51,7 @@
             line-height: 1.6;
             color: var(--dark-gray);
             font-weight: 400;
-            background: var(--pure-white);
+            background: var(--cream);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -387,7 +387,7 @@
 
         .section-header p {
             font-size: 19px;
-            color: var(--text-light);
+            color: var(--medium-gray);
             line-height: 1.65;
             font-weight: 400;
         }
@@ -481,7 +481,7 @@
         }
 
         .service-card p {
-            color: var(--text-light);
+            color: var(--medium-gray);
             line-height: 1.65;
             font-size: 16px;
         }
@@ -545,7 +545,7 @@
         }
 
         .feature-card p {
-            color: var(--text-light);
+            color: var(--medium-gray);
             line-height: 1.65;
             font-size: 16px;
         }
@@ -857,6 +857,129 @@
             display: block;
         }
 
+        /* Premium Stats Animation */
+        .premium-stat-card {
+            background: linear-gradient(135deg, var(--pure-white) 0%, var(--off-white) 100%);
+            border: 2px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(45, 80, 22, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .premium-stat-card:hover::before {
+            left: 100%;
+        }
+
+        .animated-counter {
+            font-size: 48px !important;
+            font-weight: 900 !important;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .star-rating {
+            color: #FFD700;
+            font-size: 24px;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+            animation: starGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes starGlow {
+            from { text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3); }
+            to { text-shadow: 0 4px 8px rgba(255, 215, 0, 0.6), 0 0 12px rgba(255, 215, 0, 0.3); }
+        }
+
+        .stat-label {
+            color: var(--primary-green);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        /* Trust Badges */
+        .trust-badges-section {
+            background: var(--pure-white);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .trust-badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .trust-badge {
+            text-align: center;
+            padding: 32px 24px;
+            background: var(--cream);
+            border-radius: 16px;
+            border: 2px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-green);
+            box-shadow: var(--shadow-large);
+        }
+
+        .trust-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--light-green));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .trust-badge:hover::before {
+            transform: scaleX(1);
+        }
+
+        .trust-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .trust-badge h4 {
+            color: var(--dark-gray);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .trust-badge p {
+            color: var(--medium-gray);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
         /* Footer */
         footer {
             background: var(--black);
@@ -1110,18 +1233,21 @@
                     <p>With 162 perfect five-star reviews, we've earned our reputation through exceptional service, immaculate workmanship, and treating every customer like family.</p>
                 </div>
                 <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-number">5.0</div>
+                    <div class="feature-card premium-stat-card">
+                        <div class="feature-number animated-counter" data-target="5.0">0</div>
+                        <div class="star-rating">★★★★★</div>
                         <h3>Perfect Rating</h3>
                         <p>162 five-star Google reviews speak for themselves. We don't just meet expectations - we exceed them every time.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-number">1</div>
-                        <h3>Day Completion</h3>
-                        <p>Most roofs completed in just one day! Our efficient crew arrives early and works until the job is done right.</p>
+                    <div class="feature-card premium-stat-card">
+                        <div class="feature-number animated-counter" data-target="162">0</div>
+                        <div class="stat-label">Reviews</div>
+                        <h3>Happy Customers</h3>
+                        <p>Every single customer gave us 5 stars! Our track record speaks to our commitment to excellence.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-number">24/7</div>
+                    <div class="feature-card premium-stat-card">
+                        <div class="feature-number animated-counter" data-target="24">0</div>
+                        <div class="stat-label">Hour Service</div>
                         <h3>Emergency Response</h3>
                         <p>Round-the-clock emergency services for storm damage and urgent repairs when you need us most.</p>
                     </div>
@@ -1129,6 +1255,34 @@
             </div>
         </section>
 
+
+        <!-- Trust Badges Section -->
+        <section class="trust-badges-section">
+            <div class="container">
+                <div class="trust-badges-grid">
+                    <div class="trust-badge">
+                        <div class="trust-icon">✓</div>
+                        <h4>Licensed & Bonded</h4>
+                        <p>Fully licensed general contractor with comprehensive bonding for your protection</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-icon">🛡️</div>
+                        <h4>Fully Insured</h4>
+                        <p>Complete liability and workers' compensation insurance coverage</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-icon">⭐</div>
+                        <h4>5.0 Star Rating</h4>
+                        <p>Perfect rating across 162 customer reviews on Google</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-icon">📋</div>
+                        <h4>Free Estimates</h4>
+                        <p>Detailed project assessments with transparent, honest pricing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="section business-info">
             <div class="container">
@@ -1569,6 +1723,53 @@
                 setTimeout(() => {
                     formAlert.classList.remove('show');
                 }, 5000);
+            }
+
+            // Animated Counter Effect
+            function animateCounters() {
+                const counters = document.querySelectorAll('.animated-counter');
+
+                counters.forEach(counter => {
+                    const target = parseFloat(counter.getAttribute('data-target'));
+                    const increment = target / 100;
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            if (target === 5.0) {
+                                counter.textContent = Math.min(current, target).toFixed(1);
+                            } else {
+                                counter.textContent = Math.floor(Math.min(current, target));
+                            }
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            if (target === 5.0) {
+                                counter.textContent = target.toFixed(1);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        }
+                    };
+
+                    updateCounter();
+                });
+            }
+
+            // Intersection Observer for triggering animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            // Observe the features section
+            const featuresSection = document.querySelector('.features-grid');
+            if (featuresSection) {
+                observer.observe(featuresSection);
             }
         });
     </script>
