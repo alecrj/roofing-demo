@@ -785,8 +785,10 @@
         /* Gallery */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .gallery-item {
@@ -983,6 +985,11 @@
             .features-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
             }
 
             .marquee-item {
@@ -1258,56 +1265,32 @@
                 <div class="gallery-grid">
                     <div class="gallery-item">
                         <img src="before1.jpg" alt="Roofing Project 1 - Before" class="gallery-image">
-                        <div class="gallery-overlay">
-                            <span class="gallery-label">BEFORE</span>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="after1.jpg" alt="Roofing Project 1 - After" class="gallery-image">
-                        <div class="gallery-overlay">
-                            <span class="gallery-label">AFTER</span>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="before2.jpg" alt="Roofing Project 2 - Before" class="gallery-image">
-                        <div class="gallery-overlay">
-                            <span class="gallery-label">BEFORE</span>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="after2.jpg" alt="Roofing Project 2 - After" class="gallery-image">
-                        <div class="gallery-overlay">
-                            <span class="gallery-label">AFTER</span>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="before3.jpg" alt="Roofing Project 3 - Before" class="gallery-image">
-                        <div class="gallery-overlay">
-                            <span class="gallery-label">BEFORE</span>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="after3.jpg" alt="Roofing Project 3 - After" class="gallery-image">
-                        <div class="gallery-overlay">
-                            <span class="gallery-label">AFTER</span>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="before4.jpg" alt="Roofing Project 4 - Before" class="gallery-image">
-                        <div class="gallery-overlay">
-                            <span class="gallery-label">BEFORE</span>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="after4.jpg" alt="Roofing Project 4 - After" class="gallery-image">
-                        <div class="gallery-overlay">
-                            <span class="gallery-label">AFTER</span>
-                        </div>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 60px;">
-                    <p style="color: var(--medium-gray); margin-bottom: 20px; font-size: 16px;">Interested in seeing more of our completed projects?</p>
-                    <a href="#" class="btn btn-accent" data-page="contact">Request Project Portfolio</a>
+                    <p style="color: var(--medium-gray); margin-bottom: 20px; font-size: 16px;">Want to see more of our completed projects?</p>
+                    <a href="https://www.facebook.com/profile.php?id=100083540612215" target="_blank" rel="noopener" class="btn btn-accent">Check Out More of Our Work Here</a>
                 </div>
             </div>
         </section>
