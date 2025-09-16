@@ -884,14 +884,55 @@
             left: 100%;
         }
 
+        .circular-progress {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
+        }
+
+        .circular-progress svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .progress-bg {
+            fill: none;
+            stroke: var(--border-light);
+            stroke-width: 8;
+        }
+
+        .progress-bar {
+            fill: none;
+            stroke: var(--primary-green);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 377;
+            stroke-dashoffset: 377;
+            transition: stroke-dashoffset 2s ease-in-out;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-green);
+            text-align: center;
+        }
+
         .animated-counter {
-            font-size: 48px !important;
-            font-weight: 900 !important;
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
+            font-size: inherit !important;
+            font-weight: inherit !important;
+            color: inherit !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            background-clip: unset !important;
+            margin-bottom: 0 !important;
         }
 
         .star-rating {
@@ -916,37 +957,75 @@
             margin-bottom: 16px;
         }
 
-        /* Trust Badges */
+        /* Trust Badges - Premium Dark Section */
         .trust-badges-section {
-            background: var(--pure-white);
-            padding: 80px 0;
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
+            background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-badges-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="trust-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23trust-pattern)"/></svg>');
+            opacity: 0.4;
+        }
+
+        .trust-section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .trust-section-header h2 {
+            font-size: clamp(36px, 6vw, 48px);
+            color: var(--pure-white);
+            margin-bottom: 16px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .trust-section-header p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         .trust-badges-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 800px;
+            gap: 40px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .trust-badge {
-            text-align: center;
-            padding: 32px 24px;
-            background: var(--cream);
-            border-radius: 16px;
-            border: 2px solid var(--border-light);
-            transition: all 0.3s ease;
+            text-align: left;
+            padding: 40px 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(20px);
         }
 
         .trust-badge:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
             border-color: var(--primary-green);
-            box-shadow: var(--shadow-large);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .trust-badge::before {
@@ -958,30 +1037,26 @@
             height: 4px;
             background: linear-gradient(90deg, var(--primary-green), var(--light-green));
             transform: scaleX(0);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .trust-badge:hover::before {
             transform: scaleX(1);
         }
 
-        .trust-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-            display: block;
-        }
-
         .trust-badge h4 {
-            color: var(--dark-gray);
-            font-size: 18px;
+            color: var(--pure-white);
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
         }
 
         .trust-badge p {
-            color: var(--medium-gray);
-            font-size: 14px;
-            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         /* Footer */
@@ -1243,19 +1318,43 @@
                 </div>
                 <div class="features-grid">
                     <div class="feature-card premium-stat-card">
-                        <div class="feature-number animated-counter" data-target="5.0">0</div>
+                        <div class="circular-progress" data-target="100">
+                            <svg>
+                                <circle class="progress-bg" cx="60" cy="60" r="52"></circle>
+                                <circle class="progress-bar" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="animated-counter" data-target="5.0">0</span>
+                            </div>
+                        </div>
                         <div class="star-rating">★★★★★</div>
                         <h3>Perfect Rating</h3>
                         <p>162 five-star Google reviews speak for themselves. We don't just meet expectations - we exceed them every time.</p>
                     </div>
                     <div class="feature-card premium-stat-card">
-                        <div class="feature-number animated-counter" data-target="162">0</div>
+                        <div class="circular-progress" data-target="100">
+                            <svg>
+                                <circle class="progress-bg" cx="60" cy="60" r="52"></circle>
+                                <circle class="progress-bar" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="animated-counter" data-target="162">0</span>
+                            </div>
+                        </div>
                         <div class="stat-label">Five-Star Reviews</div>
                         <h3>Happy Customers</h3>
                         <p>Every single customer gave us 5 stars! Our track record speaks to our commitment to excellence.</p>
                     </div>
                     <div class="feature-card premium-stat-card">
-                        <div class="feature-number animated-counter" data-target="24">0</div>
+                        <div class="circular-progress" data-target="100">
+                            <svg>
+                                <circle class="progress-bg" cx="60" cy="60" r="52"></circle>
+                                <circle class="progress-bar" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="animated-counter" data-target="24">0</span>
+                            </div>
+                        </div>
                         <div class="stat-label">Hour Service</div>
                         <h3>Emergency Response</h3>
                         <p>Round-the-clock emergency services for storm damage and urgent repairs when you need us most.</p>
@@ -1268,22 +1367,26 @@
         <!-- Trust Badges Section -->
         <section class="trust-badges-section">
             <div class="container">
+                <div class="trust-section-header">
+                    <h2>Your Trusted Roofing Partner</h2>
+                    <p>Professional credentials and exceptional service that set us apart from the competition</p>
+                </div>
                 <div class="trust-badges-grid">
                     <div class="trust-badge">
                         <h4>Licensed & Bonded</h4>
-                        <p>Fully licensed general contractor with comprehensive bonding for your protection</p>
+                        <p>Fully licensed general contractor with comprehensive bonding for your complete protection and peace of mind</p>
                     </div>
                     <div class="trust-badge">
                         <h4>Fully Insured</h4>
-                        <p>Complete liability and workers' compensation insurance coverage</p>
+                        <p>Complete liability and workers' compensation insurance coverage protecting you and our team</p>
                     </div>
                     <div class="trust-badge">
                         <h4>5.0 Star Rating</h4>
-                        <p>Perfect rating across 162 customer reviews on Google</p>
+                        <p>Perfect rating across 162 customer reviews on Google - our reputation speaks for itself</p>
                     </div>
                     <div class="trust-badge">
                         <h4>Emergency Service</h4>
-                        <p>24/7 emergency response for storm damage and urgent repairs</p>
+                        <p>24/7 emergency response for storm damage and urgent repairs when you need us most</p>
                     </div>
                 </div>
             </div>
@@ -1730,14 +1833,22 @@
                 }, 5000);
             }
 
-            // Animated Counter Effect
+            // Animated Counter Effect with Circular Progress
             function animateCounters() {
                 const counters = document.querySelectorAll('.animated-counter');
+                const progressBars = document.querySelectorAll('.progress-bar');
 
-                counters.forEach(counter => {
+                counters.forEach((counter, index) => {
                     const target = parseFloat(counter.getAttribute('data-target'));
                     const increment = target / 100;
                     let current = 0;
+
+                    // Animate progress bar
+                    if (progressBars[index]) {
+                        setTimeout(() => {
+                            progressBars[index].style.strokeDashoffset = '0';
+                        }, index * 200);
+                    }
 
                     const updateCounter = () => {
                         if (current < target) {
@@ -1757,7 +1868,10 @@
                         }
                     };
 
-                    updateCounter();
+                    // Start counter animation slightly after progress bar
+                    setTimeout(() => {
+                        updateCounter();
+                    }, (index * 200) + 500);
                 });
             }
 
