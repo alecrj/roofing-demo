@@ -13,23 +13,27 @@
     
     <style>
         :root {
-            --primary-green: #2D5016;
-            --secondary-green: #1E3A0F;
-            --accent-green: #3F6B22;
-            --light-green: #4A7C29;
+            --primary-green: #2F5D33;
+            --secondary-green: #244028;
+            --accent-green: #3A7A3E;
+            --light-green: #4A9F4E;
+            --dark-green: #1A2E1D;
             --pure-white: #FFFFFF;
-            --off-white: #FDFCFC;
-            --cream: #FEFEF9;
-            --light-gray: #F7F8FA;
-            --medium-gray: #6B7280;
-            --dark-gray: #1E293B;
-            --charcoal: #2D3748;
-            --black: #0F172A;
-            --forest: #1A2E0E;
-            --text-light: #64748B;
-            --text-muted: #94A3B8;
-            --border-light: #E2E8F0;
-            --border-elegant: #D1D5DB;
+            --off-white: #FEFEFE;
+            --cream: #FDFDFB;
+            --warm-gray: #F8F9FA;
+            --light-gray: #F1F3F4;
+            --medium-gray: #5F6368;
+            --dark-gray: #202124;
+            --charcoal: #1A1D1F;
+            --black: #0D1117;
+            --forest: #1B2F1E;
+            --text-light: #5F6368;
+            --text-muted: #80868B;
+            --border-light: #E8EAED;
+            --border-elegant: #DADCE0;
+            --success: #34A853;
+            --gold: #FBBC04;
             --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.08);
             --shadow-light: 0 4px 6px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.1);
             --shadow-medium: 0 10px 15px rgba(15, 23, 42, 0.1), 0 4px 6px rgba(15, 23, 42, 0.05);
@@ -51,7 +55,7 @@
             line-height: 1.6;
             color: var(--dark-gray);
             font-weight: 400;
-            background: var(--cream);
+            background: var(--warm-gray);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -145,7 +149,7 @@
             background: var(--primary-green);
             border-color: var(--primary-green);
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
+            box-shadow: 0 4px 12px rgba(47, 93, 51, 0.25);
             letter-spacing: 0.5px;
         }
 
@@ -171,7 +175,7 @@
 
         /* Hero Section - Improved */
         .hero {
-            background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 70%, var(--dark-green) 100%);
+            background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 70%, var(--primary-green) 100%);
             color: var(--pure-white);
             padding: 160px 0 140px;
             text-align: center;
@@ -189,8 +193,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="roof-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 20 L10 0 L20 20 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23roof-pattern)"/></svg>');
-            opacity: 0.3;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="roof-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M0 30 L15 0 L30 30 Z" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/><circle cx="15" cy="20" r="2" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23roof-pattern)"/></svg>');
+            opacity: 0.6;
         }
 
         .hero-content {
@@ -251,7 +255,7 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
             color: var(--pure-white);
-            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
+            box-shadow: 0 8px 25px rgba(47, 93, 51, 0.3);
             font-weight: 700;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -259,7 +263,7 @@
         .btn-primary:hover {
             background: linear-gradient(135deg, var(--secondary-green) 0%, var(--accent-green) 100%);
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(45, 80, 22, 0.5);
+            box-shadow: 0 12px 35px rgba(47, 93, 51, 0.4);
             letter-spacing: 0.5px;
         }
 
@@ -348,7 +352,7 @@
         }
 
         .section.alternate {
-            background: var(--light-gray);
+            background: var(--pure-white);
         }
 
         .section-header {
@@ -450,7 +454,7 @@
             font-size: 24px;
             color: var(--pure-white);
             font-weight: 700;
-            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
+            box-shadow: 0 8px 25px rgba(47, 93, 51, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -520,7 +524,7 @@
             margin: 0 auto 32px;
             font-size: 24px;
             font-weight: 800;
-            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
+            box-shadow: 0 8px 25px rgba(47, 93, 51, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -891,16 +895,16 @@
         }
 
         .star-rating {
-            color: #FFD700;
+            color: var(--gold);
             font-size: 24px;
             margin-bottom: 16px;
-            text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 2px 4px rgba(251, 188, 4, 0.3);
             animation: starGlow 2s ease-in-out infinite alternate;
         }
 
         @keyframes starGlow {
-            from { text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3); }
-            to { text-shadow: 0 4px 8px rgba(255, 215, 0, 0.6), 0 0 12px rgba(255, 215, 0, 0.3); }
+            from { text-shadow: 0 2px 4px rgba(251, 188, 4, 0.3); }
+            to { text-shadow: 0 4px 8px rgba(251, 188, 4, 0.6), 0 0 12px rgba(251, 188, 4, 0.3); }
         }
 
         .stat-label {
@@ -922,9 +926,9 @@
 
         .trust-badges-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 32px;
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -1120,6 +1124,11 @@
                 gap: 16px;
             }
 
+            .trust-badges-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
             .marquee-item {
                 min-width: 300px;
             }
@@ -1241,7 +1250,7 @@
                     </div>
                     <div class="feature-card premium-stat-card">
                         <div class="feature-number animated-counter" data-target="162">0</div>
-                        <div class="stat-label">Reviews</div>
+                        <div class="stat-label">Five-Star Reviews</div>
                         <h3>Happy Customers</h3>
                         <p>Every single customer gave us 5 stars! Our track record speaks to our commitment to excellence.</p>
                     </div>
@@ -1261,24 +1270,20 @@
             <div class="container">
                 <div class="trust-badges-grid">
                     <div class="trust-badge">
-                        <div class="trust-icon">✓</div>
                         <h4>Licensed & Bonded</h4>
                         <p>Fully licensed general contractor with comprehensive bonding for your protection</p>
                     </div>
                     <div class="trust-badge">
-                        <div class="trust-icon">🛡️</div>
                         <h4>Fully Insured</h4>
                         <p>Complete liability and workers' compensation insurance coverage</p>
                     </div>
                     <div class="trust-badge">
-                        <div class="trust-icon">⭐</div>
                         <h4>5.0 Star Rating</h4>
                         <p>Perfect rating across 162 customer reviews on Google</p>
                     </div>
                     <div class="trust-badge">
-                        <div class="trust-icon">📋</div>
-                        <h4>Free Estimates</h4>
-                        <p>Detailed project assessments with transparent, honest pricing</p>
+                        <h4>Emergency Service</h4>
+                        <p>24/7 emergency response for storm damage and urgent repairs</p>
                     </div>
                 </div>
             </div>
