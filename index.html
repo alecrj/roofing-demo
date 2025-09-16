@@ -910,7 +910,7 @@
             stroke-linecap: round;
             stroke-dasharray: 377;
             stroke-dashoffset: 377;
-            transition: stroke-dashoffset 2s ease-in-out;
+            transition: stroke-dashoffset 0.8s ease-out;
         }
 
         .progress-text {
@@ -1840,14 +1840,14 @@
 
                 counters.forEach((counter, index) => {
                     const target = parseFloat(counter.getAttribute('data-target'));
-                    const increment = target / 100;
+                    const increment = target / 60; // Faster increment
                     let current = 0;
 
-                    // Animate progress bar
+                    // Animate progress bar immediately
                     if (progressBars[index]) {
                         setTimeout(() => {
                             progressBars[index].style.strokeDashoffset = '0';
-                        }, index * 200);
+                        }, index * 100); // Reduced delay
                     }
 
                     const updateCounter = () => {
@@ -1868,10 +1868,10 @@
                         }
                     };
 
-                    // Start counter animation slightly after progress bar
+                    // Start counter animation quickly
                     setTimeout(() => {
                         updateCounter();
-                    }, (index * 200) + 500);
+                    }, (index * 100) + 200); // Much faster start
                 });
             }
 
@@ -1883,7 +1883,7 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.5 });
+            }, { threshold: 0.2 }); // Trigger earlier when only 20% visible
 
             // Observe the features section
             const featuresSection = document.querySelector('.features-grid');
