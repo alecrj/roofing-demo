@@ -824,6 +824,32 @@
             padding: 20px;
         }
 
+        .gallery-overlay {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(17, 24, 39, 0.9);
+            color: var(--pure-white);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            background: var(--primary-green);
+            transform: scale(1.05);
+        }
+
+        .gallery-label {
+            display: block;
+        }
+
         /* Footer */
         footer {
             background: var(--black);
@@ -1231,27 +1257,51 @@
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="before1.jpg" alt="Residential Roofing Project - Before" class="gallery-image">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="after1.jpg" alt="Residential Roofing Project - After (Aerial View)" class="gallery-image">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="before2.jpg" alt="Commercial Roofing Project - Before" class="gallery-image">
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <strong>Additional Project Photos Available Upon Request</strong>
+                        <img src="before1.jpg" alt="Roofing Project 1 - Before" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">BEFORE</span>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <strong>Professional Workmanship Gallery</strong>
+                        <img src="after1.jpg" alt="Roofing Project 1 - After" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">AFTER</span>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <strong>Contact Us for Full Portfolio</strong>
+                        <img src="before2.jpg" alt="Roofing Project 2 - Before" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">BEFORE</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="after2.jpg" alt="Roofing Project 2 - After" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">AFTER</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="before3.jpg" alt="Roofing Project 3 - Before" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">BEFORE</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="after3.jpg" alt="Roofing Project 3 - After" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">AFTER</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="before4.jpg" alt="Roofing Project 4 - Before" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">BEFORE</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="after4.jpg" alt="Roofing Project 4 - After" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <span class="gallery-label">AFTER</span>
                         </div>
                     </div>
                 </div>
