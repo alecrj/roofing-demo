@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roofing Services | Complete Solutions | Elite Roofing</title>
+    <meta name="description" content="Complete roofing services including installations, repairs, maintenance, and emergency response. Licensed and insured roofing contractors serving Miami.">
+
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Premium Color System */
+            --primary: #0A0A0A;
+            --primary-light: #1A1A1A;
+            --accent: #D4A574;
+            --accent-light: #E8C4A0;
+            --accent-dark: #B8925E;
+            --neutral-50: #FAFAFA;
+            --neutral-100: #F5F5F5;
+            --neutral-200: #E5E5E5;
+            --neutral-300: #D4D4D4;
+            --neutral-400: #A3A3A3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+            --white: #FFFFFF;
+            --success: #10B981;
+            --error: #EF4444;
+
+            /* Premium Shadows */
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s ease-out;
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+
+            /* Spacing */
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            --space-32: 8rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--neutral-900);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Demo Banner */
+        .demo-banner {
+            background: linear-gradient(90deg, #2563EB 0%, #1D4ED8 100%);
+            color: var(--white);
+            padding: var(--space-2) 0;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            z-index: 1002;
+        }
+
+        .demo-banner-content {
+            animation: marquee 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Container System */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 32px;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--neutral-200);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-4) 0;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--neutral-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+            position: relative;
+            padding: var(--space-2) 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--primary);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-sm);
+            margin-left: var(--space-4);
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-phone {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: var(--space-4);
+        }
+
+        .nav-phone:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: var(--space-32) 0 var(--space-20);
+            background: var(--neutral-50);
+            text-align: center;
+            margin-top: 112px;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-6);
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 1.375rem;
+            color: var(--neutral-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: var(--space-32) 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-12);
+            margin-bottom: var(--space-20);
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-xl);
+            padding: var(--space-12);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-8);
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-6);
+        }
+
+        .service-description {
+            color: var(--neutral-600);
+            line-height: 1.7;
+            font-size: 1.125rem;
+            margin-bottom: var(--space-8);
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: var(--space-8);
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+            color: var(--neutral-700);
+            font-weight: 500;
+        }
+
+        .service-feature::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4) var(--space-8);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, var(--error) 0%, #DC2626 100%);
+            color: var(--white);
+            padding: var(--space-20) 0;
+            text-align: center;
+            margin: var(--space-32) 0;
+        }
+
+        .emergency-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+        }
+
+        .emergency-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-10);
+            opacity: 0.9;
+        }
+
+        .btn-emergency {
+            background: var(--white);
+            color: var(--error);
+            padding: var(--space-6) var(--space-12);
+            font-size: 1.375rem;
+            font-weight: 700;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-emergency:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--neutral-50);
+            padding: var(--space-32) 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-8);
+        }
+
+        .cta-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-600);
+            margin-bottom: var(--space-12);
+        }
+
+        .btn-large {
+            padding: var(--space-6) var(--space-12);
+            font-size: 1.25rem;
+            min-width: 300px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav {
+                top: 32px;
+            }
+
+            .page-header {
+                margin-top: 112px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: var(--space-6);
+                gap: var(--space-4);
+                border-top: 1px solid var(--neutral-200);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-phone {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+
+            .service-card {
+                padding: var(--space-8);
+            }
+
+            .btn-large {
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        <div class="demo-banner-content">
+            DEMO SITE - Get Your Roofing Company Website for One-Time Fee $399 - Professional Design - Mobile Responsive - Lead Generation Ready - Contact Alec Today
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Elite Roofing</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="web-design.html" class="nav-link">Get Your Site</a></li>
+                </ul>
+
+                <div style="display: flex; align-items: center;">
+                    <a href="tel:9546145352" class="nav-phone">(954) 614-5352</a>
+                    <a href="web-design.html" class="nav-cta">Get Your Site $399</a>
+                </div>
+
+                <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Complete Roofing <span style="color: var(--accent);">Solutions</span></h1>
+            <p class="page-subtitle">From emergency repairs to complete roof systems, we deliver exceptional results with premium materials and expert craftsmanship that stands the test of time.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Residential Roofing</h3>
+                    <p class="service-description">Complete roof installations and replacements using premium materials with industry-leading warranties for your home's protection.</p>
+                    <ul class="service-features">
+                        <li class="service-feature">Asphalt shingle systems</li>
+                        <li class="service-feature">Metal roofing installation</li>
+                        <li class="service-feature">Tile roof systems</li>
+                        <li class="service-feature">Flat roof solutions</li>
+                        <li class="service-feature">Insurance claim assistance</li>
+                        <li class="service-feature">Free inspections & estimates</li>
+                    </ul>
+                    <a href="tel:9546145352" class="btn btn-primary">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Emergency Repairs</h3>
+                    <p class="service-description">24/7 emergency response for storm damage, leaks, and urgent repairs throughout Miami-Dade and Broward Counties.</p>
+                    <ul class="service-features">
+                        <li class="service-feature">Storm damage restoration</li>
+                        <li class="service-feature">Leak detection & repair</li>
+                        <li class="service-feature">Temporary roof protection</li>
+                        <li class="service-feature">Insurance documentation</li>
+                        <li class="service-feature">Same-day response available</li>
+                        <li class="service-feature">Emergency tarping service</li>
+                    </ul>
+                    <a href="tel:9546145352" class="btn btn-primary">Call Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Roof Maintenance</h3>
+                    <p class="service-description">Comprehensive inspection and maintenance programs to extend your roof's lifespan and prevent costly emergency repairs.</p>
+                    <ul class="service-features">
+                        <li class="service-feature">Annual roof inspections</li>
+                        <li class="service-feature">Gutter cleaning & repair</li>
+                        <li class="service-feature">Preventive maintenance plans</li>
+                        <li class="service-feature">Detailed photo reports</li>
+                        <li class="service-feature">Priority scheduling for clients</li>
+                        <li class="service-feature">Warranty protection programs</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Learn More</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3 class="service-title">Commercial Roofing</h3>
+                    <p class="service-description">Professional commercial roofing services for businesses, including flat roofs, TPO, EPDM, and modified bitumen systems.</p>
+                    <ul class="service-features">
+                        <li class="service-feature">Flat roof installations</li>
+                        <li class="service-feature">TPO & EPDM systems</li>
+                        <li class="service-feature">Modified bitumen roofing</li>
+                        <li class="service-feature">Commercial roof repairs</li>
+                        <li class="service-feature">Scheduled maintenance programs</li>
+                        <li class="service-feature">Energy-efficient solutions</li>
+                    </ul>
+                    <a href="tel:9546145352" class="btn btn-primary">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section class="emergency-banner">
+        <div class="container">
+            <h2 class="emergency-title">Roofing Emergency?</h2>
+            <p class="emergency-subtitle">We provide 24/7 emergency response for storm damage and urgent repairs</p>
+            <a href="tel:9546145352" class="btn-emergency">Call Emergency Line: (954) 614-5352</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Protect Your Investment?</h2>
+            <p class="cta-subtitle">Get your free estimate today and experience the Elite Roofing difference</p>
+            <a href="tel:9546145352" class="btn btn-primary btn-large">Get Your Free Estimate</a>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.borderBottom = '1px solid var(--neutral-300)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.borderBottom = '1px solid var(--neutral-200)';
+            }
+        });
+
+        // Phone number click tracking
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Custom Roofing Website | Premium Web Design by Alec</title>
+    <meta name="description" content="Want a stunning roofing website like this? I build custom, premium websites for roofing contractors across the US. Get your professional site for just $399.">
+
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Premium Color System */
+            --primary: #0A0A0A;
+            --primary-light: #1A1A1A;
+            --accent: #D4A574;
+            --accent-light: #E8C4A0;
+            --accent-dark: #B8925E;
+            --secondary: #2563EB;
+            --secondary-light: #3B82F6;
+            --neutral-50: #FAFAFA;
+            --neutral-100: #F5F5F5;
+            --neutral-200: #E5E5E5;
+            --neutral-300: #D4D4D4;
+            --neutral-400: #A3A3A3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+            --white: #FFFFFF;
+            --success: #10B981;
+            --error: #EF4444;
+
+            /* Premium Shadows */
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s ease-out;
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Playfair Display', Georgia, serif;
+
+            /* Spacing */
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+            --space-32: 8rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--neutral-900);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Demo Banner */
+        .demo-banner {
+            background: linear-gradient(90deg, #2563EB 0%, #1D4ED8 100%);
+            color: var(--white);
+            padding: var(--space-2) 0;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            z-index: 1002;
+        }
+
+        .demo-banner-content {
+            animation: marquee 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Container System */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 32px;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--neutral-200);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-4) 0;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--neutral-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+            position: relative;
+            padding: var(--space-2) 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--primary);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-sm);
+            margin-left: var(--space-4);
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-phone {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: var(--space-4);
+        }
+
+        .nav-phone:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+            color: var(--white);
+            position: relative;
+            padding-top: 132px;
+            padding-bottom: var(--space-16);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--space-8);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--space-8);
+            letter-spacing: -0.02em;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-12);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            margin-bottom: var(--space-12);
+            text-align: center;
+        }
+
+        .price {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: var(--space-3);
+        }
+
+        .price-description {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-6);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-5) var(--space-10);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-lg);
+            min-width: 250px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: var(--space-32) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-20);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-6);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-12);
+            margin-bottom: var(--space-20);
+        }
+
+        .feature-card {
+            background: var(--neutral-50);
+            border-radius: var(--radius-xl);
+            padding: var(--space-10);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--neutral-200);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-6);
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .feature-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .feature-description {
+            color: var(--neutral-600);
+            line-height: 1.7;
+        }
+
+        /* Portfolio Preview */
+        .portfolio-preview {
+            background: var(--neutral-50);
+            border-radius: var(--radius-xl);
+            padding: var(--space-16);
+            text-align: center;
+            margin-bottom: var(--space-20);
+        }
+
+        .portfolio-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-6);
+        }
+
+        .portfolio-description {
+            color: var(--neutral-600);
+            margin-bottom: var(--space-10);
+            font-size: 1.125rem;
+        }
+
+        .portfolio-preview-image {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-2xl);
+            max-width: 100%;
+            height: auto;
+            margin-bottom: var(--space-8);
+        }
+
+        /* About Alec */
+        .about-alec {
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-16);
+            text-align: center;
+            margin-bottom: var(--space-20);
+        }
+
+        .about-alec h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: var(--space-6);
+        }
+
+        .about-alec p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto var(--space-6);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-20);
+            text-align: center;
+            margin-bottom: var(--space-20);
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+        }
+
+        .cta-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-10);
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-6);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-6) var(--space-12);
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: var(--space-6) var(--space-12);
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-cta-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav {
+                top: 32px;
+            }
+
+            .hero {
+                padding-top: 132px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: var(--space-6);
+                gap: var(--space-4);
+                border-top: 1px solid var(--neutral-200);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-phone {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        <div class="demo-banner-content">
+            DEMO SITE - Get Your Roofing Company Website for One-Time Fee $399 - Professional Design - Mobile Responsive - Lead Generation Ready - Contact Alec Today
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Elite Roofing</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="web-design.html" class="nav-link active">Get Your Site</a></li>
+                </ul>
+
+                <div style="display: flex; align-items: center;">
+                    <a href="tel:9546145352" class="nav-phone">(954) 614-5352</a>
+                    <a href="web-design.html" class="nav-cta">Get Your Site $399</a>
+                </div>
+
+                <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Premium Web Design for Roofing Contractors</div>
+
+                <h1>
+                    Get a Website That<br>
+                    <span style="color: var(--white);">Wins You More Jobs</span>
+                </h1>
+
+                <p class="subtitle">
+                    Want a stunning, professional website like this one? I'm Alec, and I build custom websites for roofing contractors across the US. Get online, get leads, and grow your business.
+                </p>
+
+                <div class="price-highlight">
+                    <div class="price">$399</div>
+                    <div class="price-description">Complete custom website + hosting for 1 year</div>
+                    <a href="tel:9546145352" class="btn btn-primary">Get Your Website Built</a>
+                </div>
+
+                <a href="mailto:contact@alecrj.com" class="btn btn-secondary">See More Examples</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What You Get</h2>
+                <p class="section-subtitle">Everything your roofing business needs to succeed online</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Custom Design</h3>
+                    <p class="feature-description">A unique, professional website designed specifically for your roofing business. No templates, no cookie-cutter designs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Mobile Optimized</h3>
+                    <p class="feature-description">Your website will look perfect on all devices. Most customers browse on their phones, so this is crucial.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Lead Generation</h3>
+                    <p class="feature-description">Built to convert visitors into customers with strategic call-to-actions, contact forms, and phone number prominence.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Fast & Secure</h3>
+                    <p class="feature-description">Lightning-fast loading speeds and enterprise-grade security. Your customers will have a smooth experience.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-preview">
+                <h3 class="portfolio-title">This Website is an Example</h3>
+                <p class="portfolio-description">You're looking at the quality of work I deliver. This entire roofing website was built from scratch with premium design and functionality.</p>
+                <img src="after1.jpg" alt="Example of premium roofing website design" class="portfolio-preview-image" style="width: 100%; max-width: 800px;">
+            </div>
+
+            <div class="about-alec">
+                <h3>Hi, I'm Alec</h3>
+                <p>I'm a web developer who specializes in building high-converting websites for roofing contractors. I understand your industry and know what works to get you more leads and customers.</p>
+                <p>I've helped dozens of roofers across the US establish a strong online presence and grow their businesses. Your website will be built with the same attention to detail and quality as this demo site.</p>
+            </div>
+
+            <div class="cta-section">
+                <h2 class="cta-title">Ready to Get More Roofing Jobs?</h2>
+                <p class="cta-subtitle">Call or email me today and let's build your professional website</p>
+
+                <div class="cta-buttons">
+                    <a href="tel:9546145352" class="btn-cta-primary">Call: (954) 614-5352</a>
+                    <a href="mailto:contact@alecrj.com" class="btn-cta-secondary">Email: contact@alecrj.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.borderBottom = '1px solid var(--neutral-300)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.borderBottom = '1px solid var(--neutral-200)';
+            }
+        });
+
+        // Phone number click tracking
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
