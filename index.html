@@ -1029,23 +1029,28 @@
 
         .gallery-overlay {
             position: absolute;
-            top: 16px;
-            left: 16px;
-            background: rgba(17, 24, 39, 0.9);
+            top: 8px;
+            left: 8px;
             color: var(--pure-white);
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
             font-weight: 700;
-            letter-spacing: 1px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            letter-spacing: 0.5px;
             z-index: 2;
             transition: all 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .gallery-overlay.before {
+            background: var(--premium-red);
+        }
+
+        .gallery-overlay.after {
+            background: var(--accent-blue);
         }
 
         .gallery-item:hover .gallery-overlay {
-            background: var(--primary-blue);
             transform: scale(1.05);
         }
 
@@ -1798,35 +1803,35 @@
                 <div class="gallery-grid">
                     <div class="gallery-item">
                         <img src="before1.jpg" alt="Roofing Project 1 - Before" class="gallery-image">
-                        <div class="gallery-overlay"><span class="gallery-label">BEFORE</span></div>
+                        <div class="gallery-overlay before"><span class="gallery-label">BEFORE</span></div>
                     </div>
                     <div class="gallery-item">
                         <img src="after1.jpg" alt="Roofing Project 1 - After" class="gallery-image">
-                        <div class="gallery-overlay"><span class="gallery-label">AFTER</span></div>
+                        <div class="gallery-overlay after"><span class="gallery-label">AFTER</span></div>
                     </div>
                     <div class="gallery-item">
                         <img src="before2.jpg" alt="Roofing Project 2 - Before" class="gallery-image">
-                        <div class="gallery-overlay"><span class="gallery-label">BEFORE</span></div>
+                        <div class="gallery-overlay before"><span class="gallery-label">BEFORE</span></div>
                     </div>
                     <div class="gallery-item">
                         <img src="after2.jpg" alt="Roofing Project 2 - After" class="gallery-image">
-                        <div class="gallery-overlay"><span class="gallery-label">AFTER</span></div>
+                        <div class="gallery-overlay after"><span class="gallery-label">AFTER</span></div>
                     </div>
                     <div class="gallery-item">
                         <img src="before3.jpg" alt="Roofing Project 3 - Before" class="gallery-image">
-                        <div class="gallery-overlay"><span class="gallery-label">BEFORE</span></div>
+                        <div class="gallery-overlay before"><span class="gallery-label">BEFORE</span></div>
                     </div>
                     <div class="gallery-item">
                         <img src="after3.jpg" alt="Roofing Project 3 - After" class="gallery-image">
-                        <div class="gallery-overlay"><span class="gallery-label">AFTER</span></div>
+                        <div class="gallery-overlay after"><span class="gallery-label">AFTER</span></div>
                     </div>
                     <div class="gallery-item">
                         <img src="before4.jpg" alt="Roofing Project 4 - Before" class="gallery-image">
-                        <div class="gallery-overlay"><span class="gallery-label">BEFORE</span></div>
+                        <div class="gallery-overlay before"><span class="gallery-label">BEFORE</span></div>
                     </div>
                     <div class="gallery-item">
                         <img src="after4.jpg" alt="Roofing Project 4 - After" class="gallery-image">
-                        <div class="gallery-overlay"><span class="gallery-label">AFTER</span></div>
+                        <div class="gallery-overlay after"><span class="gallery-label">AFTER</span></div>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 60px;">
