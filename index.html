@@ -271,7 +271,7 @@
         .hero {
             background:
                 linear-gradient(135deg, rgba(26, 32, 44, 0.85) 0%, rgba(45, 55, 72, 0.75) 100%),
-                url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+                url('https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -1279,10 +1279,7 @@
         }
 
         .footer-section h4 {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--pure-white);
             margin-bottom: 20px;
             font-weight: 600;
             font-size: 16px;
@@ -1748,43 +1745,108 @@
 
     <!-- ABOUT PAGE -->
     <div id="about" class="page">
+        <!-- Hero Section for About -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%); color: var(--pure-white); text-align: center; padding: 120px 0 80px;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 style="color: var(--pure-white); font-size: clamp(36px, 6vw, 48px); margin-bottom: 24px;">About Elite Roofing Pro</h2>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 20px; max-width: 600px; margin: 0 auto;">Family-owned excellence since 2015. Your trusted partner for premium roofing solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 32px; font-size: 28px; font-weight: 700;">Our Story</h3>
+                        <p style="margin-bottom: 24px; line-height: 1.7; color: var(--text-secondary); font-size: 16px;">
+                            Founded by Mike and Sarah Johnson in 2015, Elite Roofing Pro began with a simple mission: deliver exceptional roofing services with uncompromising integrity. What started as a husband-and-wife team has grown into the region's most trusted roofing company.
+                        </p>
+                        <p style="margin-bottom: 24px; line-height: 1.7; color: var(--text-secondary); font-size: 16px;">
+                            Today, we're proud to have completed over <strong>500 successful projects</strong>, maintained a perfect <strong>5.0-star rating</strong>, and built lasting relationships with families throughout our community.
+                        </p>
+                        <div style="background: var(--light-gray); padding: 24px; border-radius: var(--radius-lg); border-left: 4px solid var(--premium-red);">
+                            <p style="color: var(--text-primary); font-style: italic; margin: 0; font-size: 16px;">
+                                "We don't just install roofs - we protect families, preserve investments, and build relationships that last a lifetime."
+                            </p>
+                            <p style="color: var(--text-secondary); margin: 12px 0 0; font-size: 14px; font-weight: 600;">— Mike Johnson, Founder</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="background: linear-gradient(135deg, var(--light-gray) 0%, var(--background-gray) 100%); padding: 40px; border-radius: var(--radius-xl); text-align: center;">
+                            <h4 style="color: var(--text-primary); font-size: 20px; margin-bottom: 24px;">Meet the Team</h4>
+                            <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary-dark), var(--accent-blue)); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: var(--pure-white); font-size: 48px; font-weight: 700;">MJ</div>
+                            <h5 style="color: var(--text-primary); margin-bottom: 8px; font-size: 18px;">Mike Johnson</h5>
+                            <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 14px;">Founder & Master Roofer</p>
+                            <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.5;">8+ years experience, GAF Master Elite certified, dedicated to quality craftsmanship</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Certifications -->
+        <section class="section alternate">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Awards & Recognition</h2>
+                    <p>Recognized excellence in roofing craftsmanship and customer service</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--pure-white); font-size: 32px;">🏆</div>
+                        <h3>Best of 2023</h3>
+                        <p>Voted "Best Roofing Contractor" by local residents for outstanding service and quality workmanship.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--premium-red) 0%, var(--action-red) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--pure-white); font-size: 32px;">✓</div>
+                        <h3>GAF Master Elite</h3>
+                        <p>Certified Master Elite contractor - only 3% of roofers achieve this prestigious certification level.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--trust-blue) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--pure-white); font-size: 32px;">★</div>
+                        <h3>5.0 Star Rating</h3>
+                        <p>Perfect Google rating with 150+ reviews. Our customers consistently rate us as the best in the business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2>About Elite Roofing Pro</h2>
-                    <p>Family-owned and operated since 2015, we've built our reputation on quality craftsmanship, honest pricing, and treating every customer like family. Your roof protects what matters most - let us protect you.</p>
+                    <h2>Our Core Values</h2>
+                    <p>The principles that guide every project and customer interaction</p>
                 </div>
-                
                 <div class="contact-grid">
                     <div>
-                        <h3 style="color: var(--text-primary); margin-bottom: 24px; font-size: 24px;">Our Story</h3>
-                        <p style="margin-bottom: 24px; line-height: 1.7; color: var(--text-secondary); font-size: 16px;">
-                            Started by Mike and Sarah Johnson in 2015, Elite Roofing Pro was born from a simple belief: every homeowner deserves honest, quality roofing services at fair prices. What began as a husband-and-wife team has grown into a trusted local business with over 500 satisfied customers.
-                        </p>
-                        <p style="margin-bottom: 24px; line-height: 1.7; color: var(--text-secondary); font-size: 16px;">
-                            <strong>Our Mission:</strong> To protect your family and investment with superior roofing solutions, backed by our commitment to excellence and integrity in every project we undertake.
-                        </p>
-                        <p style="line-height: 1.7; color: var(--text-secondary); font-size: 16px;">
-                            <strong>Why Choose Us:</strong> We're not just contractors - we're your neighbors. We live here, work here, and stand behind every roof we install with our industry-leading warranty and 24/7 emergency service.
-                        </p>
+                        <div class="contact-item">
+                            <h4 style="color: var(--premium-red); display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><span style="width: 24px; height: 24px; background: var(--premium-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 700;">1</span>Quality First</h4>
+                            <p>We never compromise on materials or workmanship. Every roof is built to last with premium materials and meticulous attention to detail.</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4 style="color: var(--accent-blue); display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><span style="width: 24px; height: 24px; background: var(--accent-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 700;">2</span>Honest Pricing</h4>
+                            <p>Transparent, upfront pricing with no hidden fees. You'll know exactly what you're paying for before we start.</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4 style="color: var(--success-green); display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><span style="width: 24px; height: 24px; background: var(--success-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: 700;">3</span>Customer Care</h4>
+                            <p>Your satisfaction is our success. We treat every home like our own and every customer like family.</p>
+                        </div>
                     </div>
                     <div>
-                        <h3 style="color: var(--text-primary); margin-bottom: 24px; font-size: 24px;">Our Credentials</h3>
-                        <div class="contact-item">
-                            <h4>Licensed & Insured</h4>
-                            <p><strong>Fully licensed general contractor</strong> with comprehensive liability and workers' compensation insurance. Your protection and peace of mind are our priority.</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>8+ Years Experience</h4>
-                            <p><strong>Over 500 successful projects</strong> throughout the region. From small repairs to complete roof replacements, we've seen it all and done it right.</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>5.0 Star Rating</h4>
-                            <p><strong>Perfect rating on Google</strong> with over 150 reviews. Our customers love our work, and we're confident you will too.</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>Emergency Service</h4>
-                            <p><strong>24/7 storm damage response.</strong> When disaster strikes, we're here to protect your home with immediate temporary repairs and permanent solutions.</p>
+                        <div style="background: var(--light-gray); padding: 40px; border-radius: var(--radius-xl);">
+                            <h3 style="color: var(--text-primary); margin-bottom: 24px; text-align: center;">Why We're Different</h3>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="display: flex; align-items: center; margin-bottom: 16px; color: var(--text-secondary);"><span style="width: 20px; height: 20px; background: var(--success-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 12px;">✓</span>Local family-owned business</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 16px; color: var(--text-secondary);"><span style="width: 20px; height: 20px; background: var(--success-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 12px;">✓</span>8+ years of proven experience</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 16px; color: var(--text-secondary);"><span style="width: 20px; height: 20px; background: var(--success-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 12px;">✓</span>Fully licensed, bonded & insured</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 16px; color: var(--text-secondary);"><span style="width: 20px; height: 20px; background: var(--success-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 12px;">✓</span>24/7 emergency response</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 16px; color: var(--text-secondary);"><span style="width: 20px; height: 20px; background: var(--success-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 12px;">✓</span>Industry-leading warranties</li>
+                                <li style="display: flex; align-items: center; color: var(--text-secondary);"><span style="width: 20px; height: 20px; background: var(--success-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 12px;">✓</span>Perfect 5.0-star rating</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
