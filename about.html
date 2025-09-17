@@ -14,11 +14,12 @@
     <style>
         :root {
             /* Premium Color System */
-            --primary: #0A0A0A;
-            --primary-light: #1A1A1A;
-            --accent: #D4A574;
-            --accent-light: #E8C4A0;
-            --accent-dark: #B8925E;
+            --primary: #1A1A1A;
+            --primary-light: #2D2D2D;
+            --accent: #C9962B;
+            --accent-light: #E5B649;
+            --accent-dark: #A67E23;
+            --blue: #2563EB;
             --neutral-50: #FAFAFA;
             --neutral-100: #F5F5F5;
             --neutral-200: #E5E5E5;
@@ -106,12 +107,13 @@
         }
 
         .demo-banner-content {
-            animation: marquee 25s linear infinite;
+            animation: marquee 20s linear infinite;
             white-space: nowrap;
+            display: inline-block;
         }
 
         @keyframes marquee {
-            0% { transform: translateX(100%); }
+            0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
 
@@ -129,9 +131,9 @@
             left: 0;
             right: 0;
             z-index: 1001;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--neutral-200);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
 
@@ -143,10 +145,10 @@
         }
 
         .logo {
-            font-family: var(--font-display);
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
             text-decoration: none;
             letter-spacing: -0.02em;
         }
@@ -159,7 +161,7 @@
         }
 
         .nav-link {
-            color: var(--neutral-700);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
@@ -185,25 +187,42 @@
         }
 
         .nav-cta {
-            background: var(--accent);
-            color: var(--primary);
+            background: linear-gradient(135deg, var(--blue) 0%, #1D4ED8 100%);
+            color: var(--white);
             padding: var(--space-3) var(--space-6);
             border-radius: var(--radius);
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             transition: var(--transition-fast);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
             margin-left: var(--space-4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .nav-cta:hover::before {
+            left: 100%;
         }
 
         .nav-cta:hover {
-            background: var(--accent-light);
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
             transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
 
         .nav-phone {
-            color: var(--primary);
+            color: var(--white);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
@@ -218,7 +237,7 @@
             display: none;
             background: none;
             border: none;
-            color: var(--primary);
+            color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -486,12 +505,12 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(255, 255, 255, 0.95);
+                background: rgba(26, 26, 26, 0.95);
                 backdrop-filter: blur(20px);
                 flex-direction: column;
                 padding: var(--space-6);
                 gap: var(--space-4);
-                border-top: 1px solid var(--neutral-200);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
 
             .nav-links.active {
@@ -535,7 +554,7 @@
     <!-- Demo Banner -->
     <div class="demo-banner">
         <div class="demo-banner-content">
-            DEMO SITE - Get Your Roofing Company Website for One-Time Fee $399 - Professional Design - Mobile Responsive - Lead Generation Ready - Contact Alec Today
+            DEMO SITE - Get Your Roofing Company Website for One-Time Fee $399 - Professional Design - Mobile Responsive - Lead Generation Ready - Contact Alec Today&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;DEMO SITE - Get Your Roofing Company Website for One-Time Fee $399 - Professional Design - Mobile Responsive - Lead Generation Ready - Contact Alec Today&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
         </div>
     </div>
 
@@ -680,11 +699,9 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.nav');
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.borderBottom = '1px solid var(--neutral-300)';
+                nav.style.background = 'rgba(26, 26, 26, 0.98)';
             } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.borderBottom = '1px solid var(--neutral-200)';
+                nav.style.background = 'rgba(26, 26, 26, 0.95)';
             }
         });
 

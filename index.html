@@ -94,28 +94,58 @@
 
         /* Demo Banner */
         .demo-banner {
-            background: linear-gradient(90deg, var(--blue) 0%, #1D4ED8 100%);
+            background: linear-gradient(135deg, #1E40AF 0%, var(--blue) 50%, #3B82F6 100%);
             color: var(--white);
             padding: var(--space-2) 0;
             text-align: center;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            position: fixed;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+        }
+
+        .demo-banner::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            overflow: hidden;
-            z-index: 1002;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 100%);
+            animation: bannerShine 3s ease-in-out infinite;
         }
 
         .demo-banner-content {
             animation: marquee 25s linear infinite;
             white-space: nowrap;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .banner-highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-sm);
+            font-weight: 800;
+            color: #FEF3C7;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
+        }
+
+        @keyframes bannerShine {
+            0%, 100% { transform: translateX(-100%); opacity: 0; }
+            50% { transform: translateX(100%); opacity: 1; }
         }
 
         /* Container System */
@@ -134,14 +164,28 @@
         /* Navigation */
         .nav {
             position: fixed;
-            top: 32px;
+            top: 0;
             left: 0;
             right: 0;
             z-index: 1001;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav.scrolled {
+            background: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
         }
 
         .nav-container {
@@ -194,7 +238,7 @@
         }
 
         .nav-cta {
-            background: var(--blue);
+            background: linear-gradient(135deg, var(--blue) 0%, #1D4ED8 100%);
             color: var(--white);
             padding: var(--space-3) var(--space-6);
             border-radius: var(--radius);
@@ -203,10 +247,27 @@
             transition: var(--transition-fast);
             box-shadow: var(--shadow-md);
             margin-left: var(--space-4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .nav-cta:hover::before {
+            left: 100%;
         }
 
         .nav-cta:hover {
-            background: #1D4ED8;
+            background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
             transform: translateY(-1px);
             box-shadow: var(--shadow-lg);
         }
@@ -239,13 +300,13 @@
             align-items: center;
             background:
                 linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 45, 45, 0.6) 100%),
-                url('after1.jpg');
+                url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: var(--white);
             position: relative;
-            padding-top: 140px;
+            padding-top: var(--space-20);
             padding-bottom: var(--space-20);
         }
 
@@ -705,6 +766,76 @@
             background: var(--neutral-50);
         }
 
+        /* Scrolling Reviews Marquee */
+        .reviews-marquee-section {
+            background: var(--primary);
+            padding: var(--space-12) 0;
+            overflow: hidden;
+            position: relative;
+            border-top: 2px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .reviews-marquee-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                rgba(201, 150, 43, 0.05) 0%,
+                transparent 20%,
+                transparent 80%,
+                rgba(201, 150, 43, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        .reviews-marquee {
+            display: flex;
+            animation: reviewsScroll 60s linear infinite;
+            gap: var(--space-16);
+            width: max-content;
+        }
+
+        .review-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            white-space: nowrap;
+            min-width: 400px;
+            flex-shrink: 0;
+        }
+
+        .review-stars {
+            color: var(--accent);
+            font-size: 1.25rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .review-text {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 1rem;
+            margin-right: var(--space-4);
+        }
+
+        .review-author {
+            color: var(--white);
+            font-weight: 400;
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+
+        @keyframes reviewsScroll {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .reviews-marquee-section:hover .reviews-marquee {
+            animation-play-state: paused;
+        }
+
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -845,12 +976,8 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .nav {
-                top: 32px;
-            }
-
             .hero {
-                padding-top: 140px;
+                padding-top: var(--space-16);
             }
 
             .nav-links {
@@ -943,7 +1070,7 @@
     <!-- Demo Banner -->
     <div class="demo-banner">
         <div class="demo-banner-content">
-            DEMO SITE - Get Your Roofing Company Website for One-Time Fee $399 - Professional Design - Mobile Responsive - Lead Generation Ready - Contact Alec Today
+            🚀 DEMO SITE - Get Your Roofing Company Website for <span class="banner-highlight">Only $399</span> - Professional Design - Mobile Responsive - Lead Generation Ready - Contact Alec Today&nbsp;&nbsp;&nbsp;✨&nbsp;&nbsp;&nbsp;🚀 DEMO SITE - Get Your Roofing Company Website for <span class="banner-highlight">Only $399</span> - Professional Design - Mobile Responsive - Lead Generation Ready - Contact Alec Today&nbsp;&nbsp;&nbsp;✨&nbsp;&nbsp;&nbsp;
         </div>
     </div>
 
@@ -975,7 +1102,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">America's Most Trusted Roofing Contractors</div>
+                <div class="hero-badge">Premium Roofing Excellence Since 1998</div>
 
                 <h1>
                     Professional Roofing<br>
@@ -1023,12 +1150,12 @@
 
             <div class="before-after-grid">
                 <div class="before-after-item">
-                    <img src="before1.jpg" alt="Roof before Elite Roofing transformation" class="before-after-image">
+                    <img src="before1.jpg" alt="Old damaged roof before Elite Roofing transformation" class="before-after-image">
                     <div class="image-label before">Before</div>
                 </div>
                 <div class="arrow">TO</div>
                 <div class="before-after-item">
-                    <img src="after1.jpg" alt="Beautiful roof transformation by Elite Roofing" class="before-after-image">
+                    <img src="after1.jpg" alt="Beautiful new roof transformation by Elite Roofing" class="before-after-image">
                     <div class="image-label after">After</div>
                 </div>
             </div>
@@ -1050,6 +1177,13 @@
                     <div class="stat-description">Industry-leading coverage</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Strategic Marquee Banner -->
+    <section class="demo-banner">
+        <div class="demo-banner-content">
+            💼 Professional Roofing Websites Starting at <span class="banner-highlight">$399</span> - Custom Design - SEO Optimized - Lead Generation Ready - Contact Alec for Your Demo&nbsp;&nbsp;&nbsp;⚡&nbsp;&nbsp;&nbsp;💼 Professional Roofing Websites Starting at <span class="banner-highlight">$399</span> - Custom Design - SEO Optimized - Lead Generation Ready - Contact Alec for Your Demo&nbsp;&nbsp;&nbsp;⚡&nbsp;&nbsp;&nbsp;
         </div>
     </section>
 
@@ -1216,6 +1350,59 @@
         </div>
     </section>
 
+    <!-- Scrolling Reviews Marquee -->
+    <section class="reviews-marquee-section">
+        <div class="reviews-marquee">
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Elite Roofing transformed our home completely. Professional service from start to finish!"</div>
+                <div class="review-author">- Sarah M.</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Best roofing company in Florida. Quality work and fair pricing."</div>
+                <div class="review-author">- Mike R.</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Outstanding workmanship. Our new roof looks amazing and we feel secure."</div>
+                <div class="review-author">- Jennifer K.</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Fast, reliable, and professional. Highly recommend Elite Roofing!"</div>
+                <div class="review-author">- David T.</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"They exceeded our expectations. Clean work site and beautiful results."</div>
+                <div class="review-author">- Lisa H.</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Premium quality materials and expert installation. Worth every penny!"</div>
+                <div class="review-author">- Robert C.</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Elite Roofing delivered exactly what they promised. Professional team."</div>
+                <div class="review-author">- Maria S.</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Incredible attention to detail. Our roof is both beautiful and functional."</div>
+                <div class="review-author">- James W.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Strategic Marquee Banner -->
+    <section class="demo-banner">
+        <div class="demo-banner-content">
+            🏆 Get Your Roofing Business Online Today for <span class="banner-highlight">Only $399</span> - Professional Web Design - Mobile Responsive - Fast Turnaround - Contact Alec Now&nbsp;&nbsp;&nbsp;🚀&nbsp;&nbsp;&nbsp;🏆 Get Your Roofing Business Online Today for <span class="banner-highlight">Only $399</span> - Professional Web Design - Mobile Responsive - Fast Turnaround - Contact Alec Now&nbsp;&nbsp;&nbsp;🚀&nbsp;&nbsp;&nbsp;
+        </div>
+    </section>
+
     <!-- Final CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -1236,14 +1423,39 @@
             navLinks.classList.toggle('active');
         }
 
-        // Navbar scroll effect
+        // Advanced navbar scroll effect with glassmorphism and fade
+        let lastScrollTop = 0;
+        let scrollTimeout;
+
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(26, 26, 26, 0.98)';
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Add scrolled class for glassmorphism effect
+            if (currentScroll > 100) {
+                nav.classList.add('scrolled');
             } else {
-                nav.style.background = 'rgba(26, 26, 26, 0.95)';
+                nav.classList.remove('scrolled');
             }
+
+            // Hide/show nav based on scroll direction
+            if (currentScroll > lastScrollTop && currentScroll > 200) {
+                // Scrolling down & past threshold - hide nav
+                nav.classList.add('hidden');
+            } else {
+                // Scrolling up or at top - show nav
+                nav.classList.remove('hidden');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+            // Clear any existing timeout
+            clearTimeout(scrollTimeout);
+
+            // Show nav after scrolling stops
+            scrollTimeout = setTimeout(() => {
+                nav.classList.remove('hidden');
+            }, 150);
         });
 
         // Phone number click tracking
