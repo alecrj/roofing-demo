@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raymundo's Roofing LLC | 5-Star Roofing Contractors | Millbrook, AL</title>
-    <meta name="description" content="5-star roofing contractors in Millbrook, AL. Family-owned business with 162 five-star reviews delivering exceptional roofing services.">
+    <title>Elite Roofing Pro | Premium Roofing Contractors | Your City</title>
+    <meta name="description" content="Premium roofing contractors with exceptional reviews. See how your roofing business could look online with professional web design.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,12 +58,28 @@
             background: var(--warm-gray);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            padding-top: 48px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Demo Banner */
+        .demo-banner {
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+            color: var(--pure-white);
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1001;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         /* Navigation */
@@ -74,7 +90,7 @@
             border-bottom: 1px solid var(--border-elegant);
             position: fixed;
             width: 100%;
-            top: 0;
+            top: 48px;
             z-index: 1000;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: var(--shadow-light);
@@ -1204,6 +1220,11 @@
                 gap: 20px;
             }
 
+            .maps-container {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+
             .marquee-item {
                 min-width: 300px;
             }
@@ -1239,9 +1260,14 @@
     </style>
 </head>
 <body>
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        🚀 DEMO WEBSITE - See how YOUR roofing business could look online! Built by Alec • $800 • 24hr delivery
+    </div>
+
     <header>
         <nav class="container">
-            <a href="#" class="logo" data-page="home">Raymundo's Roofing LLC</a>
+            <a href="#" class="logo" data-page="home">Elite Roofing Pro</a>
             <ul class="nav-links">
                 <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
                 <li><a href="#" class="nav-link" data-page="services">Services</a></li>
@@ -1258,11 +1284,11 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>5-Star Excellence, Every Time</h1>
-                    <p class="subtitle">Award-winning family roofing business with 162 five-star reviews. From Millbrook to Montgomery, we deliver exceptional craftsmanship that homeowners love.</p>
+                    <h1>Your Roofing Business Deserves This</h1>
+                    <p class="subtitle">See how your 5-star reputation could look online. Professional websites that turn visitors into customers and showcase your expertise like never before.</p>
                     <div class="cta-group">
                         <a href="#" class="btn btn-primary" data-page="contact">Contact Us</a>
-                        <a href="tel:(334) 782-8086" class="btn btn-secondary">Call (334) 782-8086</a>
+                        <a href="tel:(555) 123-ROOF" class="btn btn-secondary">Call (555) 123-ROOF</a>
                     </div>
                 </div>
             </div>
@@ -1313,8 +1339,8 @@
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Why We're Alabama's Top Choice</h2>
-                    <p>With 162 perfect five-star reviews, we've earned our reputation through exceptional service, immaculate workmanship, and treating every customer like family.</p>
+                    <h2>Your Success Story Starts Here</h2>
+                    <p>Imagine showcasing YOUR five-star reviews with animated counters and premium design. This is how successful contractors establish their online presence.</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature-card premium-stat-card">
@@ -1329,7 +1355,7 @@
                         </div>
                         <div class="star-rating">★★★★★</div>
                         <h3>Perfect Rating</h3>
-                        <p>162 five-star Google reviews speak for themselves. We don't just meet expectations - we exceed them every time.</p>
+                        <p>Your 5-star Google reviews displayed with animated counters. Professional presentation that builds instant trust with potential customers.</p>
                     </div>
                     <div class="feature-card premium-stat-card">
                         <div class="circular-progress" data-target="100">
@@ -1342,8 +1368,8 @@
                             </div>
                         </div>
                         <div class="stat-label">Five-Star Reviews</div>
-                        <h3>Happy Customers</h3>
-                        <p>Every single customer gave us 5 stars! Our track record speaks to our commitment to excellence.</p>
+                        <h3>Customer Reviews</h3>
+                        <p>Showcase YOUR customer count with these smooth animations. Watch potential customers get impressed by your growing reputation.</p>
                     </div>
                     <div class="feature-card premium-stat-card">
                         <div class="circular-progress" data-target="100">
@@ -1364,12 +1390,61 @@
         </section>
 
 
+        <!-- Google Maps Integration Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Professional Local Presence</h2>
+                    <p>Your business location prominently displayed with Google Maps integration and professional contact information</p>
+                </div>
+                <div class="maps-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px;">
+                    <div class="map-section">
+                        <div class="google-map" style="width: 100%; height: 400px; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-large);">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-97.13558936718749!3d46.813343800000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52cfb42eb3d71eed%3A0x5de8949a26e0dd75!2sBismarck%2C%20ND!5e0!3m2!1sen!2sus!4v1635000000000!5m2!1sen!2sus"
+                                width="100%"
+                                height="400"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="business-info-card" style="padding: 40px; background: var(--pure-white); border-radius: 16px; box-shadow: var(--shadow-large); height: fit-content;">
+                        <h3 style="color: var(--primary-green); font-size: 24px; margin-bottom: 24px; font-weight: 700;">Your Business Location</h3>
+                        <div class="business-details" style="space-y: 16px;">
+                            <div class="detail-item" style="margin-bottom: 16px;">
+                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">📍 Address</h4>
+                                <p style="color: var(--medium-gray);">123 Main Street<br>Your City, ST 12345</p>
+                            </div>
+                            <div class="detail-item" style="margin-bottom: 16px;">
+                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">📞 Phone</h4>
+                                <p style="color: var(--medium-gray);"><a href="tel:(555) 123-ROOF" style="color: var(--primary-green); text-decoration: none;">(555) 123-ROOF</a></p>
+                            </div>
+                            <div class="detail-item" style="margin-bottom: 16px;">
+                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">⏰ Hours</h4>
+                                <p style="color: var(--medium-gray);">Mon-Fri: 7 AM - 6 PM<br>Sat: 8 AM - 4 PM<br>Sun: Emergency Only</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">⭐ Rating</h4>
+                                <div style="display: flex; align-items: center;">
+                                    <span style="color: var(--gold); margin-right: 8px;">★★★★★</span>
+                                    <span style="color: var(--medium-gray);">5.0 (50+ Reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Trust Badges Section -->
         <section class="trust-badges-section">
             <div class="container">
                 <div class="trust-section-header">
-                    <h2>Your Trusted Roofing Partner</h2>
-                    <p>Professional credentials and exceptional service that set us apart from the competition</p>
+                    <h2>Professional Credentials</h2>
+                    <p>Show customers your professional credentials and build trust with official badges and certifications</p>
                 </div>
                 <div class="trust-badges-grid">
                     <div class="trust-badge">
@@ -1399,7 +1474,7 @@
                     <p>Family-owned business committed to treating every customer fairly with honest pricing and quality work you can count on.</p>
                 </div>
                 <div class="business-photo">
-                    <img src="logo.jpg" alt="Raymundo's Roofing LLC Logo" style="width: 100%; height: 100%; object-fit: contain; background: var(--primary-green); border-radius: var(--border-radius-large);">
+                    <img src="logo.jpg" alt="Elite Roofing Pro Logo" style="width: 100%; height: 100%; object-fit: contain; background: var(--primary-green); border-radius: var(--border-radius-large);">
                 </div>
             </div>
         </section>
@@ -1481,14 +1556,14 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Built on Excellence</h2>
-                    <p>Unwavering commitment to quality, craftsmanship, and customer satisfaction in Central Alabama.</p>
+                    <p>Unwavering commitment to quality, craftsmanship, and customer satisfaction in Your Service Area.</p>
                 </div>
                 
                 <div class="contact-grid">
                     <div>
                         <h3 style="color: var(--dark-gray); margin-bottom: 24px; font-size: 24px;">Our Legacy</h3>
                         <p style="margin-bottom: 24px; line-height: 1.7; color: var(--medium-gray); font-size: 16px;">
-                            Raymundo's Roofing LLC has earned a perfect 5.0-star rating with 162 glowing reviews from satisfied customers. Our family business combines experienced craftsmanship with modern techniques to deliver exceptional results every time.
+                            Elite Roofing Pro has earned a perfect 5.0-star rating with 162 glowing reviews from satisfied customers. Our family business combines experienced craftsmanship with modern techniques to deliver exceptional results every time.
                         </p>
                         <p style="margin-bottom: 24px; line-height: 1.7; color: var(--medium-gray); font-size: 16px;">
                             Our commitment to honest pricing and reliable service has earned us positive customer reviews and repeat business. We focus on delivering quality workmanship without the price gouging often seen in the industry.
@@ -1527,7 +1602,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Craftsmanship Gallery</h2>
-                    <p>Explore examples of our recent projects throughout Central Alabama. Each represents our unwavering commitment to excellence.</p>
+                    <p>Explore examples of our recent projects throughout Your Service Area. Each represents our unwavering commitment to excellence.</p>
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item">
@@ -1576,11 +1651,11 @@
                         <h3 style="color: var(--dark-gray); margin-bottom: 32px; font-size: 20px;">Connect With Us</h3>
                         <div class="contact-item">
                             <h4>Phone</h4>
-                            <p><a href="tel:(334) 782-8086">(334) 782-8086</a></p>
+                            <p><a href="tel:(555) 123-ROOF">(555) 123-ROOF</a></p>
                         </div>
                         <div class="contact-item">
                             <h4>Service Territory</h4>
-                            <p>Millbrook, Montgomery, Prattville, Wetumpka, and all surrounding Central Alabama communities</p>
+                            <p>Millbrook, Montgomery, Prattville, Wetumpka, and all surrounding Your Service Area communities</p>
                         </div>
                         <div class="contact-item">
                             <h4>Business Hours</h4>
@@ -1612,7 +1687,7 @@
                             <div class="booking-option" style="padding: 32px 24px; background: var(--light-gray); border-radius: var(--border-radius-large); text-align: center;">
                                 <h4 style="color: var(--dark-gray); font-size: 18px; margin-bottom: 12px; font-weight: 600;">📞 Call Now</h4>
                                 <p style="color: var(--text-light); margin-bottom: 20px; font-size: 14px;">Speak with our experts immediately</p>
-                                <a href="tel:(334) 782-8086" class="btn btn-primary">(334) 782-8086</a>
+                                <a href="tel:(555) 123-ROOF" class="btn btn-primary">(555) 123-ROOF</a>
                             </div>
                             <div class="booking-option" style="padding: 32px 24px; background: var(--light-gray); border-radius: var(--border-radius-large); text-align: center;">
                                 <h4 style="color: var(--dark-gray); font-size: 18px; margin-bottom: 12px; font-weight: 600;">📧 Email Us</h4>
@@ -1630,7 +1705,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Raymundo's Roofing LLC Inc</h4>
+                    <h4>Elite Roofing Pro Inc</h4>
                     <p>Alabama's premier family roofing business with 162 five-star reviews, delivering exceptional craftsmanship and customer service.</p>
                     <p style="margin-top: 20px;"><strong>5.0 Star Rating • Licensed • Bonded • Insured</strong></p>
                 </div>
@@ -1645,9 +1720,9 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact Information</h4>
-                    <a href="tel:(334) 782-8086">Phone: (334) 782-8086</a>
+                    <a href="tel:(555) 123-ROOF">Phone: (555) 123-ROOF</a>
                     <a href="https://www.facebook.com/profile.php?id=100083540612215" target="_blank" rel="noopener">Facebook Page</a>
-                    <p>Serving Central Alabama</p>
+                    <p>Serving Your Service Area</p>
                     <p>24/7 Emergency Service Available</p>
                 </div>
                 <div class="footer-section">
@@ -1664,7 +1739,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Raymundo's Roofing LLC. All rights reserved. | 162 Five-Star Reviews | Proudly serving Central Alabama</p>
+                <p>&copy; 2025 Elite Roofing Pro. All rights reserved. | 162 Five-Star Reviews | Proudly serving Your Service Area</p>
             </div>
         </div>
     </footer>
