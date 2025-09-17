@@ -107,13 +107,16 @@
         }
 
         .price-highlight {
-            background: linear-gradient(135deg, var(--accent-red), var(--crimson-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: var(--pure-white);
+            color: var(--crimson-red);
+            padding: 4px 12px;
+            border-radius: 6px;
             font-weight: 800;
             font-size: 16px;
-            animation: priceGlow 2s ease-in-out infinite alternate;
+            border: 2px solid var(--crimson-red);
+            display: inline-block;
+            margin: 0 8px;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
         }
 
         @keyframes gradientShift {
@@ -278,19 +281,19 @@
             display: block;
         }
 
-        /* Hero Section - Premium Roofing */
+        /* Hero Section - Professional Roofing */
         .hero {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(30, 64, 175, 0.9) 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="roof-texture" width="120" height="60" patternUnits="userSpaceOnUse"><path d="M0 60 L60 0 L120 60 Z" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/><path d="M0 60 L20 40 L40 60" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/><path d="M60 60 L80 40 L100 60" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/><circle cx="30" cy="45" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="90" cy="45" r="1" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="1200" height="600" fill="url(%23roof-texture)"/></svg>');
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(30, 64, 175, 0.85) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="roof-texture" width="120" height="60" patternUnits="userSpaceOnUse"><path d="M0 60 L60 0 L120 60 Z" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/><path d="M0 60 L20 40 L40 60" stroke="rgba(255,255,255,0.03)" stroke-width="0.8" fill="none"/><path d="M60 60 L80 40 L100 60" stroke="rgba(255,255,255,0.03)" stroke-width="0.8" fill="none"/></pattern></defs><rect width="1200" height="600" fill="url(%23roof-texture)"/></svg>');
             background-size: cover, 240px 120px;
             background-position: center, center;
             background-attachment: fixed, scroll;
             color: var(--pure-white);
-            padding: 160px 0 140px;
+            padding: 180px 0 160px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
         }
@@ -319,24 +322,27 @@
         }
 
         .hero h1 {
-            font-size: clamp(44px, 8vw, 72px);
-            font-weight: 800;
-            margin-bottom: 28px;
-            line-height: 1.05;
-            letter-spacing: -2.5px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: clamp(48px, 7vw, 64px);
+            font-weight: 700;
+            margin-bottom: 32px;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero .subtitle {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 48px;
-            opacity: 0.95;
+            opacity: 0.9;
             font-weight: 400;
-            line-height: 1.6;
-            max-width: 640px;
+            line-height: 1.7;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
 
         .cta-group {
@@ -495,7 +501,7 @@
 
         /* Sections */
         .section {
-            padding: 120px 0;
+            padding: 100px 0;
         }
 
         .section.alternate {
@@ -504,8 +510,8 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 96px;
-            max-width: 640px;
+            margin-bottom: 80px;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
             position: relative;
@@ -525,22 +531,18 @@
         }
 
         .section-header h2 {
-            font-size: clamp(36px, 6vw, 52px);
-            color: var(--dark-gray);
-            margin-bottom: 24px;
-            font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.15;
-            background: linear-gradient(135deg, var(--slate-900) 0%, var(--navy-blue) 50%, var(--crimson-red) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: clamp(32px, 5vw, 42px);
+            color: var(--slate-900);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
         }
 
         .section-header p {
-            font-size: 19px;
-            color: var(--medium-gray);
-            line-height: 1.65;
+            font-size: 18px;
+            color: var(--slate-600);
+            line-height: 1.7;
             font-weight: 400;
         }
 
@@ -1456,7 +1458,7 @@
     <!-- Demo Banner -->
     <div class="demo-banner">
         <div class="banner-content">
-            <span class="banner-text">🚀 LAUNCH SPECIAL: YOUR WEBSITE IN 24 HOURS • <span class="price-highlight">$399 ONE-TIME</span> • Limited Time • Call Now: (954) 614-5352</span>
+            <span class="banner-text">LAUNCH SPECIAL: Professional Roofing Websites • <span class="price-highlight">$399 ONE-TIME FEE</span> • 24-Hour Delivery • Call: (954) 614-5352</span>
         </div>
     </div>
 
@@ -1479,11 +1481,11 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>This Could Be YOUR Website Tomorrow</h1>
-                    <p class="subtitle">🔥 <strong>LAUNCH SPECIAL: $399</strong> • ⚡ <strong>24-Hour Delivery</strong> • 📱 <strong>Fully Customizable</strong><br>While agencies charge $3000+ and take 6 weeks, you can have this exact website live tomorrow. Limited time pricing!</p>
+                    <h1>Premium Roofing Websites That Convert Leads</h1>
+                    <p class="subtitle"><strong>Professional websites for roofing contractors.</strong> Showcase your projects, build trust with customers, and grow your business online.<br>Complete customization with your photos, branding, and business information. Ready in 24 hours for $399.</p>
                     <div class="cta-group">
-                        <a href="tel:9546145352" class="btn btn-primary">🔥 CLAIM $399 SPECIAL - CALL NOW</a>
-                        <a href="mailto:contact@alecrj.com" class="btn btn-secondary">📧 Email for Quote</a>
+                        <a href="tel:9546145352" class="btn btn-primary">Get Your Website - $399</a>
+                        <a href="mailto:contact@alecrj.com" class="btn btn-secondary">Email for Details</a>
                     </div>
                 </div>
             </div>
@@ -1534,8 +1536,8 @@
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2>YOUR Reviews + OUR Design = More Customers</h2>
-                    <p>🔥 <strong>Animated counters with YOUR real review count</strong> • 🎨 <strong>YOUR colors and branding</strong> • 📸 <strong>YOUR project photos</strong><br>This premium design showcases successful contractors. Yours could look exactly like this in 24 hours.</p>
+                    <h2>Professional Online Presence for Roofing Contractors</h2>
+                    <p>Showcase your 5-star reviews with animated counters. Display your best project photos in a professional gallery. Custom branding and colors that match your business.<br>This premium design positions you as the professional choice customers trust.</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature-card premium-stat-card">
@@ -1556,8 +1558,8 @@
                             </div>
                         </div>
                         <div class="star-rating">★★★★★</div>
-                        <h3>YOUR Perfect Rating</h3>
-                        <p><strong>We plug in YOUR actual Google rating and review count.</strong> These animated counters work with any rating - 4.8, 4.9, 5.0 stars. Instant credibility.</p>
+                        <h3>Display Your Reviews</h3>
+                        <p>Professional presentation of your Google reviews and rating. Animated counters that showcase your reputation and build instant trust with potential customers.</p>
                     </div>
                     <div class="feature-card premium-stat-card">
                         <div class="circular-progress" data-target="100">
@@ -1577,8 +1579,8 @@
                             </div>
                         </div>
                         <div class="stat-label">Five-Star Reviews</div>
-                        <h3>YOUR Review Count</h3>
-                        <p><strong>25 reviews? 150 reviews? 500+ reviews?</strong> We showcase YOUR exact numbers with these smooth animations that impress every visitor.</p>
+                        <h3>Customer Trust</h3>
+                        <p>Prominently display your customer count and satisfaction ratings. Professional animations that highlight your growing reputation and successful projects.</p>
                     </div>
                     <div class="feature-card premium-stat-card">
                         <div class="circular-progress" data-target="100">
@@ -1610,8 +1612,8 @@
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2>YOUR Location + Contact Info</h2>
-                    <p>🗺️ <strong>Google Maps with YOUR exact address</strong> • 📞 <strong>YOUR phone number</strong> • ⏰ <strong>YOUR business hours</strong><br>Professional local presence that builds trust and drives calls</p>
+                    <h2>Local Business Presence</h2>
+                    <p>Integrated Google Maps showing your service area. Professional contact information and business hours clearly displayed. Make it easy for customers to find and contact you.</p>
                 </div>
                 <div class="maps-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px;">
                     <div class="map-section">
@@ -1628,22 +1630,22 @@
                         </div>
                     </div>
                     <div class="business-info-card" style="padding: 40px; background: var(--pure-white); border-radius: 16px; box-shadow: var(--shadow-large); height: fit-content;">
-                        <h3 style="color: var(--primary-blue); font-size: 24px; margin-bottom: 24px; font-weight: 700;">📍 YOUR Business Address Here</h3>
+                        <h3 style="color: var(--navy-blue); font-size: 24px; margin-bottom: 24px; font-weight: 700;">Your Business Location</h3>
                         <div class="business-details" style="space-y: 16px;">
                             <div class="detail-item" style="margin-bottom: 16px;">
-                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">📍 Address</h4>
+                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">Address</h4>
                                 <p style="color: var(--medium-gray);"><strong>YOUR ACTUAL ADDRESS</strong><br>Your City, Your State ZIP</p>
                             </div>
                             <div class="detail-item" style="margin-bottom: 16px;">
-                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">📞 Phone</h4>
+                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">Phone</h4>
                                 <p style="color: var(--medium-gray);"><a href="tel:9546145352" style="color: var(--primary-blue); text-decoration: none;">(954) 614-5352</a></p>
                             </div>
                             <div class="detail-item" style="margin-bottom: 16px;">
-                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">⏰ Hours</h4>
+                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">Hours</h4>
                                 <p style="color: var(--medium-gray);"><strong>YOUR ACTUAL HOURS</strong><br>Whatever schedule you prefer<br>Emergency availability optional</p>
                             </div>
                             <div class="detail-item">
-                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">⭐ Rating</h4>
+                                <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">Rating</h4>
                                 <div style="display: flex; align-items: center;">
                                     <span style="color: var(--gold); margin-right: 8px;">★★★★★</span>
                                     <span style="color: var(--medium-gray);"><strong>YOUR RATING (YOUR REVIEW COUNT)</strong></span>
@@ -1701,21 +1703,21 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Results From Contractors Who Got Websites</h2>
-                    <p>🎯 <strong>Real impact from professional websites</strong> • 💰 <strong>More leads, higher prices, better customers</strong></p>
+                    <p>Real results from contractors who invested in professional websites. More qualified leads, higher project values, and premium customers who choose quality.</p>
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial">
-                        <div class="rating">💰💰💰💰💰</div>
+                        <div class="rating">★★★★★</div>
                         <div class="testimonial-text">"Since getting my website, I've increased my average job size by 40%. Customers see the professional presentation and expect quality. The $399 investment paid for itself with the first job - made an extra $2000 that week."</div>
                         <div class="testimonial-author">— Mike's Roofing, Tampa FL</div>
                     </div>
                     <div class="testimonial">
-                        <div class="rating">📞📞📞📞📞</div>
+                        <div class="rating">★★★★★</div>
                         <div class="testimonial-text">"I used to get maybe 2-3 calls per week. Now with the website ranking on Google, I get 15-20 calls weekly. Had to hire 2 more crews. Alec delivered exactly what he promised in 24 hours."</div>
                         <div class="testimonial-author">— Elite Roofing Solutions, Orlando FL</div>
                     </div>
                     <div class="testimonial">
-                        <div class="rating">🏆🏆🏆🏆🏆</div>
+                        <div class="rating">★★★★★</div>
                         <div class="testimonial-text">"Before the website, I was competing on price. Now customers come to ME because they see the professionalism. I can charge 25% more and customers happily pay. Best $399 I ever spent."</div>
                         <div class="testimonial-author">— Premium Roofing Co, Jacksonville FL</div>
                     </div>
@@ -1774,19 +1776,19 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Ready to Get YOUR Website?</h2>
-                    <p>🔥 <strong>LAUNCH SPECIAL: $399</strong> (Regular $899) - Limited Time<br>🚀 <strong>SIMPLE PROCESS:</strong> Send us your business info → We customize this exact design → Live website in 24 hours<br>📧 <strong>Email:</strong> contact@alecrj.com • 📞 <strong>Call:</strong> (954) 614-5352</p>
+                    <p><strong>Launch Special: $399</strong> (Regular $899) - Limited Time<br><strong>Simple Process:</strong> Send us your business information → We customize this design with your branding → Live website in 24 hours<br><strong>Contact:</strong> (954) 614-5352 or contact@alecrj.com</p>
                 </div>
                 
                 <div class="contact-grid">
                     <div>
-                        <h3 style="color: var(--dark-gray); margin-bottom: 24px; font-size: 24px;">🎯 Why Contractors Choose Us</h3>
+                        <h3 style="color: var(--dark-gray); margin-bottom: 24px; font-size: 24px;">Why Roofing Contractors Choose Us</h3>
                         <p style="margin-bottom: 24px; line-height: 1.7; color: var(--medium-gray); font-size: 16px;">
-                            <strong>⚡ 24-Hour Delivery:</strong> Other agencies take 2-8 weeks. We deliver tomorrow.<br>
-                            <strong>🔥 $399 vs $3000+:</strong> Same quality, 87% less cost, limited time.<br>
-                            <strong>🎨 Fully Customized:</strong> YOUR colors, YOUR photos, YOUR info.
+                            <strong>Fast Delivery:</strong> While agencies take 2-8 weeks, we deliver in 24 hours.<br>
+                            <strong>Affordable Pricing:</strong> $399 vs $3000+ from agencies - same quality, better value.<br>
+                            <strong>Full Customization:</strong> Your colors, your photos, your business information.
                         </p>
                         <p style="margin-bottom: 24px; line-height: 1.7; color: var(--medium-gray); font-size: 16px;">
-                            <strong>📱 Mobile-Responsive:</strong> Looks perfect on phones, tablets, computers.<br>
+                            <strong>Mobile-Responsive:</strong> Looks perfect on phones, tablets, and computers.<br>
                             <strong>🗺️ Google Maps Integration:</strong> Helps customers find you.<br>
                             <strong>🎪 Animated Features:</strong> Professional animations that wow visitors.
                         </p>
@@ -1795,21 +1797,21 @@
                         </p>
                     </div>
                     <div>
-                        <h3 style="color: var(--dark-gray); margin-bottom: 24px; font-size: 24px;">🎁 Everything Included</h3>
+                        <h3 style="color: var(--dark-gray); margin-bottom: 24px; font-size: 24px;">Everything Included</h3>
                         <div class="contact-item">
-                            <h4>🎨 Complete Customization</h4>
+                            <h4>Complete Customization</h4>
                             <p><strong>YOUR business name, logo, phone, address, services, and real customer reviews</strong> professionally integrated into this exact premium design.</p>
                         </div>
                         <div class="contact-item">
-                            <h4>⚡ 24-Hour Delivery</h4>
+                            <h4>24-Hour Delivery</h4>
                             <p><strong>Live website tomorrow.</strong> No 6-week wait like agencies. Send info today, website live tomorrow. Limited spots available.</p>
                         </div>
                         <div class="contact-item">
-                            <h4>🚀 Premium Features</h4>
+                            <h4>Premium Features</h4>
                             <p><strong>Animated counters, Google Maps, mobile-responsive, professional styling.</strong> Everything you see here, customized for you.</p>
                         </div>
                         <div class="contact-item">
-                            <h4>🔥 $399 Launch Special</h4>
+                            <h4>$399 Launch Special</h4>
                             <p><strong>Limited time pricing. No monthly fees. Hosting included.</strong> Less than one roofing job pays for your entire online presence.</p>
                         </div>
                     </div>
@@ -1824,7 +1826,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>YOUR Project Photos Go Here</h2>
-                    <p>🖼️ <strong>Send us 4-8 photos of your best work</strong> • We'll arrange them professionally in this exact layout<br>📱 <strong>Before/after photos work great</strong> • Show off your craftsmanship and results</p>
+                    <p>Send us 4-8 photos of your best roofing projects and we'll arrange them professionally in this layout. Before/after photos work exceptionally well to showcase your craftsmanship and results.</p>
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item">
@@ -1915,12 +1917,12 @@
                         <h3 style="color: var(--dark-gray); margin-bottom: 32px; font-size: 20px;">Contact Us</h3>
                         <div class="booking-options" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
                             <div class="booking-option" style="padding: 32px 24px; background: var(--light-gray); border-radius: var(--border-radius-large); text-align: center;">
-                                <h4 style="color: var(--dark-gray); font-size: 18px; margin-bottom: 12px; font-weight: 600;">📞 Call Now</h4>
+                                <h4 style="color: var(--dark-gray); font-size: 18px; margin-bottom: 12px; font-weight: 600;">Call Now</h4>
                                 <p style="color: var(--text-light); margin-bottom: 20px; font-size: 14px;">Speak with our experts immediately</p>
                                 <a href="tel:9546145352" class="btn btn-primary">(954) 614-5352</a>
                             </div>
                             <div class="booking-option" style="padding: 32px 24px; background: var(--light-gray); border-radius: var(--border-radius-large); text-align: center;">
-                                <h4 style="color: var(--dark-gray); font-size: 18px; margin-bottom: 12px; font-weight: 600;">📧 Email Us</h4>
+                                <h4 style="color: var(--dark-gray); font-size: 18px; margin-bottom: 12px; font-weight: 600;">Email Us</h4>
                                 <p style="color: var(--text-light); margin-bottom: 20px; font-size: 14px;">Send us your project details</p>
                                 <a href="mailto:contact@alecrj.com" class="btn btn-accent">Send Email</a>
                             </div>
