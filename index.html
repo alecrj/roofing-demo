@@ -13,46 +13,40 @@
     
     <style>
         :root {
-            --slate-900: #0F172A;
-            --slate-800: #1E293B;
-            --slate-700: #334155;
-            --slate-600: #475569;
-            --slate-500: #64748B;
-            --slate-400: #94A3B8;
-            --slate-300: #CBD5E1;
-            --slate-200: #E2E8F0;
-            --slate-100: #F1F5F9;
-            --slate-50: #F8FAFC;
+            /* Premium Roofing Color Palette */
+            --deep-blue: #0A1628;
+            --steel-blue: #1E3A8A;
+            --professional-blue: #3B82F6;
+            --trust-blue: #60A5FA;
+            --light-blue: #DBEAFE;
+            --charcoal: #1F2937;
+            --slate: #374151;
+            --medium-gray: #6B7280;
+            --light-gray: #E5E7EB;
+            --off-gray: #F3F4F6;
             --pure-white: #FFFFFF;
             --off-white: #FEFEFE;
-            --cream: #FAF9F7;
-            --warm-gray: #F7F9FC;
-            --light-gray: #F1F5F9;
-            --medium-gray: #64748B;
-            --dark-gray: #1E293B;
-            --charcoal: #0F172A;
-            --black: #000000;
-            --navy-blue: #1E40AF;
-            --royal-blue: #2563EB;
-            --sky-blue: #0EA5E9;
-            --crimson-red: #DC2626;
-            --ruby-red: #B91C1C;
-            --accent-red: #EF4444;
-            --text-light: #64748B;
-            --text-muted: #94A3B8;
-            --border-light: #E2E8F0;
-            --border-elegant: #CBD5E1;
-            --success: #059669;
-            --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.08);
-            --shadow-light: 0 4px 6px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.1);
-            --shadow-medium: 0 10px 15px rgba(15, 23, 42, 0.1), 0 4px 6px rgba(15, 23, 42, 0.05);
-            --shadow-large: 0 25px 50px rgba(15, 23, 42, 0.15), 0 10px 20px rgba(15, 23, 42, 0.1);
-            --shadow-premium: 0 32px 64px rgba(15, 23, 42, 0.12), 0 16px 32px rgba(15, 23, 42, 0.08);
-            --shadow-red: 0 10px 25px rgba(220, 38, 38, 0.15), 0 4px 10px rgba(220, 38, 38, 0.1);
-            --shadow-blue: 0 10px 25px rgba(30, 64, 175, 0.15), 0 4px 10px rgba(30, 64, 175, 0.1);
+            --warm-white: #FAFAFA;
+            --premium-orange: #EA580C;
+            --action-orange: #FB923C;
+            --light-orange: #FED7AA;
+            --success-green: #059669;
+            --gold-accent: #D97706;
+            --text-primary: #111827;
+            --text-secondary: #4B5563;
+            --text-muted: #9CA3AF;
+            --border-light: #E5E7EB;
+            --border-medium: #D1D5DB;
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-large: 0 25px 50px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.08);
+            --shadow-premium: 0 32px 64px rgba(0, 0, 0, 0.15), 0 16px 32px rgba(0, 0, 0, 0.1);
+            --shadow-orange: 0 10px 25px rgba(234, 88, 12, 0.2), 0 4px 10px rgba(234, 88, 12, 0.1);
+            --shadow-blue: 0 10px 25px rgba(30, 58, 138, 0.2), 0 4px 10px rgba(30, 58, 138, 0.1);
             --border-radius: 8px;
             --border-radius-large: 16px;
-            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -80,7 +74,7 @@
 
         /* Demo Banner */
         .demo-banner {
-            background: linear-gradient(-45deg, var(--slate-900), var(--navy-blue), var(--crimson-red), var(--slate-900));
+            background: linear-gradient(-45deg, var(--deep-blue), var(--professional-blue), var(--premium-orange), var(--charcoal));
             background-size: 400% 400%;
             color: var(--pure-white);
             text-align: center;
@@ -91,7 +85,7 @@
             width: 100%;
             top: 0;
             z-index: 1001;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(220, 38, 38, 0.2);
+            box-shadow: 0 3px 12px rgba(0,0,0,0.3), 0 0 25px rgba(234, 88, 12, 0.3);
             animation: gradientShift 6s ease infinite, bannerGlow 3s ease-in-out infinite alternate;
             overflow: hidden;
         }
@@ -108,15 +102,15 @@
 
         .price-highlight {
             background: var(--pure-white);
-            color: var(--crimson-red);
+            color: var(--premium-orange);
             padding: 4px 12px;
             border-radius: 6px;
             font-weight: 800;
             font-size: 16px;
-            border: 2px solid var(--crimson-red);
+            border: 2px solid var(--premium-orange);
             display: inline-block;
             margin: 0 8px;
-            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+            box-shadow: var(--shadow-orange);
         }
 
         @keyframes gradientShift {
@@ -224,7 +218,7 @@
         }
 
         .nav-cta {
-            background: linear-gradient(135deg, var(--crimson-red) 0%, var(--ruby-red) 100%);
+            background: linear-gradient(135deg, var(--premium-orange) 0%, var(--action-orange) 100%);
             color: var(--pure-white) !important;
             padding: 12px 24px;
             border-radius: 8px;
@@ -232,7 +226,7 @@
             transition: var(--transition);
             font-size: 14px;
             white-space: nowrap;
-            box-shadow: var(--shadow-red);
+            box-shadow: var(--shadow-orange);
             letter-spacing: 0.3px;
             border: 2px solid transparent;
             position: relative;
@@ -255,7 +249,7 @@
         }
 
         .nav-cta:hover {
-            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--sky-blue) 100%);
+            background: linear-gradient(135deg, var(--professional-blue) 0%, var(--trust-blue) 100%);
             transform: translateY(-1px);
             box-shadow: var(--shadow-blue);
             letter-spacing: 0.5px;
@@ -281,19 +275,21 @@
             display: block;
         }
 
-        /* Hero Section - Professional Roofing */
+        /* Hero Section - Premium Roofing */
         .hero {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(30, 64, 175, 0.85) 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="roof-texture" width="120" height="60" patternUnits="userSpaceOnUse"><path d="M0 60 L60 0 L120 60 Z" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/><path d="M0 60 L20 40 L40 60" stroke="rgba(255,255,255,0.03)" stroke-width="0.8" fill="none"/><path d="M60 60 L80 40 L100 60" stroke="rgba(255,255,255,0.03)" stroke-width="0.8" fill="none"/></pattern></defs><rect width="1200" height="600" fill="url(%23roof-texture)"/></svg>');
-            background-size: cover, 240px 120px;
-            background-position: center, center;
-            background-attachment: fixed, scroll;
+            background:
+                linear-gradient(135deg, rgba(10, 22, 40, 0.92) 0%, rgba(30, 58, 138, 0.85) 100%),
+                linear-gradient(45deg, rgba(234, 88, 12, 0.1) 0%, transparent 70%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="roof-pattern" width="200" height="100" patternUnits="userSpaceOnUse"><g opacity="0.15"><path d="M0 100 L100 0 L200 100 Z" fill="none" stroke="white" stroke-width="1.5"/><path d="M0 100 L50 50 L100 100" fill="none" stroke="white" stroke-width="0.8" opacity="0.6"/><path d="M100 100 L150 50 L200 100" fill="none" stroke="white" stroke-width="0.8" opacity="0.6"/><circle cx="50" cy="75" r="2" fill="white" opacity="0.3"/><circle cx="150" cy="75" r="2" fill="white" opacity="0.3"/><rect x="45" y="70" width="10" height="15" fill="white" opacity="0.2"/><rect x="145" y="70" width="10" height="15" fill="white" opacity="0.2"/></g></pattern></defs><rect width="1200" height="800" fill="url(%23roof-pattern)"/><defs><linearGradient id="roofGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(234, 88, 12, 0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(30, 58, 138, 0.1);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23roofGradient)"/></svg>');
+            background-size: cover, 400px 200px, cover;
+            background-position: center, center, center;
+            background-attachment: fixed, scroll, scroll;
             color: var(--pure-white);
-            padding: 180px 0 160px;
+            padding: 200px 0 180px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 90vh;
+            min-height: 95vh;
             display: flex;
             align-items: center;
         }
@@ -305,13 +301,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(220, 38, 38, 0.05) 0%, transparent 20%, transparent 80%, rgba(30, 64, 175, 0.05) 100%);
-            animation: roofShine 8s ease-in-out infinite;
+            background: linear-gradient(45deg, rgba(234, 88, 12, 0.08) 0%, transparent 30%, transparent 70%, rgba(59, 130, 246, 0.08) 100%);
+            animation: premiumShine 12s ease-in-out infinite;
         }
 
-        @keyframes roofShine {
-            0%, 100% { transform: translateX(-100%); opacity: 0; }
-            50% { transform: translateX(100%); opacity: 1; }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--premium-orange) 0%, var(--professional-blue) 50%, var(--premium-orange) 100%);
+            opacity: 0.8;
+        }
+
+        @keyframes premiumShine {
+            0%, 100% { transform: translateX(-100%) translateY(-100%); opacity: 0; }
+            50% { transform: translateX(100%) translateY(100%); opacity: 0.6; }
         }
 
         .hero-content {
@@ -374,9 +381,9 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--crimson-red) 0%, var(--ruby-red) 100%);
+            background: linear-gradient(135deg, var(--premium-orange) 0%, var(--action-orange) 100%);
             color: var(--pure-white);
-            box-shadow: var(--shadow-red);
+            box-shadow: var(--shadow-orange);
             font-weight: 700;
             border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
@@ -399,7 +406,7 @@
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--sky-blue) 100%);
+            background: linear-gradient(135deg, var(--professional-blue) 0%, var(--trust-blue) 100%);
             transform: translateY(-3px);
             box-shadow: var(--shadow-blue);
             letter-spacing: 0.5px;
@@ -434,10 +441,12 @@
 
         /* Scrolling Reviews Marquee */
         .reviews-marquee {
-            background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
-            padding: 20px 0;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--deep-blue) 100%);
+            padding: 24px 0;
             overflow: hidden;
             position: relative;
+            border-top: 3px solid var(--premium-orange);
+            border-bottom: 3px solid var(--premium-orange);
         }
 
         .reviews-marquee::before {
@@ -472,9 +481,10 @@
         }
 
         .review-stars {
-            color: var(--primary-blue);
-            font-size: 18px;
-            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+            color: var(--action-orange);
+            font-size: 20px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            text-shadow: 0 0 10px rgba(234, 88, 12, 0.5);
         }
 
         .review-text {
@@ -532,7 +542,7 @@
 
         .section-header h2 {
             font-size: clamp(32px, 5vw, 42px);
-            color: var(--slate-900);
+            color: var(--text-primary);
             margin-bottom: 20px;
             font-weight: 700;
             letter-spacing: -1px;
@@ -541,7 +551,7 @@
 
         .section-header p {
             font-size: 18px;
-            color: var(--slate-600);
+            color: var(--text-secondary);
             line-height: 1.7;
             font-weight: 400;
         }
@@ -1496,39 +1506,39 @@
             <div class="marquee-container">
                 <div class="marquee-item">
                     <span class="review-stars">★★★★★</span>
-                    <span class="review-text">"More than fair pricing and excellent service and workmanship."</span>
-                    <span class="review-author">— Douglas R.</span>
+                    <span class="review-text">"Outstanding work and professional service. Roof looks incredible!"</span>
+                    <span class="review-author">— Michael B.</span>
                 </div>
                 <div class="marquee-item">
                     <span class="review-stars">★★★★★</span>
-                    <span class="review-text">"I would give Raymundo's Roofing 10/10 stars if possible."</span>
-                    <span class="review-author">— Crystal T.</span>
+                    <span class="review-text">"Finished ahead of schedule with amazing attention to detail."</span>
+                    <span class="review-author">— Sarah K.</span>
                 </div>
                 <div class="marquee-item">
                     <span class="review-stars">★★★★★</span>
-                    <span class="review-text">"Great people and great quality of work!!"</span>
-                    <span class="review-author">— Latonya W.</span>
+                    <span class="review-text">"Best roofing company in the area. Highly recommend!"</span>
+                    <span class="review-author">— David L.</span>
                 </div>
                 <div class="marquee-item">
                     <span class="review-stars">★★★★★</span>
-                    <span class="review-text">"The work is immaculate. They completed this job in one day!"</span>
-                    <span class="review-author">— Crystal T.</span>
+                    <span class="review-text">"Professional team, fair pricing, exceptional results."</span>
+                    <span class="review-author">— Jennifer M.</span>
                 </div>
                 <div class="marquee-item">
                     <span class="review-stars">★★★★★</span>
-                    <span class="review-text">"No problems, great price, I highly recommend them!"</span>
-                    <span class="review-author">— Happy Customer</span>
+                    <span class="review-text">"Transformed our home with beautiful new roofing. 10/10!"</span>
+                    <span class="review-author">— Robert S.</span>
                 </div>
                 <!-- Duplicate for seamless loop -->
                 <div class="marquee-item">
                     <span class="review-stars">★★★★★</span>
-                    <span class="review-text">"More than fair pricing and excellent service and workmanship."</span>
-                    <span class="review-author">— Douglas R.</span>
+                    <span class="review-text">"Outstanding work and professional service. Roof looks incredible!"</span>
+                    <span class="review-author">— Michael B.</span>
                 </div>
                 <div class="marquee-item">
                     <span class="review-stars">★★★★★</span>
-                    <span class="review-text">"I would give Raymundo's Roofing 10/10 stars if possible."</span>
-                    <span class="review-author">— Crystal T.</span>
+                    <span class="review-text">"Finished ahead of schedule with amazing attention to detail."</span>
+                    <span class="review-author">— Sarah K.</span>
                 </div>
             </div>
         </section>
@@ -1575,7 +1585,7 @@
                                 <circle class="progress-bar" cx="60" cy="60" r="52"></circle>
                             </svg>
                             <div class="progress-text">
-                                <span class="animated-counter" data-target="162">0</span>
+                                <span class="animated-counter" data-target="150">0</span>
                             </div>
                         </div>
                         <div class="stat-label">Five-Star Reviews</div>
@@ -1675,7 +1685,7 @@
                     </div>
                     <div class="trust-badge">
                         <h4>5.0 Star Rating</h4>
-                        <p>Perfect rating across 162 customer reviews on Google - our reputation speaks for itself</p>
+                        <p>Perfect rating across all customer reviews on Google - your reputation speaks for itself</p>
                     </div>
                     <div class="trust-badge">
                         <h4>Emergency Service</h4>
@@ -1864,7 +1874,7 @@
                 </div>
                 <div style="text-align: center; margin-top: 60px;">
                     <p style="color: var(--medium-gray); margin-bottom: 20px; font-size: 16px;">Want to see more completed projects?</p>
-                    <a href="#" class="btn btn-accent">Your Gallery/Facebook Page Linked Here</a>
+                    <a href="#" class="btn" style="background: var(--professional-blue); color: var(--pure-white); border: 2px solid var(--professional-blue); box-shadow: var(--shadow-blue); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: var(--transition);">Your Gallery/Facebook Page Linked Here</a>
                 </div>
             </div>
         </section>
@@ -1887,7 +1897,7 @@
                         </div>
                         <div class="contact-item">
                             <h4>Service Territory</h4>
-                            <p>Millbrook, Montgomery, Prattville, Wetumpka, and all surrounding Your Service Area communities</p>
+                            <p>Your Service Area City Here, Your Service Area City Here, Your Service Area City Here, and all surrounding communities</p>
                         </div>
                         <div class="contact-item">
                             <h4>Business Hours</h4>
@@ -1910,7 +1920,7 @@
                         </div>
                         <div class="contact-item">
                             <h4>Follow Us</h4>
-                            <p><a href="https://www.facebook.com/profile.php?id=100083540612215" target="_blank" rel="noopener">Facebook - See our latest projects and customer reviews</a></p>
+                            <p><a href="#">Your Facebook Page - See your latest projects and customer reviews</a></p>
                         </div>
                     </div>
                     <div class="contact-form">
@@ -1938,7 +1948,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Elite Roofing Pro Inc</h4>
-                    <p>Alabama's premier family roofing business with 162 five-star reviews, delivering exceptional craftsmanship and customer service.</p>
+                    <p>Your area's premier roofing business with outstanding five-star reviews, delivering exceptional craftsmanship and customer service.</p>
                     <p style="margin-top: 20px;"><strong>5.0 Star Rating • Licensed • Bonded • Insured</strong></p>
                 </div>
                 <div class="footer-section">
@@ -1953,25 +1963,25 @@
                 <div class="footer-section">
                     <h4>Contact Information</h4>
                     <a href="tel:9546145352">Phone: (954) 614-5352</a>
-                    <a href="https://www.facebook.com/profile.php?id=100083540612215" target="_blank" rel="noopener">Facebook Page</a>
+                    <a href="#">Your Facebook Page</a>
                     <p>Serving Your Service Area</p>
                     <p>24/7 Emergency Service Available</p>
                 </div>
                 <div class="footer-section">
                     <h4>Service Areas</h4>
-                    <p>Millbrook</p>
-                    <p>Montgomery</p>
-                    <p>Prattville</p>
-                    <p>Wetumpka</p>
-                    <p>Quincy</p>
-                    <p>Havana</p>
-                    <p>Midway</p>
-                    <p>Gretna</p>
-                    <p>Gadsden County</p>
+                    <p>Your Service Area City Here</p>
+                    <p>Your Service Area City Here</p>
+                    <p>Your Service Area City Here</p>
+                    <p>Your Service Area City Here</p>
+                    <p>Your Service Area City Here</p>
+                    <p>Your Service Area City Here</p>
+                    <p>Your Service Area City Here</p>
+                    <p>Your Service Area City Here</p>
+                    <p>Your Service Area City Here</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Elite Roofing Pro. All rights reserved. | 162 Five-Star Reviews | Proudly serving Your Service Area</p>
+                <p>&copy; 2025 Your Roofing Business Name. All rights reserved. | Outstanding Five-Star Reviews | Proudly serving Your Service Area</p>
             </div>
         </div>
     </footer>
