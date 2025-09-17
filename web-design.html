@@ -9,11 +9,12 @@
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- GSAP for Premium Animations -->
+    <!-- Premium Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <style>
         :root {
@@ -90,67 +91,94 @@
         }
 
         body {
-            font-family: var(--font-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--neutral-900);
-            background: var(--white);
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            overflow-x: hidden;
         }
 
-        /* Demo Banner - Apple Minimal Style */
+        /* Premium Banner */
         .demo-banner {
-            background: rgba(220, 38, 38, 0.9);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            color: var(--white);
-            padding: 8px 0;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 500;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            position: relative;
+            overflow: hidden;
+            height: 40px;
+            display: flex;
+            align-items: center;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            overflow: hidden;
-            z-index: 1002;
-            border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.2s ease;
-            opacity: 1;
-            transform: translateY(0);
+            z-index: 1001;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
         }
 
-        .demo-banner.scrolled {
-            opacity: 0.95;
-            backdrop-filter: blur(20px) saturate(180%);
+        .demo-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shine 3s infinite;
         }
-
-        .demo-banner.hidden {
-            opacity: 0;
-            transform: translateY(-100%);
-        }
-
 
         .demo-banner-content {
-            animation: marquee 30s linear infinite;
+            animation: marquee 25s linear infinite;
             white-space: nowrap;
-            display: inline-flex;
-            position: relative;
-            z-index: 2;
-            letter-spacing: 0.3px;
-            width: 200%;
+            display: flex;
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .marquee-text {
+            padding-right: 100px;
+            display: flex;
+            align-items: center;
         }
 
         .banner-highlight {
-            color: #007AFF;
+            color: #fbbf24;
             font-weight: 600;
         }
 
+        /* Premium Animations */
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
 
@@ -161,29 +189,26 @@
             padding: 0 var(--space-6);
         }
 
-        /* Navigation - True Apple Style */
+        /* Premium Navigation */
         .nav {
             position: fixed;
-            top: 29px;
+            top: 40px;
             left: 0;
             right: 0;
-            z-index: 1001;
-            background: rgba(22, 22, 23, 0.8);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.2s ease;
-            height: 44px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 70px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
         }
 
         .nav.scrolled {
-            background: rgba(22, 22, 23, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .nav.hidden {
-            transform: translateY(-100%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
 
@@ -191,17 +216,21 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0;
-            height: 44px;
+            padding: 0 2rem;
+            height: 70px;
         }
 
         .logo {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-            font-size: 21px;
-            font-weight: 600;
-            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
             text-decoration: none;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-links {
@@ -212,71 +241,73 @@
         }
 
         .nav-link {
-            color: rgba(255, 255, 255, 0.92);
+            color: #6b7280;
             text-decoration: none;
-            font-weight: 400;
-            font-size: 17px;
-            transition: color 0.15s ease;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            font-family: 'Inter', sans-serif;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
         }
 
         .nav-link:hover {
-            color: rgba(255, 255, 255, 1);
+            color: #6366f1;
+            background: rgba(99, 102, 241, 0.05);
         }
 
         .nav-link.active {
-            color: rgba(255, 255, 255, 1);
+            color: #6366f1;
+            background: rgba(99, 102, 241, 0.1);
         }
 
 
         .nav-cta {
-            background: #007AFF;
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 20px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             text-decoration: none;
-            transition: all 0.15s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             margin-left: 16px;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         }
 
-
-
-
-
         .nav-cta:hover {
-            background: #0056CC;
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
         }
 
 
         .nav-phone-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: var(--white);
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #6366f1;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            padding: 6px 12px;
-            border-radius: 16px;
-            transition: all 0.15s ease;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
         }
 
         .nav-phone-btn::before {
-            content: '📞';
-            font-size: 13px;
+            content: '';
+            font-size: 14px;
         }
 
         .nav-phone-btn:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-1px);
         }
 
         .mobile-menu {
@@ -738,25 +769,25 @@
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
+                    <div class="feature-icon"></div>
                     <h3 class="feature-title">Custom Design</h3>
                     <p class="feature-description">A unique, professional website designed specifically for your roofing business. No templates, no cookie-cutter designs.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
+                    <div class="feature-icon"></div>
                     <h3 class="feature-title">Mobile Optimized</h3>
                     <p class="feature-description">Your website will look perfect on all devices. Most customers browse on their phones, so this is crucial.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
+                    <div class="feature-icon"></div>
                     <h3 class="feature-title">Lead Generation</h3>
                     <p class="feature-description">Built to convert visitors into customers with strategic call-to-actions, contact forms, and phone number prominence.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon"></div>
                     <h3 class="feature-title">Fast & Secure</h3>
                     <p class="feature-description">Lightning-fast loading speeds and enterprise-grade security. Your customers will have a smooth experience.</p>
                 </div>
