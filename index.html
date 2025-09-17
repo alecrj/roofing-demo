@@ -14,36 +14,36 @@
     <style>
         :root {
             /* Premium Roofing Color Palette */
-            --deep-blue: #0A1628;
-            --steel-blue: #1E3A8A;
-            --professional-blue: #3B82F6;
-            --trust-blue: #60A5FA;
-            --light-blue: #DBEAFE;
-            --charcoal: #1F2937;
-            --slate: #374151;
-            --medium-gray: #6B7280;
-            --light-gray: #E5E7EB;
-            --off-gray: #F3F4F6;
-            --pure-white: #FFFFFF;
-            --off-white: #FEFEFE;
-            --warm-white: #FAFAFA;
-            --premium-orange: #EA580C;
-            --action-orange: #FB923C;
-            --light-orange: #FED7AA;
+            --deep-navy: #1e293b;
+            --slate-blue: #334155;
+            --professional-blue: #0f172a;
+            --trust-blue: #475569;
+            --light-blue: #e2e8f0;
+            --charcoal: #0f172a;
+            --slate-gray: #64748b;
+            --medium-gray: #94a3b8;
+            --light-gray: #f1f5f9;
+            --off-gray: #f8fafc;
+            --pure-white: #ffffff;
+            --off-white: #fefefe;
+            --warm-white: #fafafa;
+            --roofing-red: #dc2626;
+            --action-red: #ef4444;
+            --light-red: #fee2e2;
             --success-green: #059669;
-            --gold-accent: #D97706;
-            --text-primary: #111827;
-            --text-secondary: #4B5563;
-            --text-muted: #9CA3AF;
-            --border-light: #E5E7EB;
-            --border-medium: #D1D5DB;
-            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
-            --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
-            --shadow-large: 0 25px 50px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.08);
-            --shadow-premium: 0 32px 64px rgba(0, 0, 0, 0.15), 0 16px 32px rgba(0, 0, 0, 0.1);
-            --shadow-orange: 0 10px 25px rgba(234, 88, 12, 0.2), 0 4px 10px rgba(234, 88, 12, 0.1);
-            --shadow-blue: 0 10px 25px rgba(30, 58, 138, 0.2), 0 4px 10px rgba(30, 58, 138, 0.1);
+            --gold-accent: #eab308;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.1);
+            --shadow-light: 0 4px 6px rgba(15, 23, 42, 0.07), 0 1px 3px rgba(15, 23, 42, 0.06);
+            --shadow-medium: 0 10px 15px rgba(15, 23, 42, 0.1), 0 4px 6px rgba(15, 23, 42, 0.05);
+            --shadow-large: 0 25px 50px rgba(15, 23, 42, 0.15), 0 10px 20px rgba(15, 23, 42, 0.1);
+            --shadow-premium: 0 32px 64px rgba(15, 23, 42, 0.12), 0 16px 32px rgba(15, 23, 42, 0.08);
+            --shadow-red: 0 10px 25px rgba(220, 38, 38, 0.25), 0 4px 10px rgba(220, 38, 38, 0.15);
+            --shadow-blue: 0 10px 25px rgba(15, 23, 42, 0.2), 0 4px 10px rgba(15, 23, 42, 0.1);
             --border-radius: 8px;
             --border-radius-large: 16px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -74,7 +74,7 @@
 
         /* Demo Banner */
         .demo-banner {
-            background: linear-gradient(-45deg, var(--deep-blue), var(--professional-blue), var(--premium-orange), var(--charcoal));
+            background: linear-gradient(-45deg, var(--deep-navy), var(--roofing-red), var(--deep-navy), var(--roofing-red));
             background-size: 400% 400%;
             color: var(--pure-white);
             text-align: center;
@@ -85,8 +85,8 @@
             width: 100%;
             top: 0;
             z-index: 1001;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.3), 0 0 25px rgba(234, 88, 12, 0.3);
-            animation: gradientShift 6s ease infinite, bannerGlow 3s ease-in-out infinite alternate;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.3), 0 0 25px rgba(220, 38, 38, 0.3);
+            animation: gradientShift 6s ease infinite;
             overflow: hidden;
         }
 
@@ -102,15 +102,15 @@
 
         .price-highlight {
             background: var(--pure-white);
-            color: var(--premium-orange);
+            color: var(--roofing-red);
             padding: 4px 12px;
             border-radius: 6px;
             font-weight: 800;
             font-size: 16px;
-            border: 2px solid var(--premium-orange);
+            border: 2px solid var(--roofing-red);
             display: inline-block;
             margin: 0 8px;
-            box-shadow: var(--shadow-orange);
+            box-shadow: var(--shadow-red);
         }
 
         @keyframes gradientShift {
@@ -161,10 +161,7 @@
         .logo {
             font-size: 24px;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--slate-900) 0%, var(--navy-blue) 50%, var(--crimson-red) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-primary);
             text-decoration: none;
             letter-spacing: -0.8px;
             transition: all 0.3s ease;
@@ -178,7 +175,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--navy-blue), var(--crimson-red));
+            background: var(--roofing-red);
             transition: width 0.3s ease;
         }
 
@@ -218,7 +215,7 @@
         }
 
         .nav-cta {
-            background: linear-gradient(135deg, var(--premium-orange) 0%, var(--action-orange) 100%);
+            background: var(--roofing-red);
             color: var(--pure-white) !important;
             padding: 12px 24px;
             border-radius: 8px;
@@ -226,7 +223,7 @@
             transition: var(--transition);
             font-size: 14px;
             white-space: nowrap;
-            box-shadow: var(--shadow-orange);
+            box-shadow: var(--shadow-red);
             letter-spacing: 0.3px;
             border: 2px solid transparent;
             position: relative;
@@ -249,9 +246,9 @@
         }
 
         .nav-cta:hover {
-            background: linear-gradient(135deg, var(--professional-blue) 0%, var(--trust-blue) 100%);
+            background: var(--action-red);
             transform: translateY(-1px);
-            box-shadow: var(--shadow-blue);
+            box-shadow: var(--shadow-red);
             letter-spacing: 0.5px;
         }
 
@@ -278,12 +275,11 @@
         /* Hero Section - Premium Roofing */
         .hero {
             background:
-                linear-gradient(135deg, rgba(10, 22, 40, 0.92) 0%, rgba(30, 58, 138, 0.85) 100%),
-                linear-gradient(45deg, rgba(234, 88, 12, 0.1) 0%, transparent 70%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="roof-pattern" width="200" height="100" patternUnits="userSpaceOnUse"><g opacity="0.15"><path d="M0 100 L100 0 L200 100 Z" fill="none" stroke="white" stroke-width="1.5"/><path d="M0 100 L50 50 L100 100" fill="none" stroke="white" stroke-width="0.8" opacity="0.6"/><path d="M100 100 L150 50 L200 100" fill="none" stroke="white" stroke-width="0.8" opacity="0.6"/><circle cx="50" cy="75" r="2" fill="white" opacity="0.3"/><circle cx="150" cy="75" r="2" fill="white" opacity="0.3"/><rect x="45" y="70" width="10" height="15" fill="white" opacity="0.2"/><rect x="145" y="70" width="10" height="15" fill="white" opacity="0.2"/></g></pattern></defs><rect width="1200" height="800" fill="url(%23roof-pattern)"/><defs><linearGradient id="roofGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(234, 88, 12, 0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(30, 58, 138, 0.1);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23roofGradient)"/></svg>');
-            background-size: cover, 400px 200px, cover;
-            background-position: center, center, center;
-            background-attachment: fixed, scroll, scroll;
+                linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--pure-white);
             padding: 200px 0 180px;
             text-align: center;
@@ -381,9 +377,9 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--premium-orange) 0%, var(--action-orange) 100%);
+            background: var(--roofing-red);
             color: var(--pure-white);
-            box-shadow: var(--shadow-orange);
+            box-shadow: var(--shadow-red);
             font-weight: 700;
             border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
@@ -406,9 +402,9 @@
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, var(--professional-blue) 0%, var(--trust-blue) 100%);
+            background: var(--action-red);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-blue);
+            box-shadow: var(--shadow-red);
             letter-spacing: 0.5px;
         }
 
@@ -441,12 +437,12 @@
 
         /* Scrolling Reviews Marquee */
         .reviews-marquee {
-            background: linear-gradient(135deg, var(--charcoal) 0%, var(--deep-blue) 100%);
+            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--charcoal) 100%);
             padding: 24px 0;
             overflow: hidden;
             position: relative;
-            border-top: 3px solid var(--premium-orange);
-            border-bottom: 3px solid var(--premium-orange);
+            border-top: 3px solid var(--roofing-red);
+            border-bottom: 3px solid var(--roofing-red);
         }
 
         .reviews-marquee::before {
@@ -481,10 +477,10 @@
         }
 
         .review-stars {
-            color: var(--action-orange);
+            color: var(--gold-accent);
             font-size: 20px;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-            text-shadow: 0 0 10px rgba(234, 88, 12, 0.5);
+            text-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
         }
 
         .review-text {
@@ -1106,13 +1102,12 @@
 
         .progress-bar {
             fill: none;
-            stroke: url(#progressGradient);
+            stroke: var(--roofing-red);
             stroke-width: 8;
             stroke-linecap: round;
             stroke-dasharray: 377;
             stroke-dashoffset: 377;
             transition: stroke-dashoffset 0.8s ease-out;
-            filter: drop-shadow(0 2px 4px rgba(15, 76, 117, 0.3));
         }
 
         .progress-text {
@@ -1122,12 +1117,8 @@
             transform: translate(-50%, -50%);
             font-size: 28px;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--crimson-red) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--roofing-red);
             text-align: center;
-            text-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
         }
 
         .animated-counter {
@@ -1553,13 +1544,6 @@
                     <div class="feature-card premium-stat-card">
                         <div class="circular-progress" data-target="100">
                             <svg>
-                                <defs>
-                                    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:var(--navy-blue);stop-opacity:1" />
-                                        <stop offset="50%" style="stop-color:var(--sky-blue);stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:var(--crimson-red);stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
                                 <circle class="progress-bg" cx="60" cy="60" r="52"></circle>
                                 <circle class="progress-bar" cx="60" cy="60" r="52"></circle>
                             </svg>
@@ -1574,13 +1558,6 @@
                     <div class="feature-card premium-stat-card">
                         <div class="circular-progress" data-target="100">
                             <svg>
-                                <defs>
-                                    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:var(--navy-blue);stop-opacity:1" />
-                                        <stop offset="50%" style="stop-color:var(--sky-blue);stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:var(--crimson-red);stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
                                 <circle class="progress-bg" cx="60" cy="60" r="52"></circle>
                                 <circle class="progress-bar" cx="60" cy="60" r="52"></circle>
                             </svg>
@@ -1595,13 +1572,6 @@
                     <div class="feature-card premium-stat-card">
                         <div class="circular-progress" data-target="100">
                             <svg>
-                                <defs>
-                                    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:var(--navy-blue);stop-opacity:1" />
-                                        <stop offset="50%" style="stop-color:var(--sky-blue);stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:var(--crimson-red);stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
                                 <circle class="progress-bg" cx="60" cy="60" r="52"></circle>
                                 <circle class="progress-bar" cx="60" cy="60" r="52"></circle>
                             </svg>
@@ -1640,7 +1610,7 @@
                         </div>
                     </div>
                     <div class="business-info-card" style="padding: 40px; background: var(--pure-white); border-radius: 16px; box-shadow: var(--shadow-large); height: fit-content;">
-                        <h3 style="color: var(--navy-blue); font-size: 24px; margin-bottom: 24px; font-weight: 700;">Your Business Location</h3>
+                        <h3 style="color: var(--roofing-red); font-size: 24px; margin-bottom: 24px; font-weight: 700;">Your Business Location</h3>
                         <div class="business-details" style="space-y: 16px;">
                             <div class="detail-item" style="margin-bottom: 16px;">
                                 <h4 style="color: var(--dark-gray); font-weight: 600; margin-bottom: 8px;">Address</h4>
@@ -1874,7 +1844,7 @@
                 </div>
                 <div style="text-align: center; margin-top: 60px;">
                     <p style="color: var(--medium-gray); margin-bottom: 20px; font-size: 16px;">Want to see more completed projects?</p>
-                    <a href="#" class="btn" style="background: var(--professional-blue); color: var(--pure-white); border: 2px solid var(--professional-blue); box-shadow: var(--shadow-blue); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: var(--transition);">Your Gallery/Facebook Page Linked Here</a>
+                    <a href="#" class="btn" style="background: var(--roofing-red); color: var(--pure-white); border: 2px solid var(--roofing-red); box-shadow: var(--shadow-red); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: var(--transition);">Your Gallery/Facebook Page Linked Here</a>
                 </div>
             </div>
         </section>
