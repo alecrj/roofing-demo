@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Professional Roofing Website | Premium Web Design Services</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --trust-blue: #2563eb;
+            --safety-orange: #ea580c;
+            --construction-yellow: #fbbf24;
+            --professional-gray: #374151;
+            --light-gray: #f9fafb;
+            --white: #ffffff;
+            --emergency-red: #dc2626;
+            --success: #10b981;
+            --dark-blue: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--professional-gray);
+            background-color: var(--white);
+        }
+
+        /* Emergency Alert Bar */
+        .emergency-bar {
+            background: linear-gradient(90deg, var(--emergency-red), #b91c1c);
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .emergency-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--trust-blue));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--construction-yellow);
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .phone-number {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--construction-yellow);
+            text-decoration: none;
+        }
+
+        .emergency-btn {
+            background: var(--safety-orange);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .emergency-btn:hover {
+            background: #c2410c;
+            transform: translateY(-1px);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 40px;
+            z-index: 999;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list li {
+            margin: 0;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--professional-gray);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--trust-blue);
+            border-bottom-color: var(--safety-orange);
+            background-color: #f8fafc;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--safety-orange), #c2410c);
+            border-radius: 15px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-subtitle {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            opacity: 0.95;
+        }
+
+        /* Service Overview */
+        .service-overview {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .overview-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .overview-description {
+            font-size: 1.2rem;
+            color: var(--professional-gray);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--trust-blue);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--trust-blue), var(--primary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-description {
+            color: var(--professional-gray);
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, var(--light-gray), #e5e7eb);
+            padding: 80px 40px;
+            border-radius: 20px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .pricing-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .price-display {
+            font-size: 4rem;
+            color: var(--safety-orange);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .price-description {
+            font-size: 1.2rem;
+            color: var(--professional-gray);
+            margin-bottom: 40px;
+        }
+
+        .pricing-features {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .pricing-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary {
+            background: var(--construction-yellow);
+            color: var(--primary-blue);
+        }
+
+        .cta-primary:hover {
+            background: #e6a500;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+        }
+
+        .cta-secondary {
+            background: var(--safety-orange);
+            color: white;
+        }
+
+        .cta-secondary:hover {
+            background: #c2410c;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--professional-gray);
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: var(--construction-yellow);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--construction-yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4b5563;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .price-display {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Emergency Alert Bar -->
+    <div class="emergency-bar">
+        <div class="emergency-content">
+            <span>STORM DAMAGE? EMERGENCY REPAIRS AVAILABLE 24/7</span>
+            <a href="tel:[PHONE]" style="color: var(--construction-yellow); text-decoration: none; font-weight: bold; margin-left: 20px;">CALL NOW: [PHONE]</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">[BUSINESS NAME]</div>
+            <div class="header-contact">
+                <a href="tel:[PHONE]" class="phone-number">[PHONE]</a>
+                <a href="contact.html" class="emergency-btn">GET FREE ESTIMATE</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="get-website.html" class="nav-link active" style="color: var(--safety-orange); font-weight: 700;">Get Your Website</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1 class="page-title">Get Your Professional Roofing Website</h1>
+            <p class="page-subtitle">Join successful roofing contractors who generate leads and grow their business with our premium website design service.</p>
+        </section>
+
+        <!-- Service Overview -->
+        <section class="service-overview">
+            <h2 class="overview-title">Professional Websites for Roofing Contractors</h2>
+            <p class="overview-description">
+                We specialize in creating high-converting websites specifically for roofing contractors. Our designs focus on lead generation,
+                showcasing your work, and building trust with potential customers. Every website is mobile-optimized, fast-loading,
+                and designed to turn visitors into customers.
+            </p>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">WEB</div>
+                <h3 class="feature-title">Custom Design</h3>
+                <p class="feature-description">Unique, professional design tailored specifically for your roofing business. No templates - every site is custom built.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">MOB</div>
+                <h3 class="feature-title">Mobile Optimized</h3>
+                <p class="feature-description">Fully responsive design that looks perfect on all devices. Most roofing leads come from mobile searches.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">SEO</div>
+                <h3 class="feature-title">SEO Ready</h3>
+                <p class="feature-description">Built with search engine optimization in mind. Get found by customers searching for roofing services in your area.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">LEA</div>
+                <h3 class="feature-title">Lead Generation</h3>
+                <p class="feature-description">Contact forms, call buttons, and conversion-focused design elements to turn visitors into customers.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">FAS</div>
+                <h3 class="feature-title">Fast Loading</h3>
+                <p class="feature-description">Optimized for speed and performance. Fast websites rank better and convert more visitors.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">SUP</div>
+                <h3 class="feature-title">Ongoing Support</h3>
+                <p class="feature-description">We provide training and ongoing support to help you manage and update your new website.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <h2 class="pricing-title">Complete Website Package</h2>
+            <div class="price-display">$399</div>
+            <p class="price-description">One-time setup fee. No monthly hosting fees for the first year.</p>
+
+            <ul class="pricing-features">
+                <li>Custom roofing website design</li>
+                <li>Mobile-responsive layout</li>
+                <li>Professional content writing</li>
+                <li>Contact forms and lead capture</li>
+                <li>Gallery section for your work</li>
+                <li>Services and about pages</li>
+                <li>SEO optimization</li>
+                <li>Social media integration</li>
+                <li>Google My Business setup help</li>
+                <li>Training on managing your site</li>
+                <li>30 days of support included</li>
+                <li>Free hosting for first year</li>
+            </ul>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">Ready to Grow Your Roofing Business?</h2>
+            <p class="cta-subtitle">Join successful roofing contractors who are generating more leads and growing their business with professional websites.</p>
+
+            <div class="cta-buttons">
+                <a href="mailto:[YOUR_EMAIL]?subject=Website Quote Request" class="cta-btn cta-primary">Get Your Quote</a>
+                <a href="tel:[YOUR_PHONE]" class="cta-btn cta-secondary">Call: [YOUR_PHONE]</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Web Design Services</h3>
+                <p>Professional website design for roofing contractors. Custom designs that generate leads and grow your business.</p>
+                <p><strong>Price:</strong> $399 setup</p>
+                <p><strong>Includes:</strong> Design, hosting, support</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>What's Included</h3>
+                <p>Custom Design</p>
+                <p>Mobile Optimization</p>
+                <p>Lead Generation Forms</p>
+                <p>SEO Optimization</p>
+                <p>Free Hosting (1 Year)</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:[YOUR_EMAIL]">[YOUR_EMAIL]</a></p>
+                <p>Phone: <a href="tel:[YOUR_PHONE]">[YOUR_PHONE]</a></p>
+                <p>Get started in 7-10 business days</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Why Choose Us</h3>
+                <p>Roofing industry specialists</p>
+                <p>Proven lead generation results</p>
+                <p>Fast turnaround time</p>
+                <p>Ongoing support included</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Professional Roofing Websites. Specialized web design for roofing contractors.</p>
+        </div>
+    </footer>
+</body>
+</html>

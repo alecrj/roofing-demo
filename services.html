@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[BUSINESS NAME] - Professional Roofing Services in [CITY]</title>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary-blue: #1e3a8a;
@@ -30,10 +35,30 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--professional-gray);
             background-color: var(--white);
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Premium animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
 
         /* Emergency Alert Bar */
@@ -432,7 +457,7 @@
         <section class="services-grid">
             <!-- Roof Replacement -->
             <div class="service-card">
-                <div class="service-icon"></div>
+                <div class="service-icon">NEW</div>
                 <h2 class="service-title">Complete Roof Replacement</h2>
                 <p class="service-description">Full roof replacement using premium materials and industry-leading installation techniques. We handle everything from permits to cleanup.</p>
                 <ul class="service-features">
@@ -448,7 +473,7 @@
 
             <!-- Storm Damage Repair -->
             <div class="service-card">
-                <div class="service-icon"></div>
+                <div class="service-icon">SOS</div>
                 <h2 class="service-title">Storm Damage Repair</h2>
                 <p class="service-description">Emergency storm damage assessment and repair services. We work directly with your insurance company to streamline the claims process.</p>
                 <ul class="service-features">
@@ -464,7 +489,7 @@
 
             <!-- Roof Repairs -->
             <div class="service-card">
-                <div class="service-icon"></div>
+                <div class="service-icon">FIX</div>
                 <h2 class="service-title">Roof Repairs</h2>
                 <p class="service-description">Professional roof repairs for leaks, missing shingles, flashing issues, and general maintenance. Quick response and lasting solutions.</p>
                 <ul class="service-features">
@@ -480,7 +505,7 @@
 
             <!-- Gutter Services -->
             <div class="service-card">
-                <div class="service-icon"></div>
+                <div class="service-icon">H2O</div>
                 <h2 class="service-title">Gutter Installation & Repair</h2>
                 <p class="service-description">Complete gutter solutions including installation, repair, cleaning, and gutter guard systems to protect your home's foundation.</p>
                 <ul class="service-features">
@@ -496,7 +521,7 @@
 
             <!-- Commercial Roofing -->
             <div class="service-card">
-                <div class="service-icon"></div>
+                <div class="service-icon">BIZ</div>
                 <h2 class="service-title">Commercial Roofing</h2>
                 <p class="service-description">Specialized commercial roofing services for businesses, including flat roofs, metal roofing, and building maintenance programs.</p>
                 <ul class="service-features">
@@ -512,7 +537,7 @@
 
             <!-- Roof Inspections -->
             <div class="service-card">
-                <div class="service-icon"></div>
+                <div class="service-icon">CHK</div>
                 <h2 class="service-title">Professional Roof Inspections</h2>
                 <p class="service-description">Comprehensive roof inspections for home buyers, insurance claims, and preventive maintenance. Detailed reports with photos and recommendations.</p>
                 <ul class="service-features">
