@@ -365,7 +365,7 @@
 
         /* HERO SECTION */
         .hero {
-            padding: 200px 0;
+            padding: 160px 0 120px;
             display: flex;
             align-items: center;
             min-height: 100vh;
@@ -374,12 +374,10 @@
 
         .hero-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: clamp(60px, 10vw, 120px);
-            align-items: start;
+            grid-template-columns: 1fr 400px;
+            gap: 80px;
+            align-items: center;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .hero-text {
@@ -414,27 +412,44 @@
             font-weight: 400;
             line-height: 1.6;
             max-width: 480px;
-            margin-bottom: 60px;
             color: var(--gray-400);
         }
 
-        .hero-cta {
-            display: inline-block;
-            background: transparent;
-            color: var(--white);
-            padding: 0;
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 14px;
-            border-bottom: 1px solid var(--white);
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+        .hero-stats {
+            display: grid;
+            gap: 40px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
         }
 
-        .hero-cta:hover {
-            opacity: 0.7;
-            transform: translateX(10px);
+        .hero-stat {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .hero-stat:last-child {
+            border-bottom: none;
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
         }
 
         /* SIDEBAR */
@@ -1569,6 +1584,10 @@
                 gap: 60px;
             }
 
+            .hero-stats {
+                padding: 30px 20px;
+            }
+
             .hero-sidebar {
                 position: static;
                 order: -1;
@@ -1727,50 +1746,28 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero section">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-intro fade-up">Premium Roofing Contractors</div>
+                <div class="hero-left">
                     <h1 class="hero-title fade-up">Denver's<br>Premier<br><span class="red">Roofing</span><br>Company</h1>
-                    <p class="hero-subtitle fade-up">Expert craftsmanship and premium materials for residential and commercial roofing projects across the Denver metro area.</p>
-                    <a href="#work" class="hero-cta fade-up">View Our Work</a>
+                    <p class="hero-subtitle fade-up">Expert craftsmanship, premium materials, and unmatched service quality for residential and commercial roofing projects across the Denver metro area.</p>
                 </div>
-                <div class="hero-sidebar">
-                    <div class="hero-image fade-up">
-                        <div class="before-after-slider">
-                            <div class="before-image">
-                                <img src="/Users/alec/Desktop/roof_site_assets/before5.jpg" alt="Before">
-                            </div>
-                            <div class="after-image">
-                                <img src="/Users/alec/Desktop/roof_site_assets/after5.jpg" alt="After">
-                            </div>
-                            <div class="slider-handle">
-                                <div class="slider-line"></div>
-                                <div class="slider-button"></div>
-                            </div>
+                <div class="hero-right">
+                    <div class="hero-stats">
+                        <div class="hero-stat fade-up">
+                            <div class="stat-value">4.9★</div>
+                            <div class="stat-label">Google Rating</div>
+                        </div>
+                        <div class="hero-stat fade-up">
+                            <div class="stat-value">184</div>
+                            <div class="stat-label">Reviews</div>
+                        </div>
+                        <div class="hero-stat fade-up">
+                            <div class="stat-value">6</div>
+                            <div class="stat-label">Years Serving Denver</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat fade-up">
-                    <div class="stat-number">184+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat fade-up">
-                    <div class="stat-number">4.9★</div>
-                    <div class="stat-label">Google Rating</div>
-                </div>
-                <div class="stat fade-up">
-                    <div class="stat-number">25yr</div>
-                    <div class="stat-label">Warranty</div>
                 </div>
             </div>
         </div>
@@ -1961,18 +1958,18 @@
             <ul class="services-list">
                 <li class="service-item">
                     <div class="service-number">01</div>
-                    <h3 class="service-title">Premium Installations</h3>
-                    <p class="service-description">Luxury roofing installations using the world's finest materials with enterprise-grade project management and 25-year craftsmanship warranty.</p>
+                    <h3 class="service-title">Professional Installation</h3>
+                    <p class="service-description">Expert roofing installations using premium materials with professional project management and comprehensive 25-year warranty coverage.</p>
                 </li>
                 <li class="service-item">
                     <div class="service-number">02</div>
-                    <h3 class="service-title">Emergency Response</h3>
-                    <p class="service-description">24/7 rapid response team for critical situations with immediate damage mitigation protocols and insurance coordination.</p>
+                    <h3 class="service-title">Emergency Repairs</h3>
+                    <p class="service-description">24/7 emergency response for storm damage and urgent repairs with immediate assessment and direct insurance coordination.</p>
                 </li>
                 <li class="service-item">
                     <div class="service-number">03</div>
-                    <h3 class="service-title">Claims Management</h3>
-                    <p class="service-description">Expert insurance claim navigation with specialized teams dedicated to maximizing coverage for luxury properties.</p>
+                    <h3 class="service-title">Insurance Assistance</h3>
+                    <p class="service-description">Expert insurance claim support with experienced teams dedicated to maximizing coverage for your roofing project.</p>
                 </li>
             </ul>
         </div>
