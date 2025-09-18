@@ -948,17 +948,69 @@
                 margin-bottom: 30px;
             }
 
-            /* Profile card comes second */
+            /* Profile card comes second - improved mobile layout */
             .profile-card {
                 order: 2;
-                max-width: 320px;
+                max-width: 280px;
                 margin: 0 auto;
                 padding: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin-bottom: 16px;
+                align-self: center;
+            }
+
+            .profile-photo {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .profile-name {
+                font-size: 18px;
+                margin-bottom: 4px;
+                text-align: center;
+            }
+
+            .profile-title {
+                font-size: 14px;
+                margin-bottom: 16px;
+                text-align: center;
+            }
+
+            .profile-stats {
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+                width: 100%;
+            }
+
+            .stat {
+                text-align: center;
+                flex: 1;
+            }
+
+            .stat-number {
+                display: block;
+                font-size: 16px;
+                font-weight: 700;
+                margin-bottom: 2px;
+            }
+
+            .stat-label {
+                font-size: 12px;
+                opacity: 0.8;
             }
 
             .hero-title {
-                font-size: clamp(2rem, 8vw, 3rem);
-                line-height: 1.2;
+                font-size: clamp(1.6rem, 6vw, 2.2rem);
+                line-height: 1.3;
                 margin-bottom: 24px;
                 text-align: center;
                 padding: 0 10px;
@@ -1410,7 +1462,7 @@
 
                     <p class="hero-subtitle fade-up">Premium websites that convert visitors into customers. Built specifically for roofing contractors who want to dominate their local market.</p>
 
-                    <a href="#contact" class="hero-cta fade-up">Get Started Now</a>
+                    <a href="#contact" class="hero-cta fade-up" id="get-started-btn">Get Started Now</a>
                 </div>
 
                 <div class="hero-sidebar">
@@ -1748,6 +1800,24 @@
                 mobileMenuOverlay.classList.remove('active');
                 document.body.style.overflow = 'auto';
             });
+        });
+    </script>
+
+    <!-- Smooth scroll for Get Started button -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const getStartedBtn = document.getElementById('get-started-btn');
+            const contactSection = document.getElementById('contact');
+
+            if (getStartedBtn && contactSection) {
+                getStartedBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    contactSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            }
         });
     </script>
 </body>
