@@ -51,7 +51,8 @@
             line-height: 1.4;
             overflow-x: hidden;
             font-weight: 400;
-            padding-top: 44px;
+            margin: 0;
+            padding: 0;
         }
 
         /* CURSOR */
@@ -101,14 +102,12 @@
 
         /* DEMO BANNER */
         .demo-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            position: relative;
+            width: 100%;
             background: linear-gradient(90deg, var(--red) 0%, #ff3333 100%);
             color: var(--white);
             z-index: 2000;
-            height: 44px;
+            height: 32px;
             overflow: hidden;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
@@ -151,7 +150,7 @@
         /* HEADER */
         .header {
             position: fixed;
-            top: 74px;
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
@@ -365,6 +364,19 @@
             align-items: center;
             min-height: 100vh;
             position: relative;
+            background: url('./assets/mountains.jpg') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('./assets/mountains.jpg') center/cover no-repeat;
+            filter: grayscale(100%) contrast(0.8) brightness(0.3);
+            z-index: 0;
         }
 
         .hero-content {
@@ -373,6 +385,8 @@
             gap: 80px;
             align-items: center;
             width: 100%;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-title {
@@ -1588,12 +1602,8 @@
                 resetHeader();
             }
 
-            // Demo banner fade on scroll
-            if (currentScrollY > 10) {
-                demoBanner.classList.add('hidden');
-            } else {
-                demoBanner.classList.remove('hidden');
-            }
+            // Demo banner - always visible at top
+            demoBanner.classList.remove('hidden');
 
             // Set timer to show header after scroll stops
             scrollTimer = setTimeout(() => {

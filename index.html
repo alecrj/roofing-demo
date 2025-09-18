@@ -51,7 +51,8 @@
             line-height: 1.4;
             overflow-x: hidden;
             font-weight: 400;
-            padding-top: 44px;
+            margin: 0;
+            padding: 0;
         }
 
         /* CURSOR */
@@ -101,14 +102,12 @@
 
         /* DEMO BANNER */
         .demo-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            position: relative;
+            width: 100%;
             background: linear-gradient(90deg, var(--red) 0%, #ff3333 100%);
             color: var(--white);
             z-index: 2000;
-            height: 44px;
+            height: 32px;
             overflow: hidden;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
@@ -152,7 +151,7 @@
         /* HEADER */
         .header {
             position: fixed;
-            top: 74px;
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
@@ -411,6 +410,14 @@
             text-align: center;
         }
 
+        .hero-left {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .hero-intro {
             font-size: 14px;
             color: var(--gray-400);
@@ -428,6 +435,7 @@
             letter-spacing: -0.04em;
             margin-bottom: 40px;
             color: var(--white);
+            text-align: center;
         }
 
         .hero-title .red {
@@ -2788,12 +2796,8 @@
                 resetHeader();
             }
 
-            // Demo banner fade on scroll
-            if (currentScrollY > 10) {
-                demoBanner.classList.add('hidden');
-            } else {
-                demoBanner.classList.remove('hidden');
-            }
+            // Demo banner - always visible at top
+            demoBanner.classList.remove('hidden');
 
             // Set timer to show header after scroll stops
             scrollTimer = setTimeout(() => {
