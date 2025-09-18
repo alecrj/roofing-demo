@@ -438,18 +438,31 @@
         .hero-logo {
             margin-bottom: 50px;
             text-align: left;
+            display: inline-block;
+        }
+
+        .logo-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+
+        .logo-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
         }
 
         .about-logo {
-            height: 120px;
+            height: 80px;
             width: auto;
-            filter: brightness(1) contrast(1);
+            filter: brightness(0) contrast(1);
             transition: all 0.3s ease;
-        }
-
-        .about-logo:hover {
-            filter: brightness(1.1) contrast(1.1);
-            transform: scale(1.02);
         }
 
         .company-intro {
@@ -1025,7 +1038,12 @@
             }
 
             .about-logo {
-                height: 80px;
+                height: 60px;
+            }
+
+            .logo-container {
+                padding: 20px;
+                border-radius: 15px;
             }
 
             .hero-logo {
@@ -1078,7 +1096,9 @@
             <div class="about-hero-content">
                 <div class="about-hero-left">
                     <div class="hero-logo fade-up">
-                        <img src="./assets/roofstar.png" alt="RoofStar Logo" class="about-logo">
+                        <div class="logo-container">
+                            <img src="./assets/roofstar.png" alt="RoofStar Logo" class="about-logo">
+                        </div>
                     </div>
                     <div class="company-intro fade-up">
                         <span class="intro-label">ESTABLISHED 2018</span>
