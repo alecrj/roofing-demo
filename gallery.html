@@ -3,248 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoofStar Gallery | Before & After Transformations</title>
+    <title>Portfolio — RoofStar</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ABC+Diatype:wght@400;500;700;900&family=Times+Now:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* 2025 PREMIUM DESIGN SYSTEM */
-        :root {
-            /* Sophisticated Color Palette */
-            --pure-black: #000000;
-            --charcoal: #1a1a1a;
-            --dark-slate: #2d3748;
-            --medium-gray: #4a5568;
-            --cool-gray: #718096;
-            --light-gray: #e2e8f0;
-            --whisper: #f7fafc;
-            --pure-white: #ffffff;
-
-            /* Premium Accent System */
-            --copper: #c67e3b;
-            --copper-dark: #a0621e;
-            --copper-light: #e8b676;
-            --accent-glow: rgba(198, 126, 59, 0.15);
-
-            /* Typography Scale */
-            --text-xs: 0.75rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem;
-            --text-4xl: 2.25rem;
-            --text-5xl: 3rem;
-            --text-6xl: 3.75rem;
-            --text-7xl: 4.5rem;
-            --text-8xl: 6rem;
-            --text-9xl: 8rem;
-
-            /* Spatial System */
-            --space-1: 0.25rem;
-            --space-2: 0.5rem;
-            --space-3: 0.75rem;
-            --space-4: 1rem;
-            --space-6: 1.5rem;
-            --space-8: 2rem;
-            --space-12: 3rem;
-            --space-16: 4rem;
-            --space-20: 5rem;
-            --space-24: 6rem;
-            --space-32: 8rem;
-            --space-40: 10rem;
-            --space-48: 12rem;
-            --space-64: 16rem;
-
-            /* Advanced Shadows */
-            --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.08);
-            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
-            --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.15);
-            --shadow-dramatic: 0 35px 80px rgba(0, 0, 0, 0.25);
-
-            /* 2025 Animation Curves */
-            --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
-            --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
-            --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* FOUNDATIONAL RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --red: #ff0000;
+            --gray: #808080;
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: var(--text-base);
-            line-height: 1.6;
-            color: var(--dark-slate);
-            background: var(--pure-white);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: 'ABC Diatype', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.2;
             overflow-x: hidden;
         }
 
-        /* LAYOUT SYSTEM */
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 var(--space-6);
+            padding: 0 40px;
+            position: relative;
         }
 
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 var(--space-8);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 var(--space-12);
-            }
-        }
-
-        /* PREMIUM HEADER */
+        /* HEADER */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--black);
             height: 80px;
         }
 
+        .header-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            color: var(--pure-black);
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--black);
             text-decoration: none;
             letter-spacing: -0.02em;
         }
 
-        .nav-main {
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav {
             display: none;
-            gap: var(--space-12);
         }
 
         @media (min-width: 768px) {
-            .nav-main {
+            .nav {
                 display: flex;
+                gap: 60px;
             }
         }
 
-        .nav-link {
-            font-size: var(--text-sm);
+        .nav a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 16px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            transition: border-color 0.2s ease;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            border-bottom-color: var(--red);
+        }
+
+        .contact-link {
+            color: var(--black);
+            text-decoration: none;
             font-weight: 500;
-            color: var(--medium-gray);
-            text-decoration: none;
-            transition: all 0.2s var(--ease-out-cubic);
-            padding: var(--space-2) 0;
+            font-size: 16px;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--pure-black);
-        }
-
-        .cta-header {
-            background: var(--pure-black);
-            color: var(--pure-white);
-            padding: var(--space-3) var(--space-6);
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: var(--text-sm);
-            font-weight: 600;
-            transition: all 0.3s var(--ease-out-cubic);
-        }
-
-        .cta-header:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* HERO SECTION */
+        /* HERO */
         .hero {
-            padding-top: calc(80px + var(--space-32));
-            padding-bottom: var(--space-24);
-            text-align: center;
-            background: var(--whisper);
+            padding: 180px 0 120px;
+            border-bottom: 1px solid var(--black);
         }
 
         .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(var(--text-5xl), 8vw, var(--text-8xl));
-            font-weight: 700;
-            color: var(--pure-black);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: var(--space-6);
+            font-size: clamp(80px, 12vw, 180px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            margin-bottom: 60px;
+            color: var(--black);
+        }
+
+        .hero-title .red {
+            color: var(--red);
         }
 
         .hero-subtitle {
-            font-size: var(--text-xl);
-            color: var(--medium-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 700px;
+            color: var(--gray);
         }
 
-        /* GALLERY GRID */
-        .gallery {
-            padding: var(--space-48) 0;
-            background: var(--pure-white);
+        /* PORTFOLIO GRID */
+        .portfolio {
+            padding: 120px 0;
         }
 
-        .gallery-grid {
+        .portfolio-grid {
             display: grid;
-            gap: var(--space-12);
+            gap: 200px;
         }
 
-        @media (min-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-16);
-            }
+        .project-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: start;
         }
 
-        .project-showcase {
-            background: var(--pure-white);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.4s var(--ease-out-cubic);
+        .project-section:nth-child(even) {
+            grid-template-columns: 2fr 1fr;
         }
 
-        .project-showcase:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-strong);
+        .project-section:nth-child(even) .project-info {
+            order: -1;
+        }
+
+        .project-info {
+            padding-top: 60px;
+        }
+
+        .project-number {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .project-title {
+            font-size: clamp(40px, 6vw, 80px);
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+        }
+
+        .project-description {
+            font-size: 18px;
+            line-height: 1.5;
+            color: var(--gray);
+            margin-bottom: 60px;
+            max-width: 400px;
+        }
+
+        .project-details {
+            list-style: none;
+        }
+
+        .project-details li {
+            padding: 8px 0;
+            font-size: 16px;
+            color: var(--black);
+            border-bottom: 1px solid #eee;
+        }
+
+        .project-details li:last-child {
+            border-bottom: none;
+        }
+
+        .project-details strong {
+            font-weight: 600;
+        }
+
+        .project-images {
+            display: grid;
+            gap: 40px;
         }
 
         .before-after-container {
-            width: 100%;
-            height: 400px;
             position: relative;
+            height: 500px;
+            background: var(--black);
             overflow: hidden;
         }
 
@@ -256,8 +222,7 @@
             cursor: ew-resize;
         }
 
-        .before-image,
-        .after-image {
+        .before-image, .after-image {
             position: absolute;
             top: 0;
             left: 0;
@@ -265,8 +230,7 @@
             height: 100%;
         }
 
-        .before-image img,
-        .after-image img {
+        .before-image img, .after-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -274,30 +238,6 @@
 
         .after-image {
             clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
-            transition: clip-path 0.3s var(--ease-out-cubic);
-        }
-
-        .image-label {
-            position: absolute;
-            top: var(--space-4);
-            left: var(--space-4);
-            background: rgba(0, 0, 0, 0.8);
-            color: var(--pure-white);
-            padding: var(--space-2) var(--space-4);
-            border-radius: 6px;
-            font-size: var(--text-xs);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            backdrop-filter: blur(10px);
-        }
-
-        .before-image .image-label {
-            background: rgba(255, 0, 0, 0.8);
-        }
-
-        .after-image .image-label {
-            background: rgba(0, 150, 0, 0.8);
         }
 
         .slider-handle {
@@ -306,7 +246,6 @@
             left: 50%;
             width: 4px;
             height: 100%;
-            cursor: ew-resize;
             z-index: 10;
         }
 
@@ -317,8 +256,7 @@
             transform: translateX(-50%);
             width: 2px;
             height: 100%;
-            background: var(--pure-white);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background: var(--red);
         }
 
         .slider-button {
@@ -326,158 +264,67 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: var(--pure-white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--copper);
-            box-shadow: var(--shadow-medium);
-            transition: all 0.2s var(--ease-out-cubic);
-        }
-
-        .slider-button:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-            box-shadow: var(--shadow-strong);
-        }
-
-        .slider-button svg {
             width: 20px;
             height: 20px;
+            background: var(--red);
+            border-radius: 50%;
         }
 
-        .project-info {
-            padding: var(--space-8);
-        }
-
-        .project-title {
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            color: var(--pure-black);
-            margin-bottom: var(--space-3);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .project-description {
-            color: var(--medium-gray);
-            line-height: 1.6;
-            margin-bottom: var(--space-6);
-        }
-
-        .project-details {
+        .image-labels {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            font-size: var(--text-sm);
+            z-index: 5;
         }
 
-        .project-specs {
-            color: var(--copper);
+        .label {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 16px;
+            font-size: 12px;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        .project-value {
-            background: var(--accent-glow);
-            color: var(--copper-dark);
-            padding: var(--space-1) var(--space-3);
-            border-radius: 20px;
-            font-weight: 700;
+        .label.before {
+            background: var(--red);
         }
 
-        /* CTA SECTION */
-        .cta-section {
-            padding: var(--space-48) 0;
-            background: linear-gradient(135deg, var(--charcoal) 0%, var(--pure-black) 100%);
-            text-align: center;
-            color: var(--pure-white);
-        }
-
-        .cta-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
-            font-weight: 700;
-            margin-bottom: var(--space-8);
-        }
-
-        .cta-subtitle {
-            font-size: var(--text-xl);
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: var(--space-12);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: var(--space-6);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: var(--copper);
-            color: var(--pure-white);
-            padding: var(--space-4) var(--space-12);
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: var(--text-lg);
-            font-weight: 700;
-            transition: all 0.4s var(--ease-back);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: var(--shadow-dramatic);
-        }
-
-        .btn-secondary {
-            color: var(--pure-white);
-            padding: var(--space-4) var(--space-12);
-            border: 2px solid var(--pure-white);
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: var(--text-lg);
-            font-weight: 700;
-            transition: all 0.3s var(--ease-out-cubic);
-        }
-
-        .btn-secondary:hover {
-            background: var(--pure-white);
-            color: var(--pure-black);
-            transform: translateY(-2px);
-        }
-
-        /* SCROLL ANIMATIONS */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s var(--ease-out-cubic);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .label.after {
+            background: #059669;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 767px) {
-            .gallery-grid {
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .project-section {
                 grid-template-columns: 1fr;
+                gap: 60px;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .project-section:nth-child(even) .project-info {
+                order: 0;
             }
 
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
+            .portfolio-grid {
+                gap: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 140px 0 80px;
+            }
+
+            .portfolio {
+                padding: 80px 0;
             }
         }
     </style>
@@ -487,14 +334,15 @@
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="logo">RoofStar</a>
-                <nav class="nav-main">
-                    <a href="index.html" class="nav-link">Portfolio</a>
-                    <a href="#" class="nav-link active">Gallery</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                <a href="index.html" class="logo">
+                    <img src="/Users/alec/Desktop/roof_site_assets/roofstar.png" alt="RoofStar">
+                </a>
+                <nav class="nav">
+                    <a href="index.html">Work</a>
+                    <a href="#" class="active">Portfolio</a>
+                    <a href="about.html">About</a>
                 </nav>
-                <a href="tel:(303) 555-7663" class="cta-header">Call Now</a>
+                <a href="tel:(303) 555-7663" class="contact-link">Contact</a>
             </div>
         </div>
     </header>
@@ -502,153 +350,151 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title">Transformation Gallery</h1>
-            <p class="hero-subtitle">
-                Witness the dramatic before and after transformations that showcase our craftsmanship and attention to detail.
-            </p>
+            <h1 class="hero-title">Complete<br><span class="red">Portfolio</span></h1>
+            <p class="hero-subtitle">A comprehensive collection of our premium roofing transformations, showcasing our commitment to architectural excellence and uncompromising craftsmanship.</p>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="gallery fade-in">
+    <!-- Portfolio -->
+    <section class="portfolio">
         <div class="container">
-            <div class="gallery-grid">
+            <div class="portfolio-grid">
                 <!-- Project 1 -->
-                <div class="project-showcase">
-                    <div class="before-after-container">
-                        <div class="before-after-slider" data-project="1">
-                            <div class="before-image">
-                                <img src="/Users/alec/Desktop/before1.jpg" alt="Before: Damaged Asphalt Shingles">
-                                <div class="image-label">BEFORE</div>
-                            </div>
-                            <div class="after-image">
-                                <img src="/Users/alec/Desktop/after1.jpg" alt="After: Premium Architectural Shingles">
-                                <div class="image-label">AFTER</div>
-                            </div>
-                            <div class="slider-handle">
-                                <div class="slider-line"></div>
-                                <div class="slider-button">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
-                                        <path d="M16.41,7.41L11.83,12L16.41,16.58L15,18L9,12L15,6L16.41,7.41Z"/>
-                                    </svg>
+                <div class="project-section">
+                    <div class="project-info">
+                        <div class="project-number">Project 01</div>
+                        <h2 class="project-title">Cherry Creek Estate</h2>
+                        <p class="project-description">Complete luxury transformation featuring imported Welsh slate, custom copper detailing, and architectural precision that elevated this estate's value significantly.</p>
+                        <ul class="project-details">
+                            <li><strong>Location:</strong> Cherry Creek, Denver</li>
+                            <li><strong>Materials:</strong> Welsh Slate, Copper</li>
+                            <li><strong>Timeline:</strong> 4 Weeks</li>
+                            <li><strong>Specialty:</strong> Historic Restoration</li>
+                        </ul>
+                    </div>
+                    <div class="project-images">
+                        <div class="before-after-container">
+                            <div class="before-after-slider" data-project="1">
+                                <div class="before-image">
+                                    <img src="/Users/alec/Desktop/before6.jpg" alt="Before Cherry Creek">
+                                </div>
+                                <div class="after-image">
+                                    <img src="/Users/alec/Desktop/after6.jpg" alt="After Cherry Creek">
+                                </div>
+                                <div class="slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button"></div>
+                                </div>
+                                <div class="image-labels">
+                                    <div class="label before">Before</div>
+                                    <div class="label after">After</div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Highland Ranch Renovation</h3>
-                        <p class="project-description">
-                            Complete roof replacement featuring premium architectural shingles after hail damage. Enhanced curb appeal and property value.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-specs">3,200 sq ft • GAF Timberline HD</div>
-                            <div class="project-value">$28K</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-showcase">
-                    <div class="before-after-container">
-                        <div class="before-after-slider" data-project="2">
-                            <div class="before-image">
-                                <img src="/Users/alec/Desktop/before2.jpg" alt="Before: Old Cedar Shakes">
-                                <div class="image-label">BEFORE</div>
-                            </div>
-                            <div class="after-image">
-                                <img src="/Users/alec/Desktop/after2.jpg" alt="After: Modern Metal Roofing">
-                                <div class="image-label">AFTER</div>
-                            </div>
-                            <div class="slider-handle">
-                                <div class="slider-line"></div>
-                                <div class="slider-button">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
-                                        <path d="M16.41,7.41L11.83,12L16.41,16.58L15,18L9,12L15,6L16.41,7.41Z"/>
-                                    </svg>
+                <div class="project-section">
+                    <div class="project-info">
+                        <div class="project-number">Project 02</div>
+                        <h2 class="project-title">Highland Modern</h2>
+                        <p class="project-description">Contemporary standing seam metal roofing with integrated smart home systems and energy optimization technology.</p>
+                        <ul class="project-details">
+                            <li><strong>Location:</strong> Highland, Denver</li>
+                            <li><strong>Materials:</strong> Standing Seam Metal</li>
+                            <li><strong>Timeline:</strong> 3 Weeks</li>
+                            <li><strong>Specialty:</strong> Smart Integration</li>
+                        </ul>
+                    </div>
+                    <div class="project-images">
+                        <div class="before-after-container">
+                            <div class="before-after-slider" data-project="2">
+                                <div class="before-image">
+                                    <img src="/Users/alec/Desktop/before7.jpg" alt="Before Highland">
+                                </div>
+                                <div class="after-image">
+                                    <img src="/Users/alec/Desktop/after7.jpg" alt="After Highland">
+                                </div>
+                                <div class="slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button"></div>
+                                </div>
+                                <div class="image-labels">
+                                    <div class="label before">Before</div>
+                                    <div class="label after">After</div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Cherry Creek Estate</h3>
-                        <p class="project-description">
-                            Luxury estate transformation from aging cedar to premium standing seam metal roofing with energy efficiency upgrades.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-specs">5,800 sq ft • Standing Seam Metal</div>
-                            <div class="project-value">$85K</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-showcase">
-                    <div class="before-after-container">
-                        <div class="before-after-slider" data-project="3">
-                            <div class="before-image">
-                                <img src="/Users/alec/Desktop/before3.jpg" alt="Before: Storm Damaged Roof">
-                                <div class="image-label">BEFORE</div>
-                            </div>
-                            <div class="after-image">
-                                <img src="/Users/alec/Desktop/after3.jpg" alt="After: Premium Slate Installation">
-                                <div class="image-label">AFTER</div>
-                            </div>
-                            <div class="slider-handle">
-                                <div class="slider-line"></div>
-                                <div class="slider-button">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
-                                        <path d="M16.41,7.41L11.83,12L16.41,16.58L15,18L9,12L15,6L16.41,7.41Z"/>
-                                    </svg>
+                <div class="project-section">
+                    <div class="project-info">
+                        <div class="project-number">Project 03</div>
+                        <h2 class="project-title">Executive Residence</h2>
+                        <p class="project-description">Architectural precision with premium materials and energy optimization for this executive family residence.</p>
+                        <ul class="project-details">
+                            <li><strong>Location:</strong> Greenwood Village</li>
+                            <li><strong>Materials:</strong> Premium Composite</li>
+                            <li><strong>Timeline:</strong> 5 Weeks</li>
+                            <li><strong>Specialty:</strong> Energy Efficiency</li>
+                        </ul>
+                    </div>
+                    <div class="project-images">
+                        <div class="before-after-container">
+                            <div class="before-after-slider" data-project="3">
+                                <div class="before-image">
+                                    <img src="/Users/alec/Desktop/before8.jpg" alt="Before Executive">
+                                </div>
+                                <div class="after-image">
+                                    <img src="/Users/alec/Desktop/after8.jpg" alt="After Executive">
+                                </div>
+                                <div class="slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button"></div>
+                                </div>
+                                <div class="image-labels">
+                                    <div class="label before">Before</div>
+                                    <div class="label after">After</div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">University Hills Historic</h3>
-                        <p class="project-description">
-                            Historic home restoration featuring imported Welsh slate. Period-accurate craftsmanship with modern weatherproofing.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-specs">4,600 sq ft • Welsh Slate</div>
-                            <div class="project-value">$125K</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-showcase">
-                    <div class="before-after-container">
-                        <div class="before-after-slider" data-project="4">
-                            <div class="before-image">
-                                <img src="/Users/alec/Desktop/before4.jpg" alt="Before: Failing Tile Roof">
-                                <div class="image-label">BEFORE</div>
-                            </div>
-                            <div class="after-image">
-                                <img src="/Users/alec/Desktop/after4.jpg" alt="After: Premium Tile Restoration">
-                                <div class="image-label">AFTER</div>
-                            </div>
-                            <div class="slider-handle">
-                                <div class="slider-line"></div>
-                                <div class="slider-button">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
-                                        <path d="M16.41,7.41L11.83,12L16.41,16.58L15,18L9,12L15,6L16.41,7.41Z"/>
-                                    </svg>
+                <div class="project-section">
+                    <div class="project-info">
+                        <div class="project-number">Project 04</div>
+                        <h2 class="project-title">Luxury Mansion</h2>
+                        <p class="project-description">Complete roofing system overhaul for this prestigious mansion featuring multiple roof lines and premium materials.</p>
+                        <ul class="project-details">
+                            <li><strong>Location:</strong> Cherry Hills Village</li>
+                            <li><strong>Materials:</strong> Cedar Shake, Copper</li>
+                            <li><strong>Timeline:</strong> 6 Weeks</li>
+                            <li><strong>Specialty:</strong> Complex Architecture</li>
+                        </ul>
+                    </div>
+                    <div class="project-images">
+                        <div class="before-after-container">
+                            <div class="before-after-slider" data-project="4">
+                                <div class="before-image">
+                                    <img src="/Users/alec/Desktop/roof_site_assets/before4.jpg" alt="Before Mansion">
+                                </div>
+                                <div class="after-image">
+                                    <img src="/Users/alec/Desktop/roof_site_assets/after4.jpg" alt="After Mansion">
+                                </div>
+                                <div class="slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button"></div>
+                                </div>
+                                <div class="image-labels">
+                                    <div class="label before">Before</div>
+                                    <div class="label after">After</div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Greenwood Village Modern</h3>
-                        <p class="project-description">
-                            Contemporary home featuring premium concrete tile system with integrated solar preparation and smart home connectivity.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-specs">3,800 sq ft • Concrete Tile</div>
-                            <div class="project-value">$52K</div>
                         </div>
                     </div>
                 </div>
@@ -656,90 +502,100 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section fade-in">
-        <div class="container">
-            <h2 class="cta-title">Ready for Your Transformation?</h2>
-            <p class="cta-subtitle">
-                Let's discuss how we can transform your home with premium roofing craftsmanship.
-            </p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn-primary">Get Free Estimate</a>
-                <a href="tel:(303) 555-7663" class="btn-secondary">Call (303) 555-7663</a>
-            </div>
-        </div>
-    </section>
-
     <script>
-        // Before/After Slider functionality
-        document.querySelectorAll('.before-after-slider').forEach(slider => {
-            const sliderHandle = slider.querySelector('.slider-handle');
+        // Initialize all before/after sliders with automatic animation
+        document.querySelectorAll('.before-after-slider').forEach((slider, index) => {
+            const handle = slider.querySelector('.slider-handle');
             const afterImage = slider.querySelector('.after-image');
             let isDragging = false;
+            let autoPlay = true;
+            let currentPosition = 50;
+            let direction = 1;
 
-            function updateSlider(x) {
-                const rect = slider.getBoundingClientRect();
-                const percentage = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
-
-                sliderHandle.style.left = percentage + '%';
+            function updateSlider(percentage) {
+                handle.style.left = percentage + '%';
                 afterImage.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
             }
 
-            sliderHandle.addEventListener('mousedown', (e) => {
+            function updateSliderFromMouse(x) {
+                const rect = slider.getBoundingClientRect();
+                const percentage = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
+                currentPosition = percentage;
+                updateSlider(percentage);
+            }
+
+            // Automatic animation with staggered timing
+            function autoSlide() {
+                if (!isDragging && autoPlay) {
+                    currentPosition += direction * 1.2;
+
+                    if (currentPosition >= 80) {
+                        direction = -1;
+                    } else if (currentPosition <= 20) {
+                        direction = 1;
+                    }
+
+                    updateSlider(currentPosition);
+                }
+            }
+
+            // Start auto animation with staggered delay for each slider
+            setTimeout(() => {
+                setInterval(autoSlide, 30);
+            }, index * 1200); // 1.2 second delay between each slider
+
+            handle.addEventListener('mousedown', (e) => {
                 isDragging = true;
+                autoPlay = false;
                 e.preventDefault();
             });
 
             document.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    updateSlider(e.clientX);
-                }
+                if (isDragging) updateSliderFromMouse(e.clientX);
             });
 
             document.addEventListener('mouseup', () => {
                 isDragging = false;
+                setTimeout(() => { autoPlay = true; }, 3000); // Resume auto after 3 seconds
             });
 
             slider.addEventListener('click', (e) => {
                 if (!isDragging) {
-                    updateSlider(e.clientX);
+                    autoPlay = false;
+                    updateSliderFromMouse(e.clientX);
+                    setTimeout(() => { autoPlay = true; }, 3000);
                 }
             });
 
             // Touch support
-            sliderHandle.addEventListener('touchstart', (e) => {
+            handle.addEventListener('touchstart', (e) => {
                 isDragging = true;
+                autoPlay = false;
                 e.preventDefault();
             });
 
             document.addEventListener('touchmove', (e) => {
                 if (isDragging) {
                     const touch = e.touches[0];
-                    updateSlider(touch.clientX);
+                    updateSliderFromMouse(touch.clientX);
                 }
             });
 
             document.addEventListener('touchend', () => {
                 isDragging = false;
+                setTimeout(() => { autoPlay = true; }, 3000);
             });
-        });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            // Pause on hover
+            slider.addEventListener('mouseenter', () => {
+                autoPlay = false;
+            });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+            slider.addEventListener('mouseleave', () => {
+                if (!isDragging) {
+                    autoPlay = true;
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>

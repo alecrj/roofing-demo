@@ -3,398 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About RoofStar | Denver's Elite Roofing Team</title>
+    <title>About — RoofStar</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ABC+Diatype:wght@400;500;700;900&family=Times+Now:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* 2025 PREMIUM DESIGN SYSTEM */
-        :root {
-            /* Sophisticated Color Palette */
-            --pure-black: #000000;
-            --charcoal: #1a1a1a;
-            --dark-slate: #2d3748;
-            --medium-gray: #4a5568;
-            --cool-gray: #718096;
-            --light-gray: #e2e8f0;
-            --whisper: #f7fafc;
-            --pure-white: #ffffff;
-
-            /* Premium Accent System */
-            --copper: #c67e3b;
-            --copper-dark: #a0621e;
-            --copper-light: #e8b676;
-            --accent-glow: rgba(198, 126, 59, 0.15);
-
-            /* Typography Scale */
-            --text-xs: 0.75rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem;
-            --text-4xl: 2.25rem;
-            --text-5xl: 3rem;
-            --text-6xl: 3.75rem;
-            --text-7xl: 4.5rem;
-            --text-8xl: 6rem;
-            --text-9xl: 8rem;
-
-            /* Spatial System */
-            --space-1: 0.25rem;
-            --space-2: 0.5rem;
-            --space-3: 0.75rem;
-            --space-4: 1rem;
-            --space-6: 1.5rem;
-            --space-8: 2rem;
-            --space-12: 3rem;
-            --space-16: 4rem;
-            --space-20: 5rem;
-            --space-24: 6rem;
-            --space-32: 8rem;
-            --space-40: 10rem;
-            --space-48: 12rem;
-            --space-64: 16rem;
-
-            /* Advanced Shadows */
-            --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.08);
-            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
-            --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.15);
-            --shadow-dramatic: 0 35px 80px rgba(0, 0, 0, 0.25);
-
-            /* 2025 Animation Curves */
-            --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
-            --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
-            --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* FOUNDATIONAL RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --red: #ff0000;
+            --gray: #808080;
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: var(--text-base);
-            line-height: 1.6;
-            color: var(--dark-slate);
-            background: var(--pure-white);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: 'ABC Diatype', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.2;
             overflow-x: hidden;
         }
 
-        /* LAYOUT SYSTEM */
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 var(--space-6);
+            padding: 0 40px;
+            position: relative;
         }
 
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 var(--space-8);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 var(--space-12);
-            }
-        }
-
-        /* PREMIUM HEADER */
+        /* HEADER */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--black);
             height: 80px;
         }
 
+        .header-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            color: var(--pure-black);
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--black);
             text-decoration: none;
             letter-spacing: -0.02em;
         }
 
-        .nav-main {
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav {
             display: none;
-            gap: var(--space-12);
         }
 
         @media (min-width: 768px) {
-            .nav-main {
+            .nav {
                 display: flex;
+                gap: 60px;
             }
         }
 
-        .nav-link {
-            font-size: var(--text-sm);
+        .nav a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 16px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            transition: border-color 0.2s ease;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            border-bottom-color: var(--red);
+        }
+
+        .contact-link {
+            color: var(--black);
+            text-decoration: none;
             font-weight: 500;
-            color: var(--medium-gray);
-            text-decoration: none;
-            transition: all 0.2s var(--ease-out-cubic);
-            padding: var(--space-2) 0;
+            font-size: 16px;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--pure-black);
-        }
-
-        .cta-header {
-            background: var(--pure-black);
-            color: var(--pure-white);
-            padding: var(--space-3) var(--space-6);
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: var(--text-sm);
-            font-weight: 600;
-            transition: all 0.3s var(--ease-out-cubic);
-        }
-
-        .cta-header:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* HERO SECTION */
+        /* HERO */
         .hero {
-            padding-top: calc(80px + var(--space-32));
-            padding-bottom: var(--space-24);
-            text-align: center;
-            background: var(--whisper);
+            padding: 180px 0 120px;
+            border-bottom: 1px solid var(--black);
         }
 
         .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(var(--text-5xl), 8vw, var(--text-8xl));
-            font-weight: 700;
-            color: var(--pure-black);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: var(--space-6);
+            font-size: clamp(80px, 12vw, 180px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            margin-bottom: 60px;
+            color: var(--black);
+        }
+
+        .hero-title .red {
+            color: var(--red);
         }
 
         .hero-subtitle {
-            font-size: var(--text-xl);
-            color: var(--medium-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 700px;
+            color: var(--gray);
         }
 
-        /* STORY SECTION */
-        .story {
-            padding: var(--space-48) 0;
-            background: var(--pure-white);
+        /* MISSION SECTION */
+        .mission {
+            padding: 200px 0;
+            border-bottom: 1px solid var(--black);
         }
 
-        .story-grid {
+        .mission-content {
             display: grid;
-            gap: var(--space-16);
-            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 120px;
+            align-items: start;
         }
 
-        @media (min-width: 768px) {
-            .story-grid {
-                grid-template-columns: 1fr 1.2fr;
-                gap: var(--space-24);
-            }
+        .mission-text {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--black);
         }
 
-        .story-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
-            font-weight: 700;
-            color: var(--pure-black);
-            margin-bottom: var(--space-6);
-            line-height: 1.2;
-        }
-
-        .story-content p {
-            font-size: var(--text-lg);
-            color: var(--medium-gray);
-            line-height: 1.7;
-            margin-bottom: var(--space-6);
-        }
-
-        .story-stats {
+        .mission-stats {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-6);
-            margin-top: var(--space-8);
+            gap: 60px;
         }
 
         .stat {
-            text-align: center;
-            padding: var(--space-6);
-            background: var(--whisper);
-            border-radius: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .stat:last-child {
+            border-bottom: none;
         }
 
         .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: var(--text-4xl);
-            font-weight: 700;
-            color: var(--copper);
-            display: block;
-            margin-bottom: var(--space-2);
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 8px;
+            line-height: 1;
         }
 
         .stat-label {
-            font-size: var(--text-sm);
-            color: var(--medium-gray);
-            font-weight: 600;
-        }
-
-        .story-image {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-medium);
-        }
-
-        .story-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
+            font-size: 16px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         /* TEAM SECTION */
         .team {
-            padding: var(--space-48) 0;
-            background: var(--whisper);
+            padding: 200px 0;
         }
 
         .team-header {
-            text-align: center;
-            margin-bottom: var(--space-24);
+            margin-bottom: 120px;
         }
 
         .team-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
-            font-weight: 700;
-            color: var(--pure-black);
-            margin-bottom: var(--space-6);
+            font-size: clamp(60px, 10vw, 140px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            margin-bottom: 60px;
         }
 
         .team-subtitle {
-            font-size: var(--text-xl);
-            color: var(--medium-gray);
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.4;
             max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
+            color: var(--gray);
         }
 
         .team-grid {
             display: grid;
-            gap: var(--space-12);
-        }
-
-        @media (min-width: 768px) {
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .team-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            gap: 120px;
         }
 
         .team-member {
-            background: var(--pure-white);
-            border-radius: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .team-member:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .team-member:nth-child(even) .member-info {
+            order: -1;
+        }
+
+        .member-photo {
+            height: 600px;
+            background: var(--black);
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.4s var(--ease-out-cubic);
-            position: relative;
         }
 
-        .team-member:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-strong);
-        }
-
-        .member-image {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .member-image img {
+        .member-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s var(--ease-out-cubic);
+            filter: grayscale(100%) contrast(1.1);
         }
 
-        .team-member:hover .member-image img {
-            transform: scale(1.05);
-        }
-
-        .member-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            padding: var(--space-8);
-            color: var(--pure-white);
-        }
-
-        .member-name {
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            margin-bottom: var(--space-2);
-            font-family: 'Playfair Display', serif;
+        .member-info {
+            padding: 60px 0;
         }
 
         .member-role {
-            font-size: var(--text-lg);
-            color: var(--copper-light);
-            font-weight: 600;
-            margin-bottom: var(--space-3);
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        .member-content {
-            padding: var(--space-8);
+        .member-name {
+            font-size: clamp(40px, 6vw, 80px);
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
         }
 
         .member-bio {
-            color: var(--medium-gray);
-            line-height: 1.6;
-            margin-bottom: var(--space-6);
+            font-size: 18px;
+            line-height: 1.5;
+            color: var(--gray);
+            margin-bottom: 60px;
+            max-width: 400px;
         }
 
         .member-credentials {
@@ -402,119 +270,123 @@
         }
 
         .member-credentials li {
-            padding: var(--space-1) 0;
-            color: var(--cool-gray);
-            font-size: var(--text-sm);
-            position: relative;
-            padding-left: var(--space-5);
+            padding: 8px 0;
+            font-size: 16px;
+            color: var(--black);
+            border-bottom: 1px solid #eee;
         }
 
-        .member-credentials li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--copper);
-            font-weight: bold;
+        .member-credentials li:last-child {
+            border-bottom: none;
+        }
+
+        .member-credentials strong {
+            font-weight: 600;
         }
 
         /* VALUES SECTION */
         .values {
-            padding: var(--space-48) 0;
-            background: var(--pure-white);
+            padding: 200px 0;
+            border-top: 1px solid var(--black);
         }
 
         .values-header {
-            text-align: center;
-            margin-bottom: var(--space-24);
+            margin-bottom: 120px;
         }
 
         .values-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
-            font-weight: 700;
-            color: var(--pure-black);
-            margin-bottom: var(--space-6);
+            font-size: clamp(60px, 10vw, 140px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
         }
 
-        .values-grid {
+        .values-list {
+            list-style: none;
+        }
+
+        .value-item {
+            border-bottom: 1px solid var(--black);
+            padding: 60px 0;
             display: grid;
-            gap: var(--space-8);
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 80px;
+            align-items: start;
         }
 
-        @media (min-width: 768px) {
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-12);
-            }
-        }
-
-        .value-card {
-            background: var(--whisper);
-            padding: var(--space-12);
-            border-radius: 24px;
-            text-align: center;
-            transition: all 0.3s var(--ease-out-cubic);
-        }
-
-        .value-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .value-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--copper);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-6);
-            color: var(--pure-white);
-            font-size: var(--text-4xl);
+        .value-number {
+            font-size: 16px;
+            color: var(--gray);
+            font-weight: 400;
         }
 
         .value-title {
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            color: var(--pure-black);
-            margin-bottom: var(--space-4);
-            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 4vw, 60px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
         }
 
         .value-description {
-            color: var(--medium-gray);
-            line-height: 1.6;
-        }
-
-        /* SCROLL ANIMATIONS */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s var(--ease-out-cubic);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--gray);
         }
 
         /* RESPONSIVE */
-        @media (max-width: 767px) {
-            .story-grid {
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .mission-content {
                 grid-template-columns: 1fr;
+                gap: 80px;
+            }
+
+            .team-member {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .team-member:nth-child(even) .member-info {
+                order: 0;
+            }
+
+            .value-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: left;
             }
 
             .team-grid {
-                grid-template-columns: 1fr;
+                gap: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 140px 0 80px;
             }
 
-            .values-grid {
-                grid-template-columns: 1fr;
+            .mission {
+                padding: 120px 0;
             }
 
-            .story-stats {
-                grid-template-columns: 1fr;
+            .team {
+                padding: 120px 0;
+            }
+
+            .values {
+                padding: 120px 0;
+            }
+
+            .team-header {
+                margin-bottom: 80px;
+            }
+
+            .values-header {
+                margin-bottom: 60px;
             }
         }
     </style>
@@ -524,14 +396,15 @@
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="logo">RoofStar</a>
-                <nav class="nav-main">
-                    <a href="index.html" class="nav-link">Portfolio</a>
-                    <a href="gallery.html" class="nav-link">Gallery</a>
-                    <a href="#" class="nav-link active">About</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                <a href="index.html" class="logo">
+                    <img src="/Users/alec/Desktop/roof_site_assets/roofstar.png" alt="RoofStar">
+                </a>
+                <nav class="nav">
+                    <a href="index.html">Work</a>
+                    <a href="gallery.html">Portfolio</a>
+                    <a href="#" class="active">About</a>
                 </nav>
-                <a href="tel:(303) 555-7663" class="cta-header">Call Now</a>
+                <a href="tel:(303) 555-7663" class="contact-link">Contact</a>
             </div>
         </div>
     </header>
@@ -539,134 +412,96 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title">Master Craftsmen</h1>
-            <p class="hero-subtitle">
-                Meet the artisans behind Denver's most prestigious roofing transformations.
-                Excellence runs in our DNA.
-            </p>
+            <h1 class="hero-title">Crafting<br><span class="red">Excellence</span></h1>
+            <p class="hero-subtitle">Denver's premier roofing craftsmen, dedicated to architectural precision and uncompromising quality since 2018.</p>
         </div>
     </section>
 
-    <!-- Story -->
-    <section class="story fade-in">
+    <!-- Mission -->
+    <section class="mission">
         <div class="container">
-            <div class="story-grid">
-                <div class="story-content">
-                    <h2>Crafting Excellence Since 2018</h2>
-                    <p>
-                        RoofStar was born from a simple belief: Denver's luxury homes deserve
-                        roofing that matches their architectural beauty and investment value.
-                    </p>
-                    <p>
-                        Founded by master craftsmen with decades of combined experience, we've built
-                        our reputation one premium installation at a time. From imported Welsh slate
-                        to cutting-edge metal systems, we don't just install roofs—we create lasting
-                        masterpieces.
-                    </p>
-
-                    <div class="story-stats">
-                        <div class="stat">
-                            <span class="stat-number">$47M</span>
-                            <span class="stat-label">Projects Value</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">184</span>
-                            <span class="stat-label">Luxury Homes</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Satisfaction</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">25yr</span>
-                            <span class="stat-label">Warranty</span>
-                        </div>
-                    </div>
+            <div class="mission-content">
+                <div class="mission-text">
+                    We believe exceptional roofing is both art and science—where traditional craftsmanship meets modern innovation.
                 </div>
-
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="RoofStar premium roofing work">
+                <div class="mission-stats">
+                    <div class="stat">
+                        <div class="stat-number">2018</div>
+                        <div class="stat-label">Founded</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">184</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">25</div>
+                        <div class="stat-label">Year Warranty</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Team -->
-    <section class="team fade-in">
+    <section class="team">
         <div class="container">
             <div class="team-header">
-                <h2 class="team-title">Our Expert Team</h2>
-                <p class="team-subtitle">
-                    Master craftsmen, certified specialists, and industry leaders committed to roofing excellence.
-                </p>
+                <h2 class="team-title">Our<br>Team</h2>
+                <p class="team-subtitle">Master craftsmen with decades of combined experience in luxury roofing and architectural precision.</p>
             </div>
 
             <div class="team-grid">
+                <!-- John Tompkins -->
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="/Users/alec/Desktop/sarah.jpg" alt="Sarah Smith - Master Craftsman">
-                        <div class="member-overlay">
-                            <h3 class="member-name">Sarah Smith</h3>
-                            <p class="member-role">Master Craftsman & Founder</p>
-                        </div>
+                    <div class="member-photo">
+                        <img src="/Users/alec/Desktop/roof_site_assets/john.jpg" alt="John Tompkins">
                     </div>
-                    <div class="member-content">
-                        <p class="member-bio">
-                            With over 15 years in luxury roofing, Sarah founded RoofStar to bring
-                            European craftsmanship standards to Denver's finest homes. She personally
-                            oversees every premium installation.
-                        </p>
+                    <div class="member-info">
+                        <div class="member-role">Founder & CEO</div>
+                        <h3 class="member-name">John Tompkins</h3>
+                        <p class="member-bio">John founded RoofStar in 2018 with a vision to elevate industry standards through precision craftsmanship and uncompromising quality. His leadership drives our commitment to architectural excellence.</p>
                         <ul class="member-credentials">
-                            <li>Certified Master Roofer (CMP)</li>
-                            <li>Slate & Tile Roofing Association Member</li>
-                            <li>Licensed Contractor (#CO-ROOF-2024)</li>
-                            <li>OSHA 30-Hour Safety Certified</li>
+                            <li><strong>Certification:</strong> Master Roofer, PMP, OSHA 30</li>
+                            <li><strong>Specialty:</strong> Business Operations & Quality</li>
+                            <li><strong>Experience:</strong> 12 Years</li>
                         </ul>
                     </div>
                 </div>
 
+                <!-- Sarah Smith -->
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="/Users/alec/Desktop/john.jpg" alt="John Tompkins - Lead Estimator">
-                        <div class="member-overlay">
-                            <h3 class="member-name">John Tompkins</h3>
-                            <p class="member-role">Lead Estimator & Project Manager</p>
-                        </div>
+                    <div class="member-photo">
+                        <img src="/Users/alec/Desktop/roof_site_assets/sarah.jpg" alt="Sarah Smith">
                     </div>
-                    <div class="member-content">
-                        <p class="member-bio">
-                            John brings precision engineering to every estimate. His detailed assessments
-                            and project management ensure luxury installations are completed on time and
-                            beyond expectations.
-                        </p>
+                    <div class="member-info">
+                        <div class="member-role">Client Relations Director</div>
+                        <h3 class="member-name">Sarah Smith</h3>
+                        <p class="member-bio">Sarah ensures every client experience exceeds expectations, from initial consultation through project completion. Her attention to detail and communication excellence makes each project seamless.</p>
                         <ul class="member-credentials">
-                            <li>Certified Roofing Professional (CRP)</li>
-                            <li>Project Management Professional (PMP)</li>
-                            <li>Xactimate Certified Estimator</li>
-                            <li>12+ Years Premium Roofing Experience</li>
+                            <li><strong>Certification:</strong> Project Management, Customer Success</li>
+                            <li><strong>Specialty:</strong> Client Experience & Design</li>
+                            <li><strong>Experience:</strong> 6 Years</li>
                         </ul>
                     </div>
                 </div>
 
+                <!-- Leonard Goodman -->
                 <div class="team-member">
-                    <div class="member-image">
-                        <img src="/Users/alec/Desktop/leonard.jpg" alt="Leonard Goodman - Insurance Specialist">
-                        <div class="member-overlay">
-                            <h3 class="member-name">Leonard Goodman</h3>
-                            <p class="member-role">Insurance Claims Specialist</p>
-                        </div>
+                    <div class="member-photo">
+                        <img src="/Users/alec/Desktop/roof_site_assets/leonard.jpg" alt="Leonard Goodman">
                     </div>
-                    <div class="member-content">
-                        <p class="member-bio">
-                            Leonard's expertise in luxury property insurance claims has secured millions
-                            in coverage for our clients. He navigates complex claims to maximize your
-                            investment protection.
-                        </p>
+                    <div class="member-info">
+                        <div class="member-role">Master Installer</div>
+                        <h3 class="member-name">Leonard Goodman</h3>
+                        <p class="member-bio">Leonard's expertise in premium materials and installation techniques ensures every project meets the highest standards of craftsmanship and durability.</p>
                         <ul class="member-credentials">
-                            <li>Certified Insurance Claims Professional</li>
-                            <li>Haag Engineering Graduate</li>
-                            <li>$12M+ in Claims Successfully Negotiated</li>
-                            <li>Luxury Property Damage Specialist</li>
+                            <li><strong>Certification:</strong> Slate & Tile Specialist</li>
+                            <li><strong>Specialty:</strong> Premium Materials</li>
+                            <li><strong>Experience:</strong> 7 Years</li>
                         </ul>
                     </div>
                 </div>
@@ -675,70 +510,35 @@
     </section>
 
     <!-- Values -->
-    <section class="values fade-in">
+    <section class="values">
         <div class="container">
             <div class="values-header">
-                <h2 class="values-title">Our Commitment</h2>
+                <h2 class="values-title">Our Values</h2>
             </div>
 
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">⚡</div>
-                    <h3 class="value-title">Unmatched Quality</h3>
-                    <p class="value-description">
-                        We use only premium materials from trusted suppliers and employ techniques
-                        refined over decades of luxury roofing expertise.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">🛡️</div>
-                    <h3 class="value-title">Lifetime Warranty</h3>
-                    <p class="value-description">
-                        Our 25-year craftsmanship warranty reflects our confidence in every installation.
-                        Your investment is protected for decades to come.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">⏰</div>
-                    <h3 class="value-title">Precision Timing</h3>
-                    <p class="value-description">
-                        Luxury projects demand precise scheduling. We coordinate every detail to ensure
-                        minimal disruption to your daily life.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon">🎯</div>
-                    <h3 class="value-title">Concierge Service</h3>
-                    <p class="value-description">
-                        From initial consultation to final inspection, we provide white-glove service
-                        that matches the caliber of your home.
-                    </p>
-                </div>
-            </div>
+            <ul class="values-list">
+                <li class="value-item">
+                    <div class="value-number">01</div>
+                    <h3 class="value-title">Uncompromising Quality</h3>
+                    <p class="value-description">Every project meets the highest standards of craftsmanship using only premium materials and proven techniques.</p>
+                </li>
+                <li class="value-item">
+                    <div class="value-number">02</div>
+                    <h3 class="value-title">Architectural Precision</h3>
+                    <p class="value-description">We approach each project with the attention to detail and precision of fine architecture.</p>
+                </li>
+                <li class="value-item">
+                    <div class="value-number">03</div>
+                    <h3 class="value-title">Client Partnership</h3>
+                    <p class="value-description">We work closely with clients to understand their vision and exceed their expectations.</p>
+                </li>
+                <li class="value-item">
+                    <div class="value-number">04</div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-description">Continuously advancing our techniques while honoring traditional craftsmanship principles.</p>
+                </li>
+            </ul>
         </div>
     </section>
-
-    <script>
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
