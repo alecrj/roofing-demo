@@ -619,13 +619,18 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            justify-items: center;
         }
 
         .cert-list li {
             font-size: 14px;
             color: var(--gray-400);
-            padding: 8px 0;
             line-height: 1.4;
+            text-align: center;
+            padding: 4px 0;
         }
 
         /* SERVICES SECTION */
@@ -1201,6 +1206,11 @@
                 padding: 25px 20px;
                 max-width: 100%;
             }
+
+            .cert-list {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -1285,7 +1295,6 @@
                         <div class="certifications">
                             <div class="cert-header">Professional Certifications</div>
                             <ul class="cert-list">
-                                <li>✓ GAF Master Elite Contractor</li>
                                 <li>✓ Better Business Bureau A+ Rating</li>
                                 <li>✓ Colorado Licensed & Bonded</li>
                                 <li>✓ OSHA 30 Safety Certified</li>
