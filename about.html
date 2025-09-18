@@ -427,9 +427,9 @@
         .about-hero-content {
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: 50px;
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -499,22 +499,27 @@
             font-size: 18px;
             font-weight: 400;
             line-height: 1.6;
-            max-width: 520px;
+            max-width: 700px;
             color: var(--gray-400);
-            margin-bottom: 40px;
+            margin: 0 auto 30px;
         }
 
         .key-credentials {
             display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 50px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .credential-item {
             display: flex;
             align-items: center;
             gap: 12px;
+            min-width: 200px;
         }
 
         .credential-icon {
@@ -546,16 +551,16 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--gray-800);
             border-radius: 20px;
-            padding: 40px;
+            padding: 35px 40px;
             backdrop-filter: blur(20px);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
         }
 
         .stats-header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
             border-bottom: 1px solid var(--gray-800);
         }
 
@@ -579,7 +584,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .stat-item {
@@ -597,7 +602,7 @@
         }
 
         .certifications {
-            padding-top: 20px;
+            padding-top: 15px;
             border-top: 1px solid var(--gray-800);
         }
 
@@ -1173,7 +1178,18 @@
 
             .about-hero-content {
                 max-width: 100%;
-                gap: 40px;
+                gap: 35px;
+            }
+
+            .key-credentials {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .credential-item {
+                min-width: auto;
+                justify-content: center;
             }
 
             .stats-grid {
@@ -1182,7 +1198,7 @@
             }
 
             .company-stats {
-                padding: 30px 20px;
+                padding: 25px 20px;
                 max-width: 100%;
             }
         }
