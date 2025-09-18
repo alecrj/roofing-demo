@@ -29,6 +29,43 @@
             color: var(--black);
             line-height: 1.2;
             overflow-x: hidden;
+            padding-top: 44px;
+        }
+
+        /* DEMO BANNER */
+        .demo-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, var(--red) 0%, #ff3333 100%);
+            color: var(--white);
+            z-index: 2000;
+            height: 44px;
+            overflow: hidden;
+        }
+
+        .demo-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite;
+        }
+
+        .demo-text {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 0 100px;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         /* PENTAGRAM GRID SYSTEM */
@@ -42,7 +79,7 @@
         /* HEADER */
         .header {
             position: fixed;
-            top: 30px;
+            top: 74px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
@@ -64,7 +101,7 @@
             border-color: rgba(0, 0, 0, 0.1);
             box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08), 0 3px 12px rgba(0, 0, 0, 0.06);
             height: 48px;
-            top: 20px;
+            top: 64px;
             border-radius: 24px;
         }
 
@@ -232,10 +269,10 @@
 
         /* HERO - PERFECT ABOVE THE FOLD */
         .hero {
-            height: 100vh;
-            min-height: 600px;
-            max-height: 900px;
-            padding: 0;
+            height: calc(100vh - 44px);
+            min-height: 550px;
+            max-height: 800px;
+            padding: 120px 0 20px;
             display: flex;
             align-items: center;
             position: relative;
@@ -244,12 +281,12 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 40px;
             width: 100%;
             align-items: center;
             height: 100%;
-            padding: 100px 0 40px;
+            max-height: 600px;
         }
 
         .hero-text {
@@ -258,11 +295,11 @@
         }
 
         .hero-title {
-            font-size: clamp(48px, 8vw, 120px);
+            font-size: clamp(40px, 6vw, 80px);
             font-weight: 900;
             line-height: 0.9;
             letter-spacing: -0.04em;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             color: var(--black);
         }
 
@@ -271,11 +308,11 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(16px, 2vw, 20px);
+            font-size: clamp(14px, 1.5vw, 18px);
             font-weight: 400;
             line-height: 1.4;
-            max-width: 480px;
-            margin-bottom: 40px;
+            max-width: 400px;
+            margin-bottom: 24px;
             color: var(--gray);
         }
 
@@ -302,12 +339,12 @@
         .hero-image {
             position: relative;
             height: 100%;
-            min-height: 400px;
-            max-height: 600px;
+            min-height: 300px;
+            max-height: 450px;
             background: var(--black);
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
         }
 
         .hero-image::before {
@@ -504,6 +541,119 @@
             font-size: 14px;
             line-height: 1.5;
             color: var(--gray);
+        }
+
+        /* WHY WORK WITH US */
+        .why-work-with-us {
+            padding: 200px 0;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .why-work-header {
+            text-align: center;
+            margin-bottom: 120px;
+        }
+
+        .why-work-title {
+            font-size: clamp(60px, 10vw, 140px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .why-work-title .red {
+            color: var(--red);
+        }
+
+        .why-work-subtitle {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        .why-work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .why-work-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-work-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--red) 0%, #cc0000 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .why-work-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .why-work-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-number {
+            background: var(--red);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-description {
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--gray);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-stat {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--red);
+            position: relative;
+            z-index: 2;
         }
 
         /* PORTFOLIO - ASYMMETRICAL */
@@ -1155,13 +1305,12 @@
         /* FAQ */
         .faq {
             padding: 200px 0;
-            background: var(--white);
-            border-top: 1px solid var(--black);
+            background: #f8f8f8;
         }
 
         .faq-header {
             text-align: center;
-            margin-bottom: 120px;
+            margin-bottom: 80px;
         }
 
         .faq-title {
@@ -1169,43 +1318,75 @@
             font-weight: 900;
             line-height: 0.9;
             letter-spacing: -0.03em;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .faq-subtitle {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--gray);
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .faq-item {
-            padding: 40px 0;
-            border-bottom: 1px solid #eee;
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
         }
 
-        .faq-item:last-child {
-            border-bottom: none;
+        .faq-item:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         .faq-question {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 24px 28px;
+            margin: 0;
             color: var(--black);
-            line-height: 1.3;
+            line-height: 1.4;
+            cursor: pointer;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--red);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
         }
 
         .faq-answer {
-            font-size: 16px;
-            line-height: 1.5;
+            font-size: 15px;
+            line-height: 1.6;
             color: var(--gray);
+            padding: 0 28px 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 28px 24px;
         }
 
         /* RESPONSIVE */
@@ -1368,6 +1549,13 @@
     </style>
 </head>
 <body>
+    <!-- Demo Site Banner -->
+    <div class="demo-banner">
+        <div class="demo-content">
+            <span class="demo-text">🚀 DEMO SITE - Get your roofing website made for a one-time fee of $299 • Contact Alec to get started today</span>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -1509,6 +1697,54 @@
                         <h3 class="step-title">Quality Assurance</h3>
                         <p class="step-description">Final inspection and 25-year warranty with ongoing maintenance support.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With RoofStar -->
+    <section class="why-work-with-us">
+        <div class="container">
+            <div class="why-work-header">
+                <h2 class="why-work-title">Why Roofing Contractors<br>Choose <span class="red">RoofStar</span></h2>
+                <p class="why-work-subtitle">More than just roofing - we're your growth partner in the competitive Denver market</p>
+            </div>
+            <div class="why-work-grid">
+                <div class="why-work-card">
+                    <div class="card-number">01</div>
+                    <h3 class="card-title">Higher Conversion Rates</h3>
+                    <p class="card-description">Our proven sales process and professional presentation materials help close 40% more deals than industry average.</p>
+                    <div class="card-stat">+40% Close Rate</div>
+                </div>
+                <div class="why-work-card">
+                    <div class="card-number">02</div>
+                    <h3 class="card-title">Premium Pricing Strategy</h3>
+                    <p class="card-description">Position yourself as the premium choice in Denver. Our marketing approach justifies 20-30% higher pricing than competitors.</p>
+                    <div class="card-stat">+25% Profit Margins</div>
+                </div>
+                <div class="why-work-card">
+                    <div class="card-number">03</div>
+                    <h3 class="card-title">Insurance Partnership</h3>
+                    <p class="card-description">Direct relationships with all major insurance carriers. We handle the paperwork, you focus on the work.</p>
+                    <div class="card-stat">90% Claim Approval</div>
+                </div>
+                <div class="why-work-card">
+                    <div class="card-number">04</div>
+                    <h3 class="card-title">Lead Generation System</h3>
+                    <p class="card-description">Consistent flow of qualified leads through our digital marketing and referral network. No more hunting for work.</p>
+                    <div class="card-stat">50+ Leads/Month</div>
+                </div>
+                <div class="why-work-card">
+                    <div class="card-number">05</div>
+                    <h3 class="card-title">Business Growth Support</h3>
+                    <p class="card-description">Operations consulting, crew training, and business development to scale from 1-2 person operation to full roofing company.</p>
+                    <div class="card-stat">3x Revenue Growth</div>
+                </div>
+                <div class="why-work-card">
+                    <div class="card-number">06</div>
+                    <h3 class="card-title">Material Discounts</h3>
+                    <p class="card-description">Bulk purchasing power gets you contractor pricing on premium materials. Save 15-20% on every job.</p>
+                    <div class="card-stat">20% Material Savings</div>
                 </div>
             </div>
         </div>
@@ -1794,30 +2030,30 @@
                 <h2 class="faq-title">Frequently<br>Asked Questions</h2>
                 <p class="faq-subtitle">Common questions about our roofing services and process</p>
             </div>
-            <div class="faq-grid">
+            <div class="faq-container">
                 <div class="faq-item">
                     <h3 class="faq-question">How long does a typical roof replacement take?</h3>
-                    <p class="faq-answer">Most residential roof replacements take 2-4 days depending on size, weather, and material complexity. We provide detailed timelines during consultation.</p>
+                    <div class="faq-answer">Most residential roof replacements take 2-4 days depending on size, weather, and material complexity. We provide detailed timelines during consultation.</div>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">Do you work with insurance companies?</h3>
-                    <p class="faq-answer">Yes, we're experienced with insurance claims and work directly with adjusters to ensure proper coverage and streamlined approval processes.</p>
+                    <div class="faq-answer">Yes, we're experienced with insurance claims and work directly with adjusters to ensure proper coverage and streamlined approval processes.</div>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">What materials do you recommend for Colorado weather?</h3>
-                    <p class="faq-answer">We recommend impact-resistant materials like architectural shingles, metal roofing, or tile that can withstand hail, wind, and temperature fluctuations.</p>
+                    <div class="faq-answer">We recommend impact-resistant materials like architectural shingles, metal roofing, or tile that can withstand hail, wind, and temperature fluctuations.</div>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">How much does a new roof typically cost?</h3>
-                    <p class="faq-answer">Costs vary by size, materials, and complexity. Most residential projects range from $12,000-$35,000. We provide detailed estimates during free consultations.</p>
+                    <div class="faq-answer">Costs vary by size, materials, and complexity. Most residential projects range from $12,000-$35,000. We provide detailed estimates during free consultations.</div>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">What's included in your warranty?</h3>
-                    <p class="faq-answer">Our 25-year warranty covers materials, workmanship, and installation. It's transferable to new homeowners and includes storm damage protection.</p>
+                    <div class="faq-answer">Our 25-year warranty covers materials, workmanship, and installation. It's transferable to new homeowners and includes storm damage protection.</div>
                 </div>
                 <div class="faq-item">
                     <h3 class="faq-question">Do you offer emergency roof repairs?</h3>
-                    <p class="faq-answer">Yes, we provide 24/7 emergency response for storm damage, leaks, and urgent repairs throughout the Denver metro area.</p>
+                    <div class="faq-answer">Yes, we provide 24/7 emergency response for storm damage, leaks, and urgent repairs throughout the Denver metro area.</div>
                 </div>
             </div>
         </div>
@@ -1928,6 +2164,24 @@
             }
 
             lastScrollY = currentScrollY;
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
         });
 
         // Smooth scrolling
