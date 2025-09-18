@@ -45,7 +45,7 @@
             top: 30px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 100;
+            z-index: 1000;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid rgba(0, 0, 0, 0.1);
@@ -54,15 +54,17 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             width: auto;
-            min-width: 600px;
+            min-width: 500px;
+            max-width: 800px;
         }
 
         .header.scrolled {
             background: rgba(255, 255, 255, 0.95);
             border-color: rgba(0, 0, 0, 0.15);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            height: 60px;
-            min-width: 500px;
+            height: 55px;
+            min-width: 450px;
+            top: 15px;
         }
 
         .header-inner {
@@ -70,7 +72,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 30px;
+            padding: 0 25px;
+            white-space: nowrap;
         }
 
         .logo {
@@ -88,7 +91,7 @@
         @media (min-width: 768px) {
             .nav {
                 display: flex;
-                gap: 60px;
+                gap: 35px;
             }
         }
 
@@ -312,43 +315,63 @@
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 80px;
-        }
-
-        .process-step {
-            text-align: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0;
             position: relative;
         }
 
-        .step-number {
+        .process-grid::before {
+            content: '';
             position: absolute;
-            top: -20px;
-            right: 20px;
-            font-size: 14px;
-            color: var(--gray);
-            font-weight: 500;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--red) 20%, var(--red) 80%, transparent 100%);
+            z-index: 1;
         }
 
-        .step-icon {
-            font-size: 48px;
-            margin-bottom: 30px;
-            display: block;
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            background: var(--black);
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            flex-shrink: 0;
+            border: 4px solid var(--white);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content {
+            flex: 1;
         }
 
         .step-title {
             font-size: 24px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--black);
+            line-height: 1.2;
         }
 
         .step-description {
             font-size: 16px;
             line-height: 1.5;
             color: var(--gray);
-            max-width: 250px;
-            margin: 0 auto;
         }
 
         /* PORTFOLIO - ASYMMETRICAL */
@@ -1209,6 +1232,48 @@
         </div>
     </section>
 
+    <!-- Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <div class="reviews-header">
+                <h2 class="reviews-title">Client Reviews</h2>
+                <p class="reviews-subtitle">What our customers say about our work</p>
+            </div>
+        </div>
+        <div class="marquee">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation. The team was professional, clean, and finished ahead of schedule."</p>
+                <div class="review-author">— Sarah Johnson, Aurora</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Best roofing company in Denver! They handled our storm damage repair perfectly and worked directly with our insurance. Couldn't be happier with the results."</p>
+                <div class="review-author">— Mike Chen, Westminster</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Incredible attention to detail. John and his team replaced our entire roof in just 3 days and left our property cleaner than when they started."</p>
+                <div class="review-author">— Lisa Martinez, Littleton</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Professional from start to finish. Fair pricing, excellent communication, and beautiful work. Our new roof has completely transformed our home's curb appeal."</p>
+                <div class="review-author">— David Thompson, Thornton</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"RoofStar exceeded our expectations. The quality of work is exceptional and their warranty gives us complete peace of mind. Highly recommend!"</p>
+                <div class="review-author">— Jennifer Wilson, Aurora</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation. The team was professional, clean, and finished ahead of schedule."</p>
+                <div class="review-author">— Sarah Johnson, Aurora</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Process -->
     <section class="process">
         <div class="container">
@@ -1219,27 +1284,31 @@
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">01</div>
-                    <div class="step-icon">📋</div>
-                    <h3 class="step-title">Consultation</h3>
-                    <p class="step-description">Free detailed assessment of your roofing needs with transparent pricing and timeline.</p>
+                    <div class="step-content">
+                        <h3 class="step-title">Consultation</h3>
+                        <p class="step-description">Free detailed assessment of your roofing needs with transparent pricing and timeline.</p>
+                    </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">02</div>
-                    <div class="step-icon">📐</div>
-                    <h3 class="step-title">Design & Planning</h3>
-                    <p class="step-description">Custom design planning with material selection and architectural precision planning.</p>
+                    <div class="step-content">
+                        <h3 class="step-title">Design & Planning</h3>
+                        <p class="step-description">Custom design planning with material selection and architectural precision planning.</p>
+                    </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">03</div>
-                    <div class="step-icon">🔨</div>
-                    <h3 class="step-title">Installation</h3>
-                    <p class="step-description">Expert installation by certified professionals using premium materials and proven techniques.</p>
+                    <div class="step-content">
+                        <h3 class="step-title">Installation</h3>
+                        <p class="step-description">Expert installation by certified professionals using premium materials and proven techniques.</p>
+                    </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">04</div>
-                    <div class="step-icon">✅</div>
-                    <h3 class="step-title">Quality Assurance</h3>
-                    <p class="step-description">Final inspection and 25-year warranty with ongoing maintenance support.</p>
+                    <div class="step-content">
+                        <h3 class="step-title">Quality Assurance</h3>
+                        <p class="step-description">Final inspection and 25-year warranty with ongoing maintenance support.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1326,25 +1395,21 @@
             </div>
             <div class="materials-grid">
                 <div class="material-card">
-                    <div class="material-icon">🏠</div>
                     <h3 class="material-title">Architectural Shingles</h3>
                     <p class="material-description">High-quality dimensional shingles with enhanced wind resistance and 30-year manufacturer warranties.</p>
                     <div class="material-brands">GAF, Owens Corning, CertainTeed</div>
                 </div>
                 <div class="material-card">
-                    <div class="material-icon">⚡</div>
                     <h3 class="material-title">Standing Seam Metal</h3>
                     <p class="material-description">Durable metal roofing with superior longevity, energy efficiency, and modern aesthetic appeal.</p>
                     <div class="material-brands">ATAS, Berridge, McElroy</div>
                 </div>
                 <div class="material-card">
-                    <div class="material-icon">🛡️</div>
                     <h3 class="material-title">Impact Resistant</h3>
                     <p class="material-description">Class 4 hail-resistant materials designed specifically for Colorado's severe weather patterns.</p>
                     <div class="material-brands">IKO, Malarkey, Atlas</div>
                 </div>
                 <div class="material-card">
-                    <div class="material-icon">🏔️</div>
                     <h3 class="material-title">Premium Slate & Tile</h3>
                     <p class="material-description">Natural stone and clay tiles offering unmatched durability and timeless architectural beauty.</p>
                     <div class="material-brands">Vermont Slate, Ludowici, Boral</div>
@@ -1363,32 +1428,26 @@
                 </div>
                 <div class="why-choose-grid">
                     <div class="why-item">
-                        <div class="why-icon">🏆</div>
                         <h3 class="why-title">Certified Excellence</h3>
                         <p class="why-description">Master certified roofers with OSHA 30 safety training and continuous education.</p>
                     </div>
                     <div class="why-item">
-                        <div class="why-icon">🛡️</div>
                         <h3 class="why-title">25-Year Warranty</h3>
                         <p class="why-description">Industry-leading warranty coverage on all materials and workmanship.</p>
                     </div>
                     <div class="why-item">
-                        <div class="why-icon">📍</div>
                         <h3 class="why-title">Local Denver Focus</h3>
                         <p class="why-description">Deep understanding of Colorado weather patterns and local building codes.</p>
                     </div>
                     <div class="why-item">
-                        <div class="why-icon">💰</div>
                         <h3 class="why-title">Insurance Direct</h3>
                         <p class="why-description">We work directly with insurance companies to streamline claims and maximize coverage.</p>
                     </div>
                     <div class="why-item">
-                        <div class="why-icon">⚡</div>
                         <h3 class="why-title">Emergency Response</h3>
                         <p class="why-description">24/7 emergency storm damage response with rapid deployment team.</p>
                     </div>
                     <div class="why-item">
-                        <div class="why-icon">🎯</div>
                         <h3 class="why-title">Precision Installation</h3>
                         <p class="why-description">Architectural precision with premium materials for lasting durability.</p>
                     </div>
@@ -1407,7 +1466,6 @@
                 </div>
                 <div class="insurance-grid">
                     <div class="insurance-card warranty-card">
-                        <div class="card-icon">🛡️</div>
                         <h3 class="card-title">25-Year Material Warranty</h3>
                         <div class="warranty-details">
                             <div class="warranty-item">
@@ -1425,7 +1483,6 @@
                         </div>
                     </div>
                     <div class="insurance-card insurance-claims">
-                        <div class="card-icon">📋</div>
                         <h3 class="card-title">Insurance Claim Experts</h3>
                         <div class="claims-process">
                             <div class="process-item">
@@ -1447,7 +1504,6 @@
                         </div>
                     </div>
                     <div class="insurance-card certifications">
-                        <div class="card-icon">🏆</div>
                         <h3 class="card-title">Professional Certifications</h3>
                         <div class="cert-list">
                             <div class="cert-item">✓ Better Business Bureau A+ Rating</div>
@@ -1459,48 +1515,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews -->
-    <section class="reviews">
-        <div class="container">
-            <div class="reviews-header">
-                <h2 class="reviews-title">Client Reviews</h2>
-                <p class="reviews-subtitle">What our customers say about our work</p>
-            </div>
-        </div>
-        <div class="marquee">
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation. The team was professional, clean, and finished ahead of schedule."</p>
-                <div class="review-author">— Sarah Johnson, Aurora</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Best roofing company in Denver! They handled our storm damage repair perfectly and worked directly with our insurance. Couldn't be happier with the results."</p>
-                <div class="review-author">— Mike Chen, Westminster</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Incredible attention to detail. John and his team replaced our entire roof in just 3 days and left our property cleaner than when they started."</p>
-                <div class="review-author">— Lisa Martinez, Littleton</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Professional from start to finish. Fair pricing, excellent communication, and beautiful work. Our new roof has completely transformed our home's curb appeal."</p>
-                <div class="review-author">— David Thompson, Thornton</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"RoofStar exceeded our expectations. The quality of work is exceptional and their warranty gives us complete peace of mind. Highly recommend!"</p>
-                <div class="review-author">— Jennifer Wilson, Aurora</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation. The team was professional, clean, and finished ahead of schedule."</p>
-                <div class="review-author">— Sarah Johnson, Aurora</div>
             </div>
         </div>
     </section>
