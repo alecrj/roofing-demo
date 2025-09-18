@@ -92,6 +92,12 @@
             z-index: 2000;
             height: 44px;
             overflow: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .demo-banner.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
         }
 
         .demo-content {
@@ -320,39 +326,45 @@
             box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
         }
 
-        /* HERO - PERFECT ABOVE THE FOLD */
+        /* HERO SECTION */
         .hero {
-            height: calc(100vh - 44px);
-            min-height: 500px;
-            max-height: 750px;
-            padding: 180px 0 40px;
+            padding: 200px 0;
             display: flex;
             align-items: center;
+            min-height: 100vh;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero-grid {
+        .hero-content {
             display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 40px;
+            grid-template-columns: 2fr 1fr;
+            gap: clamp(60px, 10vw, 120px);
+            align-items: start;
             width: 100%;
-            align-items: center;
-            height: auto;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .hero-text {
-            position: relative;
-            z-index: 2;
+            max-width: none;
+        }
+
+        .hero-intro {
+            font-size: 14px;
+            color: var(--gray-400);
+            margin-bottom: 40px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(40px, 6vw, 80px);
-            font-weight: 700;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 300;
             line-height: 0.9;
             letter-spacing: -0.04em;
-            margin-bottom: 16px;
+            margin-bottom: 40px;
             color: var(--white);
         }
 
@@ -361,40 +373,47 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(14px, 1.5vw, 18px);
+            font-size: 18px;
             font-weight: 400;
-            line-height: 1.4;
-            max-width: 400px;
-            margin-bottom: 24px;
-            color: var(--gray-600);
+            line-height: 1.6;
+            max-width: 480px;
+            margin-bottom: 60px;
+            color: var(--gray-400);
         }
 
         .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            background: var(--white);
-            color: var(--black);
-            padding: 16px 32px;
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            padding: 0;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 400;
+            font-size: 14px;
+            border-bottom: 1px solid var(--white);
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+            opacity: 0.7;
+            transform: translateX(10px);
+        }
+
+        /* SIDEBAR */
+        .hero-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 120px;
         }
 
         .hero-image {
             position: relative;
-            height: 400px;
+            height: 300px;
             background: var(--gray-900);
-            border-radius: 12px;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
         }
 
         .hero-image::before {
@@ -468,16 +487,16 @@
 
         /* STATS - DECONSTRUCTED */
         .stats {
-            padding: 160px 0;
-            border-top: 1px solid var(--gray-800);
-            border-bottom: 1px solid var(--gray-800);
+            padding: 200px 0;
             background: var(--black);
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 120px;
+            gap: 80px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .stat {
@@ -486,19 +505,19 @@
 
         .stat-number {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(60px, 8vw, 120px);
-            font-weight: 900;
-            line-height: 0.8;
-            margin-bottom: 20px;
+            font-size: clamp(3rem, 6vw, 4rem);
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 10px;
             color: var(--white);
         }
 
         .stat-label {
-            font-size: 16px;
+            font-size: 12px;
             font-weight: 400;
-            color: var(--gray-500);
+            color: var(--gray-600);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.2em;
         }
 
         /* PROCESS SECTION */
@@ -725,20 +744,20 @@
 
         .portfolio-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(60px, 10vw, 140px);
-            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
             line-height: 0.9;
-            letter-spacing: -0.03em;
-            margin-bottom: 60px;
+            letter-spacing: -0.04em;
+            margin-bottom: 40px;
             color: var(--white);
         }
 
         .portfolio-subtitle {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 400;
-            line-height: 1.4;
-            max-width: 600px;
-            color: var(--gray-600);
+            line-height: 1.5;
+            max-width: 520px;
+            color: var(--gray-400);
         }
 
         .project-grid {
@@ -762,7 +781,7 @@
         }
 
         .project-image {
-            height: 500px;
+            height: 400px;
             background: var(--gray-900);
             position: relative;
             overflow: hidden;
@@ -791,20 +810,20 @@
 
         .project-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(40px, 6vw, 80px);
-            font-weight: 700;
-            line-height: 0.9;
-            margin-bottom: 30px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 20px;
             letter-spacing: -0.02em;
             color: var(--white);
         }
 
         .project-description {
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1.5;
-            color: var(--gray-600);
-            margin-bottom: 40px;
-            max-width: 400px;
+            color: var(--gray-400);
+            margin-bottom: 30px;
+            max-width: 350px;
         }
 
         .project-meta {
@@ -826,10 +845,10 @@
 
         .services-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(60px, 10vw, 140px);
-            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
             line-height: 0.9;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.04em;
             color: var(--white);
         }
 
@@ -839,10 +858,10 @@
 
         .service-item {
             border-bottom: 1px solid var(--gray-800);
-            padding: 60px 0;
+            padding: 40px 0;
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 80px;
+            grid-template-columns: 80px 1fr 1fr;
+            gap: 40px;
             align-items: start;
         }
 
@@ -854,17 +873,18 @@
 
         .service-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(30px, 4vw, 60px);
-            font-weight: 700;
-            line-height: 1.1;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            line-height: 1.2;
             letter-spacing: -0.02em;
             color: var(--white);
         }
 
         .service-description {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.5;
-            color: var(--gray-600);
+            color: var(--gray-400);
+            max-width: 400px;
         }
 
         /* MATERIALS SHOWCASE */
@@ -1492,31 +1512,24 @@
             }
         }
 
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr 250px;
+                gap: clamp(30px, 6vw, 60px);
+            }
+        }
+
         @media (max-width: 1024px) {
-            .hero-grid {
+            .hero-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 80px 0 20px;
-                text-align: center;
+                gap: 60px;
             }
 
-            .hero-image {
+            .hero-sidebar {
+                position: static;
                 order: -1;
-                min-height: 300px;
-                max-height: 400px;
+                max-width: 400px;
                 margin: 0 auto;
-                max-width: 500px;
-            }
-
-            .hero-title {
-                font-size: clamp(36px, 6vw, 80px);
-                margin-bottom: 20px;
-            }
-
-            .hero-subtitle {
-                font-size: clamp(14px, 1.8vw, 18px);
-                margin-bottom: 30px;
-                max-width: 100%;
             }
         }
 
@@ -1668,25 +1681,28 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero section">
         <div class="container">
-            <div class="hero-grid">
+            <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title fade-up">Premium<br><span class="red">Roofing</span></h1>
-                    <p class="hero-subtitle fade-up">We transform luxury properties with uncompromising craftsmanship and architectural precision.</p>
+                    <div class="hero-intro fade-up">Premium Roofing Contractors</div>
+                    <h1 class="hero-title fade-up">Denver's<br>Premier<br><span class="red">Roofing</span><br>Company</h1>
+                    <p class="hero-subtitle fade-up">Expert craftsmanship and premium materials for residential and commercial roofing projects across the Denver metro area.</p>
                     <a href="#work" class="hero-cta fade-up">View Our Work</a>
                 </div>
-                <div class="hero-image fade-up">
-                    <div class="before-after-slider">
-                        <div class="before-image">
-                            <img src="/Users/alec/Desktop/roof_site_assets/before5.jpg" alt="Before">
-                        </div>
-                        <div class="after-image">
-                            <img src="/Users/alec/Desktop/roof_site_assets/after5.jpg" alt="After">
-                        </div>
-                        <div class="slider-handle">
-                            <div class="slider-line"></div>
-                            <div class="slider-button"></div>
+                <div class="hero-sidebar">
+                    <div class="hero-image fade-up">
+                        <div class="before-after-slider">
+                            <div class="before-image">
+                                <img src="/Users/alec/Desktop/roof_site_assets/before5.jpg" alt="Before">
+                            </div>
+                            <div class="after-image">
+                                <img src="/Users/alec/Desktop/roof_site_assets/after5.jpg" alt="After">
+                            </div>
+                            <div class="slider-handle">
+                                <div class="slider-line"></div>
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1699,16 +1715,16 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat fade-up">
+                    <div class="stat-number">184+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat fade-up">
                     <div class="stat-number">4.9★</div>
                     <div class="stat-label">Google Rating</div>
                 </div>
                 <div class="stat fade-up">
-                    <div class="stat-number">184</div>
-                    <div class="stat-label">Reviews</div>
-                </div>
-                <div class="stat fade-up">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Years Serving Denver</div>
+                    <div class="stat-number">25yr</div>
+                    <div class="stat-label">Warranty</div>
                 </div>
             </div>
         </div>
@@ -1796,49 +1812,49 @@
         </div>
     </section>
 
-    <!-- Why Work With RoofStar -->
+    <!-- Our Services -->
     <section class="why-work-with-us">
         <div class="container">
             <div class="why-work-header">
-                <h2 class="why-work-title">Why Roofing Contractors<br>Choose <span class="red">RoofStar</span></h2>
-                <p class="why-work-subtitle">More than just roofing - we're your growth partner in the competitive Denver market</p>
+                <h2 class="why-work-title">Roofing<br>Services</h2>
+                <p class="why-work-subtitle">Comprehensive roofing solutions for residential and commercial properties in Denver</p>
             </div>
             <div class="why-work-grid">
                 <div class="why-work-card">
                     <div class="card-number">01</div>
-                    <h3 class="card-title">Higher Conversion Rates</h3>
-                    <p class="card-description">Our proven sales process and professional presentation materials help close 40% more deals than industry average.</p>
-                    <div class="card-stat">+40% Close Rate</div>
+                    <h3 class="card-title">Roof Replacement</h3>
+                    <p class="card-description">Complete roof replacement using premium materials and expert installation techniques.</p>
+                    <div class="card-stat">25yr Warranty</div>
                 </div>
                 <div class="why-work-card">
                     <div class="card-number">02</div>
-                    <h3 class="card-title">Premium Pricing Strategy</h3>
-                    <p class="card-description">Position yourself as the premium choice in Denver. Our marketing approach justifies 20-30% higher pricing than competitors.</p>
-                    <div class="card-stat">+25% Profit Margins</div>
+                    <h3 class="card-title">Roof Repair</h3>
+                    <p class="card-description">Emergency repairs and maintenance to extend your roof's lifespan and prevent damage.</p>
+                    <div class="card-stat">24/7 Service</div>
                 </div>
                 <div class="why-work-card">
                     <div class="card-number">03</div>
-                    <h3 class="card-title">Insurance Partnership</h3>
-                    <p class="card-description">Direct relationships with all major insurance carriers. We handle the paperwork, you focus on the work.</p>
-                    <div class="card-stat">90% Claim Approval</div>
+                    <h3 class="card-title">Storm Damage</h3>
+                    <p class="card-description">Expert storm damage assessment and repair with direct insurance coordination.</p>
+                    <div class="card-stat">Free Inspection</div>
                 </div>
                 <div class="why-work-card">
                     <div class="card-number">04</div>
-                    <h3 class="card-title">Lead Generation System</h3>
-                    <p class="card-description">Consistent flow of qualified leads through our digital marketing and referral network. No more hunting for work.</p>
-                    <div class="card-stat">50+ Leads/Month</div>
+                    <h3 class="card-title">Commercial Roofing</h3>
+                    <p class="card-description">Specialized commercial roofing solutions for businesses and industrial properties.</p>
+                    <div class="card-stat">Licensed & Insured</div>
                 </div>
                 <div class="why-work-card">
                     <div class="card-number">05</div>
-                    <h3 class="card-title">Business Growth Support</h3>
-                    <p class="card-description">Operations consulting, crew training, and business development to scale from 1-2 person operation to full roofing company.</p>
-                    <div class="card-stat">3x Revenue Growth</div>
+                    <h3 class="card-title">Gutter Systems</h3>
+                    <p class="card-description">Professional gutter installation and repair to protect your property from water damage.</p>
+                    <div class="card-stat">Seamless Gutters</div>
                 </div>
                 <div class="why-work-card">
                     <div class="card-number">06</div>
-                    <h3 class="card-title">Material Discounts</h3>
-                    <p class="card-description">Bulk purchasing power gets you contractor pricing on premium materials. Save 15-20% on every job.</p>
-                    <div class="card-stat">20% Material Savings</div>
+                    <h3 class="card-title">Roof Inspection</h3>
+                    <p class="card-description">Thorough roof inspections to identify potential issues before they become problems.</p>
+                    <div class="card-stat">Free Estimate</div>
                 </div>
             </div>
         </div>
@@ -1848,8 +1864,8 @@
     <section class="portfolio" id="work">
         <div class="container">
             <div class="portfolio-header">
-                <h2 class="portfolio-title fade-up">Selected<br>Work</h2>
-                <p class="portfolio-subtitle fade-up">Each project represents our commitment to excellence in luxury roofing solutions.</p>
+                <h2 class="portfolio-title fade-up">Featured<br>Projects</h2>
+                <p class="portfolio-subtitle fade-up">Recent roofing projects showcasing our craftsmanship and attention to detail.</p>
             </div>
 
             <div class="project-grid">
@@ -1859,8 +1875,8 @@
                     </div>
                     <div class="project-content">
                         <div class="project-number">01</div>
-                        <h3 class="project-title">Cherry Creek Estate</h3>
-                        <p class="project-description">Complete luxury transformation featuring imported Welsh slate and custom copper detailing.</p>
+                        <h3 class="project-title">Residential Roofing</h3>
+                        <p class="project-description">Complete roof replacement with architectural shingles and enhanced weather protection.</p>
                     </div>
                 </div>
 
@@ -1870,8 +1886,8 @@
                     </div>
                     <div class="project-content">
                         <div class="project-number">02</div>
-                        <h3 class="project-title">Highland Modern</h3>
-                        <p class="project-description">Contemporary standing seam metal roofing with integrated smart systems.</p>
+                        <h3 class="project-title">Metal Roofing</h3>
+                        <p class="project-description">Standing seam metal roof installation with superior durability and energy efficiency.</p>
                     </div>
                 </div>
 
@@ -1881,8 +1897,8 @@
                     </div>
                     <div class="project-content">
                         <div class="project-number">03</div>
-                        <h3 class="project-title">Executive Residence</h3>
-                        <p class="project-description">Architectural precision with premium materials and energy optimization.</p>
+                        <h3 class="project-title">Storm Restoration</h3>
+                        <p class="project-description">Hail damage restoration with impact-resistant materials and insurance coordination.</p>
                     </div>
                 </div>
             </div>
@@ -2286,13 +2302,15 @@
             });
         }
 
-        // Header scroll effect with GSAP
+        // Header scroll effect with GSAP and demo banner fade
         const header = document.querySelector('.header');
+        const demoBanner = document.querySelector('.demo-banner');
         let lastScrollY = window.scrollY;
 
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
 
+            // Header scroll behavior
             if (currentScrollY > 100) {
                 header.classList.add('scrolled');
             } else {
@@ -2303,6 +2321,13 @@
                 gsap.to(header, { y: '-100%', duration: 0.3 });
             } else {
                 gsap.to(header, { y: '0%', duration: 0.3 });
+            }
+
+            // Demo banner fade on scroll
+            if (currentScrollY > 50) {
+                demoBanner.classList.add('hidden');
+            } else {
+                demoBanner.classList.remove('hidden');
             }
 
             lastScrollY = currentScrollY;

@@ -321,18 +321,22 @@
 
         /* HERO */
         .hero {
-            padding: 200px 0 120px;
-            border-bottom: 1px solid var(--gray-800);
+            padding: 200px 0;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
         }
 
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(80px, 12vw, 180px);
-            font-weight: 700;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
             line-height: 0.9;
             letter-spacing: -0.04em;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
             color: var(--white);
+            text-transform: uppercase;
         }
 
         .hero-title .red {
@@ -340,28 +344,30 @@
         }
 
         .hero-subtitle {
-            font-size: 24px;
-            font-weight: 400;
-            line-height: 1.4;
-            max-width: 700px;
-            color: var(--gray-600);
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 600px;
+            color: var(--gray-400);
         }
 
         /* PORTFOLIO GRID */
         .portfolio {
-            padding: 120px 0;
+            padding: 200px 0;
             background: var(--black);
         }
 
         .portfolio-grid {
             display: grid;
-            gap: 200px;
+            gap: 160px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .project-section {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 120px;
             align-items: start;
             transition: all 0.4s ease;
         }
@@ -372,7 +378,7 @@
         }
 
         .project-section:nth-child(even) {
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1.5fr 1fr;
         }
 
         .project-section:nth-child(even) .project-info {
@@ -418,21 +424,22 @@
         }
 
         .project-number {
-            font-size: 16px;
-            color: var(--gray-500);
-            margin-bottom: 20px;
+            font-size: 12px;
+            color: var(--gray-600);
+            margin-bottom: 30px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.2em;
         }
 
         .project-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(40px, 6vw, 80px);
-            font-weight: 700;
-            line-height: 0.9;
-            margin-bottom: 40px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 60px;
             letter-spacing: -0.02em;
             color: var(--white);
+            text-transform: uppercase;
         }
 
         .project-description {
@@ -500,7 +507,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) contrast(1.2);
         }
 
         .after-image {
@@ -631,8 +637,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title fade-up">Complete<br><span class="red">Portfolio</span></h1>
-            <p class="hero-subtitle fade-up">A comprehensive collection of our premium roofing transformations, showcasing our commitment to architectural excellence and uncompromising craftsmanship.</p>
+            <h1 class="hero-title fade-up">Recent<br><span class="red">Projects</span></h1>
+            <p class="hero-subtitle fade-up">Featured roofing projects showcasing our quality craftsmanship and attention to detail across the Denver metro area.</p>
         </div>
     </section>
 
@@ -749,23 +755,23 @@
                 <div class="project-section fade-up">
                     <div class="project-info">
                         <div class="project-number">Project 04</div>
-                        <h2 class="project-title">Family Home Restoration</h2>
-                        <p class="project-description">Complete roof replacement for this two-story family home with high-quality architectural shingles and updated guttering system.</p>
+                        <h2 class="project-title">Commercial Roofing</h2>
+                        <p class="project-description">Complete commercial roof restoration transforming this industrial property with durable standing seam metal roofing for superior weather protection.</p>
                         <ul class="project-details">
                             <li><strong>Location:</strong> Thornton, CO</li>
-                            <li><strong>Materials:</strong> Architectural Shingles</li>
-                            <li><strong>Timeline:</strong> 3 Days</li>
-                            <li><strong>Specialty:</strong> Storm Damage Repair</li>
+                            <li><strong>Materials:</strong> Standing Seam Metal</li>
+                            <li><strong>Timeline:</strong> 5 Days</li>
+                            <li><strong>Specialty:</strong> Commercial Restoration</li>
                         </ul>
                     </div>
                     <div class="project-images">
                         <div class="before-after-container">
                             <div class="before-after-slider" data-project="4">
                                 <div class="before-image">
-                                    <img src="/Users/alec/Desktop/roof_site_assets/before4.jpg" alt="Before Mansion">
+                                    <img src="/var/folders/zw/wqd1gx6x1_d23tc29j8b7qcr0000gn/T/TemporaryItems/NSIRD_screencaptureui_sLOdkR/Screenshot 2025-01-18 at 5.40.52 PM.png" alt="Before Commercial Roofing">
                                 </div>
                                 <div class="after-image">
-                                    <img src="/Users/alec/Desktop/roof_site_assets/after4.jpg" alt="After Mansion">
+                                    <img src="/var/folders/zw/wqd1gx6x1_d23tc29j8b7qcr0000gn/T/TemporaryItems/NSIRD_screencaptureui_sLOdkR/Screenshot 2025-01-18 at 5.40.55 PM.png" alt="After Commercial Roofing">
                                 </div>
                                 <div class="slider-handle">
                                     <div class="slider-line"></div>
@@ -833,6 +839,9 @@
             let isDragging = false;
             let autoPlay = true;
             let currentPosition = 50;
+
+            // Initialize slider in middle position
+            updateSlider(50);
             let direction = 1;
 
             function updateSlider(percentage) {
@@ -850,11 +859,11 @@
             // Automatic animation with staggered timing
             function autoSlide() {
                 if (!isDragging && autoPlay) {
-                    currentPosition += direction * 0.4;
+                    currentPosition += direction * 0.3;
 
-                    if (currentPosition >= 95) {
+                    if (currentPosition >= 90) {
                         direction = -1;
-                    } else if (currentPosition <= 5) {
+                    } else if (currentPosition <= 10) {
                         direction = 1;
                     }
 
@@ -862,10 +871,10 @@
                 }
             }
 
-            // Start auto animation with staggered delay for each slider
+            // Start auto animation immediately with staggered delay for each slider
             setTimeout(() => {
-                setInterval(autoSlide, 60);
-            }, index * 2000); // 2 second delay between each slider
+                setInterval(autoSlide, 80);
+            }, index * 1500 + 1000); // 1.5 second delay between each slider + 1 second initial delay
 
             handle.addEventListener('mousedown', (e) => {
                 isDragging = true;

@@ -321,17 +321,28 @@
 
         /* HERO */
         .hero {
-            padding: 200px 0 120px;
-            border-bottom: 1px solid var(--gray-800);
+            padding: 160px 0 120px;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
         }
 
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(80px, 12vw, 180px);
-            font-weight: 700;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 300;
             line-height: 0.9;
             letter-spacing: -0.04em;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             color: var(--white);
         }
 
@@ -340,62 +351,149 @@
         }
 
         .hero-subtitle {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 400;
-            line-height: 1.4;
-            max-width: 700px;
-            color: var(--gray-600);
+            line-height: 1.6;
+            max-width: 480px;
+            color: var(--gray-400);
         }
 
-        /* MISSION SECTION */
-        .mission {
-            padding: 200px 0;
+        .hero-stats {
+            display: grid;
+            gap: 40px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+        }
+
+        .hero-stat {
+            text-align: center;
+            padding: 20px 0;
             border-bottom: 1px solid var(--gray-800);
-            background: var(--gray-900);
         }
 
-        .mission-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 120px;
-            align-items: start;
-        }
-
-        .mission-text {
-            font-size: 32px;
-            font-weight: 400;
-            line-height: 1.4;
-            color: var(--white);
-        }
-
-        .mission-stats {
-            display: grid;
-            gap: 60px;
-        }
-
-        .stat {
-            border-bottom: 1px solid var(--gray-700);
-            padding-bottom: 20px;
-        }
-
-        .stat:last-child {
+        .hero-stat:last-child {
             border-bottom: none;
         }
 
-        .stat-number {
+        .stat-value {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 48px;
-            font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
             color: var(--white);
-            margin-bottom: 8px;
             line-height: 1;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            font-size: 16px;
+            font-size: 14px;
             color: var(--gray-500);
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 200px 0;
+            background: var(--gray-900);
+        }
+
+        .section-header {
+            margin-bottom: 120px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 300;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            margin-bottom: 40px;
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 540px;
+            color: var(--gray-400);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--red) 0%, #cc0000 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-item:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--red);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-number {
+            background: var(--red);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--white);
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-description {
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--gray-400);
+            position: relative;
+            z-index: 2;
         }
 
         /* TEAM SECTION */
@@ -410,20 +508,21 @@
 
         .team-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(60px, 10vw, 140px);
-            font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -0.03em;
-            margin-bottom: 60px;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 80px;
             color: var(--white);
         }
 
         .team-subtitle {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 400;
-            line-height: 1.4;
-            max-width: 600px;
-            color: var(--gray-600);
+            line-height: 1.5;
+            max-width: 540px;
+            color: var(--gray-500);
         }
 
         .team-grid {
@@ -481,9 +580,9 @@
 
         .member-name {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(40px, 6vw, 80px);
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            line-height: 0.9;
+            line-height: 1.1;
             margin-bottom: 40px;
             letter-spacing: -0.02em;
             color: var(--white);
@@ -529,10 +628,11 @@
 
         .values-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(60px, 10vw, 140px);
-            font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -0.03em;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
             color: var(--white);
         }
 
@@ -615,9 +715,14 @@
                 padding: 0 20px;
             }
 
-            .mission-content {
+            .hero-content {
                 grid-template-columns: 1fr;
-                gap: 80px;
+                gap: 60px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 24px;
             }
 
             .team-member {
@@ -644,8 +749,16 @@
                 padding: 140px 0 80px;
             }
 
-            .mission {
+            .hero-stats {
+                padding: 30px 20px;
+            }
+
+            .services {
                 padding: 120px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
 
             .team {
@@ -697,35 +810,69 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title fade-up">Crafting<br><span class="red">Excellence</span></h1>
-            <p class="hero-subtitle fade-up">Denver's premier roofing craftsmen, dedicated to architectural precision and uncompromising quality since 2018.</p>
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1 class="hero-title fade-up">Denver's<br>Premier<br><span class="red">Roofing</span><br>Company</h1>
+                    <p class="hero-subtitle fade-up">Expert craftsmanship, premium materials, and unmatched service quality for residential and commercial roofing projects across the Denver metro area.</p>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-stats">
+                        <div class="hero-stat fade-up">
+                            <div class="stat-value">4.9★</div>
+                            <div class="stat-label">Google Rating</div>
+                        </div>
+                        <div class="hero-stat fade-up">
+                            <div class="stat-value">184</div>
+                            <div class="stat-label">Reviews</div>
+                        </div>
+                        <div class="hero-stat fade-up">
+                            <div class="stat-value">6</div>
+                            <div class="stat-label">Years Serving Denver</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Mission -->
-    <section class="mission">
+    <!-- Services -->
+    <section class="services">
         <div class="container">
-            <div class="mission-content">
-                <div class="mission-text fade-up">
-                    We believe exceptional roofing is both art and science—where traditional craftsmanship meets modern innovation.
+            <div class="section-header">
+                <h2 class="section-title fade-up">Roofing<br>Services</h2>
+                <p class="section-subtitle fade-up">Comprehensive roofing solutions for residential and commercial properties throughout Denver and surrounding areas.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item fade-up">
+                    <div class="service-number">01</div>
+                    <h3 class="service-title">Roof Replacement</h3>
+                    <p class="service-description">Complete roof replacement using premium materials and expert installation techniques.</p>
                 </div>
-                <div class="mission-stats fade-up">
-                    <div class="stat">
-                        <div class="stat-number">2018</div>
-                        <div class="stat-label">Founded</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">184</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">25</div>
-                        <div class="stat-label">Year Warranty</div>
-                    </div>
+                <div class="service-item fade-up">
+                    <div class="service-number">02</div>
+                    <h3 class="service-title">Roof Repair</h3>
+                    <p class="service-description">Emergency repairs and maintenance to extend your roof's lifespan and prevent damage.</p>
+                </div>
+                <div class="service-item fade-up">
+                    <div class="service-number">03</div>
+                    <h3 class="service-title">Commercial Roofing</h3>
+                    <p class="service-description">Specialized commercial roofing solutions for businesses and industrial properties.</p>
+                </div>
+                <div class="service-item fade-up">
+                    <div class="service-number">04</div>
+                    <h3 class="service-title">Gutter Installation</h3>
+                    <p class="service-description">Professional gutter systems to protect your property from water damage.</p>
+                </div>
+                <div class="service-item fade-up">
+                    <div class="service-number">05</div>
+                    <h3 class="service-title">Roof Inspection</h3>
+                    <p class="service-description">Thorough roof inspections to identify potential issues before they become problems.</p>
+                </div>
+                <div class="service-item fade-up">
+                    <div class="service-number">06</div>
+                    <h3 class="service-title">Storm Damage</h3>
+                    <p class="service-description">Emergency storm damage assessment and repair services available 24/7.</p>
                 </div>
             </div>
         </div>
@@ -735,8 +882,8 @@
     <section class="team">
         <div class="container">
             <div class="team-header">
-                <h2 class="team-title fade-up">Our<br>Team</h2>
-                <p class="team-subtitle fade-up">Master craftsmen with decades of combined experience in luxury roofing and architectural precision.</p>
+                <h2 class="team-title fade-up">Meet Our<br>Expert Team</h2>
+                <p class="team-subtitle fade-up">Experienced roofing professionals dedicated to delivering exceptional results on every project in the Denver area.</p>
             </div>
 
             <div class="team-grid">
@@ -748,7 +895,7 @@
                     <div class="member-info">
                         <div class="member-role">Founder & CEO</div>
                         <h3 class="member-name">John Tompkins</h3>
-                        <p class="member-bio">John founded RoofStar in 2018 with a vision to elevate industry standards through precision craftsmanship and uncompromising quality. His leadership drives our commitment to architectural excellence.</p>
+                        <p class="member-bio">John founded RoofStar in 2018 to bring honest, reliable roofing services to Denver homeowners and businesses. His hands-on approach ensures every project meets the highest standards.</p>
                         <ul class="member-credentials">
                             <li><strong>Certification:</strong> Master Roofer, PMP, OSHA 30</li>
                             <li><strong>Specialty:</strong> Business Operations & Quality</li>
@@ -765,7 +912,7 @@
                     <div class="member-info">
                         <div class="member-role">Client Relations Director</div>
                         <h3 class="member-name">Sarah Smith</h3>
-                        <p class="member-bio">Sarah ensures every client experience exceeds expectations, from initial consultation through project completion. Her attention to detail and communication excellence makes each project seamless.</p>
+                        <p class="member-bio">Sarah coordinates every aspect of our roofing projects, ensuring clear communication and customer satisfaction from estimate to completion. She's your main point of contact throughout the process.</p>
                         <ul class="member-credentials">
                             <li><strong>Certification:</strong> Project Management, Customer Success</li>
                             <li><strong>Specialty:</strong> Client Experience & Design</li>
@@ -782,7 +929,7 @@
                     <div class="member-info">
                         <div class="member-role">Master Installer</div>
                         <h3 class="member-name">Leonard Goodman</h3>
-                        <p class="member-bio">Leonard's expertise in premium materials and installation techniques ensures every project meets the highest standards of craftsmanship and durability.</p>
+                        <p class="member-bio">Leonard leads our installation teams with over 7 years of hands-on roofing experience. His expertise in material selection and installation ensures lasting, quality results.</p>
                         <ul class="member-credentials">
                             <li><strong>Certification:</strong> Slate & Tile Specialist</li>
                             <li><strong>Specialty:</strong> Premium Materials</li>
@@ -798,29 +945,29 @@
     <section class="values">
         <div class="container">
             <div class="values-header">
-                <h2 class="values-title fade-up">Our Values</h2>
+                <h2 class="values-title fade-up">Why Choose<br>RoofStar</h2>
             </div>
 
             <ul class="values-list">
                 <li class="value-item fade-up">
                     <div class="value-number">01</div>
-                    <h3 class="value-title">Uncompromising Quality</h3>
-                    <p class="value-description">Every project meets the highest standards of craftsmanship using only premium materials and proven techniques.</p>
+                    <h3 class="value-title">Licensed & Insured</h3>
+                    <p class="value-description">Fully licensed and insured roofing contractor with comprehensive coverage for your peace of mind.</p>
                 </li>
                 <li class="value-item fade-up">
                     <div class="value-number">02</div>
-                    <h3 class="value-title">Architectural Precision</h3>
-                    <p class="value-description">We approach each project with the attention to detail and precision of fine architecture.</p>
+                    <h3 class="value-title">Local Denver Experts</h3>
+                    <p class="value-description">6 years serving the Denver metro area with deep knowledge of local weather and building requirements.</p>
                 </li>
                 <li class="value-item fade-up">
                     <div class="value-number">03</div>
-                    <h3 class="value-title">Client Partnership</h3>
-                    <p class="value-description">We work closely with clients to understand their vision and exceed their expectations.</p>
+                    <h3 class="value-title">Quality Materials</h3>
+                    <p class="value-description">We use only premium roofing materials from trusted manufacturers with comprehensive warranties.</p>
                 </li>
                 <li class="value-item fade-up">
                     <div class="value-number">04</div>
-                    <h3 class="value-title">Innovation</h3>
-                    <p class="value-description">Continuously advancing our techniques while honoring traditional craftsmanship principles.</p>
+                    <h3 class="value-title">Emergency Service</h3>
+                    <p class="value-description">24/7 emergency roofing services for storm damage and urgent repair needs throughout Denver.</p>
                 </li>
             </ul>
         </div>
