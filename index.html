@@ -57,18 +57,36 @@
         /* CURSOR */
         .cursor {
             position: fixed;
-            width: 8px;
-            height: 8px;
-            background: var(--white);
-            border-radius: 50%;
+            width: 24px;
+            height: 24px;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.15s ease;
+            transition: all 0.15s ease;
+            left: 0;
+            top: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor::before {
+            content: '★';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 20px;
+            color: var(--red);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            transition: all 0.15s ease;
+            line-height: 1;
         }
 
         .cursor.large {
-            transform: scale(6);
-            mix-blend-mode: difference;
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .cursor.clicking::before {
+            color: var(--white);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            transform: scale(0.8);
         }
 
         /* ANIMATIONS */
@@ -877,11 +895,12 @@
 
         .service-item {
             border-bottom: 1px solid var(--gray-800);
-            padding: 40px 0;
+            padding: 50px 0;
             display: grid;
-            grid-template-columns: 80px 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 80px 300px 1fr;
+            gap: 60px;
             align-items: start;
+            max-width: 1000px;
         }
 
         .service-number {
@@ -1529,6 +1548,11 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
+
+            .service-item {
+                grid-template-columns: 80px 250px 1fr;
+                gap: 40px;
+            }
         }
 
         @media (max-width: 1200px) {
@@ -1625,6 +1649,8 @@
                 grid-template-columns: 1fr;
                 gap: 20px;
                 text-align: left;
+                max-width: none;
+                padding: 40px 0;
             }
 
             .cta-buttons {
@@ -2210,6 +2236,15 @@
             el.addEventListener('mouseleave', () => cursor.classList.remove('large'));
         });
 
+        // Cursor click effect
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('clicking');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('clicking');
+        });
+
         // Fade Up Animations
         gsap.utils.toArray('.fade-up').forEach(element => {
             gsap.fromTo(element,
@@ -2382,7 +2417,7 @@
                 if (currentScrollY > 200) {
                     resetHeader(); // Show header when scrolling stops
                 }
-            }, 1500); // Show after 1.5 seconds of no scrolling
+            }, 3000); // Show after 3 seconds of no scrolling
 
             lastScrollY = currentScrollY;
         }

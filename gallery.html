@@ -57,18 +57,36 @@
         /* CURSOR */
         .cursor {
             position: fixed;
-            width: 8px;
-            height: 8px;
-            background: var(--white);
-            border-radius: 50%;
+            width: 24px;
+            height: 24px;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.15s ease;
+            transition: all 0.15s ease;
+            left: 0;
+            top: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor::before {
+            content: '★';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 20px;
+            color: var(--red);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            transition: all 0.15s ease;
+            line-height: 1;
         }
 
         .cursor.large {
-            transform: scale(6);
-            mix-blend-mode: difference;
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .cursor.clicking::before {
+            color: var(--white);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            transform: scale(0.8);
         }
 
         /* ANIMATIONS */
@@ -884,6 +902,15 @@
         hoverElements.forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('large'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('large'));
+        });
+
+        // Cursor click effect
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('clicking');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('clicking');
         });
 
         // Fade Up Animations
