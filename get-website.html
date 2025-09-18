@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alec Johnson — Web Designer for Roofing Companies</title>
+    <title>Alec RJ — Web Designer for Roofing Companies</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -320,7 +320,7 @@
 
         /* FEATURES SECTION */
         .features {
-            padding: 120px 0;
+            padding: 200px 0 120px 0;
             background: var(--gray-900);
         }
 
@@ -584,45 +584,133 @@
             gap: 40px;
         }
 
-        .contact-method {
-            padding: 40px;
+        .contact-form {
             background: var(--gray-800);
+            padding: 40px;
             border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-600);
+            border-radius: 6px;
+            background: var(--gray-700);
+            color: var(--white);
+            font-size: 16px;
             transition: all 0.3s ease;
         }
 
-        .contact-method:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
-        .contact-method-title {
+        .form-group input[type="file"] {
+            background: var(--gray-600);
+            border: 2px dashed var(--gray-500);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .form-group input[type="file"]:hover {
+            border-color: var(--accent);
+        }
+
+        .form-group small {
+            color: var(--gray-400);
+            font-size: 12px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--white);
+            color: var(--black);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 6px;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-
-        .contact-method-info {
             font-size: 16px;
-            color: var(--gray-600);
-            margin-bottom: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: -0.01em;
         }
 
-        .contact-method-link {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-info {
+            text-align: center;
+            padding: 32px;
+            background: var(--gray-800);
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 18px;
-            border-bottom: 2px solid var(--white);
-            padding-bottom: 2px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
             transition: opacity 0.3s ease;
         }
 
-        .contact-method-link:hover {
-            opacity: 0.7;
+        .contact-detail:hover {
+            opacity: 0.8;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
         }
 
         /* RESPONSIVE */
@@ -711,6 +799,19 @@
             .hero-price {
                 font-size: clamp(2rem, 8vw, 3rem);
             }
+
+            .contact-form {
+                padding: 24px;
+            }
+
+            .contact-info {
+                padding: 24px;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
 
         /* ANIMATIONS */
@@ -731,7 +832,7 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo">ALEC JOHNSON</a>
+            <a href="index.html" class="nav-logo">ALEC RJ</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="gallery.html" class="nav-link">Portfolio</a></li>
@@ -795,17 +896,17 @@
 
                     <p class="hero-subtitle fade-up">Premium websites that convert visitors into customers. Built specifically for roofing contractors who want to dominate their local market.</p>
 
-                    <a href="#pricing" class="hero-cta fade-up">Start Your Project</a>
+                    <a href="#contact" class="hero-cta fade-up">Get Started Now</a>
                 </div>
 
                 <div class="hero-sidebar">
                     <div class="profile-card fade-up">
                         <div class="profile-image">A</div>
-                        <h3 class="profile-name">Alec Johnson</h3>
+                        <h3 class="profile-name">Alec RJ</h3>
                         <p class="profile-title">Web Designer</p>
                         <div class="profile-stats">
                             <div class="stat">
-                                <span class="stat-number">5+</span>
+                                <span class="stat-number">8+</span>
                                 <span class="stat-label">Years</span>
                             </div>
                             <div class="stat">
@@ -927,7 +1028,7 @@
                     <div class="pricing-feature">SSL certificate</div>
                 </div>
 
-                <a href="#contact" class="pricing-cta fade-up">Get Started Now</a>
+                <a href="#contact" class="pricing-cta fade-up">Get Your Website</a>
             </div>
         </div>
     </section>
@@ -942,22 +1043,58 @@
                 </div>
 
                 <div class="contact-methods">
-                    <div class="contact-method fade-up">
-                        <h3 class="contact-method-title">Email</h3>
-                        <p class="contact-method-info">Get started instantly</p>
-                        <a href="mailto:alec@roofingwebsites.com" class="contact-method-link">alec@roofingwebsites.com</a>
-                    </div>
+                    <form class="contact-form fade-up">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
 
-                    <div class="contact-method fade-up">
-                        <h3 class="contact-method-title">Phone</h3>
-                        <p class="contact-method-info">Let's discuss your project</p>
-                        <a href="tel:+1234567890" class="contact-method-link">(123) 456-7890</a>
-                    </div>
+                        <div class="form-group">
+                            <label for="business">Business Name *</label>
+                            <input type="text" id="business" name="business" required>
+                        </div>
 
-                    <div class="contact-method fade-up">
-                        <h3 class="contact-method-title">Text</h3>
-                        <p class="contact-method-info">Quick questions welcome</p>
-                        <a href="sms:+1234567890" class="contact-method-link">Send a message</a>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="colors">Preferred Color Scheme</label>
+                            <input type="text" id="colors" name="colors" placeholder="e.g., Blue and white, Red and black">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assets">Logo/Images Upload</label>
+                            <input type="file" id="assets" name="assets" multiple accept="image/*,.pdf,.ai,.eps">
+                            <small>Upload your logo, job photos, or any brand assets</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell me about your roofing business, services, target area, or any specific requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Get My Website - $299</button>
+                    </form>
+
+                    <div class="contact-info fade-up">
+                        <h3>Or Contact Me Directly:</h3>
+                        <div class="contact-details">
+                            <a href="tel:9546145352" class="contact-detail">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">(954) 614-5352</span>
+                            </a>
+                            <a href="mailto:contact@alecrj.com" class="contact-detail">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">contact@alecrj.com</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
