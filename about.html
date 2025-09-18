@@ -435,6 +435,23 @@
             max-width: none;
         }
 
+        .hero-logo {
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .about-logo {
+            height: 120px;
+            width: auto;
+            filter: brightness(1) contrast(1);
+            transition: all 0.3s ease;
+        }
+
+        .about-logo:hover {
+            filter: brightness(1.1) contrast(1.1);
+            transform: scale(1.02);
+        }
+
         .company-intro {
             margin-bottom: 40px;
         }
@@ -1007,17 +1024,13 @@
                 min-height: auto;
             }
 
-            .about-hero-cta {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 15px;
+            .about-logo {
+                height: 80px;
             }
 
-            .btn-primary,
-            .btn-secondary {
+            .hero-logo {
                 text-align: center;
-                width: 100%;
-                max-width: 300px;
+                margin-bottom: 40px;
             }
 
             .stats-grid {
@@ -1064,6 +1077,9 @@
         <div class="container">
             <div class="about-hero-content">
                 <div class="about-hero-left">
+                    <div class="hero-logo fade-up">
+                        <img src="./assets/roofstar.png" alt="RoofStar Logo" class="about-logo">
+                    </div>
                     <div class="company-intro fade-up">
                         <span class="intro-label">ESTABLISHED 2018</span>
                         <h1 class="about-hero-title">Six Years of Roofing<br>Excellence in <span class="red">Denver</span></h1>
