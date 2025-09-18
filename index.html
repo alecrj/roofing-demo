@@ -370,7 +370,7 @@
             align-items: center;
             min-height: 100vh;
             position: relative;
-            background: url('./assets/roofimage.jpg') center/cover no-repeat;
+            background: var(--black);
         }
 
         .hero::before {
@@ -380,8 +380,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(10, 10, 10, 0.75);
+            background: rgba(10, 10, 10, 0.85);
             z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('./assets/roofimage.jpg') center/cover no-repeat;
+            filter: grayscale(100%) contrast(0.8) brightness(0.6);
+            z-index: 0;
         }
 
         .hero-content {
@@ -464,19 +476,20 @@
 
         .hero-stats {
             display: grid;
-            gap: 40px;
-            padding: 40px;
+            gap: 25px;
+            padding: 30px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--gray-800);
             border-radius: 16px;
             backdrop-filter: blur(20px);
             margin-top: 0;
             align-self: start;
+            height: fit-content;
         }
 
         .hero-stat {
             text-align: center;
-            padding: 20px 0;
+            padding: 12px 0;
             border-bottom: 1px solid var(--gray-800);
         }
 
