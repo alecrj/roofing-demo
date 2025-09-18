@@ -41,13 +41,27 @@
         /* HEADER */
         .header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 100;
-            background: var(--white);
-            border-bottom: 1px solid var(--black);
-            height: 80px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            height: 70px;
+            border-radius: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: auto;
+            min-width: 600px;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            height: 60px;
+            min-width: 500px;
         }
 
         .header-inner {
@@ -55,6 +69,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 30px;
         }
 
         .logo {
@@ -66,7 +81,7 @@
         }
 
         .logo img {
-            height: 32px;
+            height: 40px;
             width: auto;
         }
 
@@ -105,7 +120,7 @@
 
         /* HERO */
         .hero {
-            padding: 180px 0 120px;
+            padding: 200px 0 120px;
             border-bottom: 1px solid var(--black);
         }
 
@@ -338,7 +353,7 @@
                     <img src="/Users/alec/Desktop/roof_site_assets/roofstar.png" alt="RoofStar">
                 </a>
                 <nav class="nav">
-                    <a href="index.html">Work</a>
+                    <a href="index.html">Home</a>
                     <a href="#" class="active">Portfolio</a>
                     <a href="about.html">About</a>
                 </nav>
@@ -363,13 +378,13 @@
                 <div class="project-section">
                     <div class="project-info">
                         <div class="project-number">Project 01</div>
-                        <h2 class="project-title">Cherry Creek Estate</h2>
-                        <p class="project-description">Complete luxury transformation featuring imported Welsh slate, custom copper detailing, and architectural precision that elevated this estate's value significantly.</p>
+                        <h2 class="project-title">Suburban Renewal</h2>
+                        <p class="project-description">Complete roof replacement for this family home featuring durable architectural shingles and enhanced weatherproofing for long-term protection.</p>
                         <ul class="project-details">
-                            <li><strong>Location:</strong> Cherry Creek, Denver</li>
-                            <li><strong>Materials:</strong> Welsh Slate, Copper</li>
-                            <li><strong>Timeline:</strong> 4 Weeks</li>
-                            <li><strong>Specialty:</strong> Historic Restoration</li>
+                            <li><strong>Location:</strong> Littleton, CO</li>
+                            <li><strong>Materials:</strong> Architectural Shingles</li>
+                            <li><strong>Timeline:</strong> 3 Days</li>
+                            <li><strong>Specialty:</strong> Family Home Upgrade</li>
                         </ul>
                     </div>
                     <div class="project-images">
@@ -398,13 +413,13 @@
                 <div class="project-section">
                     <div class="project-info">
                         <div class="project-number">Project 02</div>
-                        <h2 class="project-title">Highland Modern</h2>
-                        <p class="project-description">Contemporary standing seam metal roofing with integrated smart home systems and energy optimization technology.</p>
+                        <h2 class="project-title">Ranch Home Revival</h2>
+                        <p class="project-description">Updated this classic ranch home with premium asphalt shingles, improving both curb appeal and weather resistance for years to come.</p>
                         <ul class="project-details">
-                            <li><strong>Location:</strong> Highland, Denver</li>
-                            <li><strong>Materials:</strong> Standing Seam Metal</li>
-                            <li><strong>Timeline:</strong> 3 Weeks</li>
-                            <li><strong>Specialty:</strong> Smart Integration</li>
+                            <li><strong>Location:</strong> Westminster, CO</li>
+                            <li><strong>Materials:</strong> Premium Asphalt Shingles</li>
+                            <li><strong>Timeline:</strong> 2 Days</li>
+                            <li><strong>Specialty:</strong> Ranch Style Upgrade</li>
                         </ul>
                     </div>
                     <div class="project-images">
@@ -433,13 +448,13 @@
                 <div class="project-section">
                     <div class="project-info">
                         <div class="project-number">Project 03</div>
-                        <h2 class="project-title">Executive Residence</h2>
-                        <p class="project-description">Architectural precision with premium materials and energy optimization for this executive family residence.</p>
+                        <h2 class="project-title">Metal Roof Upgrade</h2>
+                        <p class="project-description">Transformed this home from traditional asphalt shingles to durable standing seam metal roofing for superior longevity and energy efficiency.</p>
                         <ul class="project-details">
-                            <li><strong>Location:</strong> Greenwood Village</li>
-                            <li><strong>Materials:</strong> Premium Composite</li>
-                            <li><strong>Timeline:</strong> 5 Weeks</li>
-                            <li><strong>Specialty:</strong> Energy Efficiency</li>
+                            <li><strong>Location:</strong> Aurora, CO</li>
+                            <li><strong>Materials:</strong> Standing Seam Metal</li>
+                            <li><strong>Timeline:</strong> 4 Days</li>
+                            <li><strong>Specialty:</strong> Shingle to Metal Conversion</li>
                         </ul>
                     </div>
                     <div class="project-images">
@@ -468,13 +483,13 @@
                 <div class="project-section">
                     <div class="project-info">
                         <div class="project-number">Project 04</div>
-                        <h2 class="project-title">Luxury Mansion</h2>
-                        <p class="project-description">Complete roofing system overhaul for this prestigious mansion featuring multiple roof lines and premium materials.</p>
+                        <h2 class="project-title">Family Home Restoration</h2>
+                        <p class="project-description">Complete roof replacement for this two-story family home with high-quality architectural shingles and updated guttering system.</p>
                         <ul class="project-details">
-                            <li><strong>Location:</strong> Cherry Hills Village</li>
-                            <li><strong>Materials:</strong> Cedar Shake, Copper</li>
-                            <li><strong>Timeline:</strong> 6 Weeks</li>
-                            <li><strong>Specialty:</strong> Complex Architecture</li>
+                            <li><strong>Location:</strong> Thornton, CO</li>
+                            <li><strong>Materials:</strong> Architectural Shingles</li>
+                            <li><strong>Timeline:</strong> 3 Days</li>
+                            <li><strong>Specialty:</strong> Storm Damage Repair</li>
                         </ul>
                     </div>
                     <div class="project-images">
@@ -527,11 +542,11 @@
             // Automatic animation with staggered timing
             function autoSlide() {
                 if (!isDragging && autoPlay) {
-                    currentPosition += direction * 1.2;
+                    currentPosition += direction * 0.4;
 
-                    if (currentPosition >= 80) {
+                    if (currentPosition >= 95) {
                         direction = -1;
-                    } else if (currentPosition <= 20) {
+                    } else if (currentPosition <= 5) {
                         direction = 1;
                     }
 
@@ -541,8 +556,8 @@
 
             // Start auto animation with staggered delay for each slider
             setTimeout(() => {
-                setInterval(autoSlide, 30);
-            }, index * 1200); // 1.2 second delay between each slider
+                setInterval(autoSlide, 60);
+            }, index * 2000); // 2 second delay between each slider
 
             handle.addEventListener('mousedown', (e) => {
                 isDragging = true;
@@ -596,6 +611,22 @@
                     autoPlay = true;
                 }
             });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollY = currentScrollY;
         });
     </script>
 </body>

@@ -41,13 +41,15 @@
         /* HEADER */
         .header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 20px;
+            left: 20px;
+            right: 20px;
             z-index: 100;
             background: var(--white);
-            border-bottom: 1px solid var(--black);
-            height: 80px;
+            border: 1px solid var(--black);
+            height: 100px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .header-inner {
@@ -55,6 +57,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 40px;
         }
 
         .logo {
@@ -66,7 +69,7 @@
         }
 
         .logo img {
-            height: 32px;
+            height: 40px;
             width: auto;
         }
 
@@ -105,7 +108,7 @@
 
         /* HERO */
         .hero {
-            padding: 180px 0 120px;
+            padding: 200px 0 120px;
             border-bottom: 1px solid var(--black);
         }
 
@@ -400,7 +403,7 @@
                     <img src="/Users/alec/Desktop/roof_site_assets/roofstar.png" alt="RoofStar">
                 </a>
                 <nav class="nav">
-                    <a href="index.html">Work</a>
+                    <a href="index.html">Home</a>
                     <a href="gallery.html">Portfolio</a>
                     <a href="#" class="active">About</a>
                 </nav>
@@ -540,5 +543,23 @@
             </ul>
         </div>
     </section>
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
 </body>
 </html>
