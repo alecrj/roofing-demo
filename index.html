@@ -1461,6 +1461,65 @@
             border-bottom: 1px solid var(--black);
         }
 
+        /* Mobile/Desktop visibility for reviews section */
+        .reviews-desktop {
+            display: block;
+        }
+
+        .website-services-mobile {
+            display: none;
+        }
+
+        /* Website Services Mobile Alternative Styling */
+        .website-services-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .website-services-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(60px, 10vw, 140px);
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            margin-bottom: 40px;
+            color: var(--white);
+        }
+
+        .website-services-title .line {
+            display: block;
+        }
+
+        .website-services-title .blue {
+            color: var(--blue);
+        }
+
+        .website-services-subtitle {
+            font-size: 20px;
+            color: var(--gray-600);
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .website-services-cta {
+            display: inline-block;
+            background: var(--blue);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .website-services-cta:hover {
+            background: var(--white);
+            color: var(--blue);
+            transform: translateY(-2px);
+        }
+
         .reviews-header {
             text-align: center;
             margin-bottom: 60px;
@@ -1837,20 +1896,59 @@
             }
         }
 
+        /* MOBILE HERO IMPROVEMENTS */
         @media (max-width: 768px) {
             .hero {
-                min-height: 500px;
-                max-height: 700px;
+                min-height: 100vh;
+                padding: 120px 0 60px;
             }
 
-            .hero-grid {
-                padding: 60px 0 20px;
-                gap: 30px;
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-stats {
+                order: -1;
+                max-width: 300px;
+                margin: 0 auto 40px auto;
+                padding: 25px 20px;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+                line-height: 0.95;
+                margin-bottom: 24px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 32px;
+                max-width: 100%;
+            }
+
+            .hero-cta-buttons {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
+
+            .hero-cta-buttons .btn-primary,
+            .hero-cta-buttons .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                padding: 16px 32px;
+                font-size: 16px;
+                min-height: 44px;
             }
 
             .hero-image {
                 min-height: 250px;
                 max-height: 300px;
+                border-radius: 12px;
+                margin-top: 40px;
             }
 
             .process-grid {
@@ -1865,32 +1963,48 @@
 
         @media (max-width: 480px) {
             .hero {
-                min-height: 450px;
+                min-height: 100vh;
+                padding: 100px 0 40px;
             }
 
-            .hero-grid {
-                padding: 40px 0 20px;
-                gap: 20px;
+            .hero-title {
+                font-size: clamp(2rem, 12vw, 3rem);
+                line-height: 1.0;
+                margin-bottom: 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 15px;
+                line-height: 1.4;
+                margin-bottom: 28px;
+            }
+
+            .hero-intro {
+                font-size: 12px;
+                margin-bottom: 32px;
+            }
+
+            .hero-stats {
+                padding: 20px 16px;
+                margin-bottom: 32px;
+            }
+
+            .hero-cta-buttons .btn-primary,
+            .hero-cta-buttons .btn-secondary {
+                padding: 14px 24px;
+                font-size: 15px;
+                max-width: 250px;
             }
 
             .hero-image {
                 min-height: 200px;
                 max-height: 250px;
-                border-radius: 12px;
-            }
-
-            .hero-cta {
-                padding: 14px 28px;
-                font-size: 14px;
+                margin-top: 32px;
             }
         }
 
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-                text-align: center;
-            }
-
+        /* GENERAL MOBILE GRID IMPROVEMENTS */
+        @media (max-width: 768px) {
             .stats-grid {
                 grid-template-columns: 1fr;
                 gap: 60px;
@@ -1925,29 +2039,14 @@
                 width: 100%;
                 max-width: 300px;
                 text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 120px 0 80px;
+                padding: 16px 32px;
+                font-size: 16px;
+                min-height: 44px;
             }
 
-
-            .hero-cta-buttons {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-            }
-
-            .hero-cta-buttons .btn-primary,
-            .hero-cta-buttons .btn-secondary {
-                flex: 1;
-                min-width: 140px;
-                max-width: 180px;
-                text-align: center;
-                font-size: 13px;
-                padding: 10px 16px;
+            /* All sections mobile spacing */
+            .section {
+                padding: 80px 0;
             }
 
             .stats {
@@ -2220,22 +2319,7 @@
                 font-size: 14px;
             }
 
-            /* Improve mobile hero section */
-            .hero {
-                padding: 140px 0 100px;
-            }
-
-            .hero-title {
-                font-size: clamp(2rem, 8vw, 3rem);
-                line-height: 1.1;
-                margin-bottom: 20px;
-            }
-
-            .hero-subtitle {
-                font-size: 16px;
-                line-height: 1.5;
-                margin-bottom: 30px;
-            }
+            /* Hero styles handled in MOBILE HERO IMPROVEMENTS section above */
 
             /* Better mobile spacing */
             .container {
@@ -2300,19 +2384,7 @@
                 padding: 0 20px;
             }
 
-            .hero {
-                padding: 120px 0 80px;
-            }
-
-            .hero-title {
-                font-size: clamp(1.8rem, 9vw, 2.5rem);
-                margin-bottom: 16px;
-            }
-
-            .hero-subtitle {
-                font-size: 15px;
-                margin-bottom: 24px;
-            }
+            /* Hero styles handled in MOBILE HERO IMPROVEMENTS section above */
 
             .service-card {
                 padding: 24px 20px;
@@ -2362,6 +2434,641 @@
             }
         }
 
+        /* Ultra-small devices (320px and below) */
+        @media (max-width: 320px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                min-height: 100vh;
+                padding: 80px 0 40px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.5rem, 14vw, 2rem);
+                line-height: 1.1;
+                margin-bottom: 16px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .hero-intro {
+                font-size: 11px;
+                margin-bottom: 24px;
+            }
+
+            .hero-stats {
+                padding: 16px 12px;
+                margin-bottom: 24px;
+            }
+
+            .hero-cta-buttons .btn-primary,
+            .hero-cta-buttons .btn-secondary {
+                padding: 12px 20px;
+                font-size: 14px;
+                max-width: 200px;
+            }
+
+            .section-title {
+                font-size: clamp(1.5rem, 8vw, 1.8rem);
+            }
+
+            .service-card {
+                padding: 20px 16px;
+            }
+
+            .mobile-nav a {
+                font-size: 20px;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Ensure all sections scale properly */
+        @media (max-width: 768px) {
+            /* Services section mobile optimization */
+            .services {
+                padding: 80px 0;
+            }
+
+            .services-header {
+                margin-bottom: 50px;
+            }
+
+            .services-title {
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+                margin-bottom: 20px;
+            }
+
+            .services-subtitle {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            /* Portfolio section mobile optimization */
+            .portfolio {
+                padding: 80px 0;
+            }
+
+            .portfolio-header {
+                margin-bottom: 60px;
+            }
+
+            .portfolio-title {
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+                margin-bottom: 20px;
+            }
+
+            /* Stats section mobile optimization */
+            .stats {
+                padding: 60px 0;
+            }
+
+            .stats-title {
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+                margin-bottom: 40px;
+            }
+
+            /* CTA section mobile optimization */
+            .cta {
+                padding: 80px 0;
+            }
+
+            .cta-title {
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+                margin-bottom: 20px;
+            }
+
+            .cta-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            /* Why Choose Us mobile optimization */
+            .why-choose {
+                padding: 80px 0;
+            }
+
+            .why-choose-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .why-choose-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+                line-height: 1.0;
+                margin-bottom: 24px;
+            }
+
+            .why-choose-description {
+                font-size: 16px;
+                line-height: 1.5;
+                max-width: 100%;
+                margin: 0 auto 40px auto;
+            }
+
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .why-choose-item {
+                padding: 24px 20px;
+                text-align: left;
+            }
+
+            .why-choose-item h3 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+
+            .why-choose-item p {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+
+            /* Insurance & Warranty mobile optimization */
+            .insurance-warranty {
+                padding: 80px 0;
+            }
+
+            .insurance-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .insurance-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+                line-height: 1.0;
+                margin-bottom: 24px;
+            }
+
+            .insurance-description {
+                font-size: 16px;
+                line-height: 1.5;
+                max-width: 100%;
+                margin: 0 auto 40px auto;
+            }
+
+            .insurance-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .insurance-card {
+                padding: 30px 24px;
+                text-align: left;
+            }
+
+            .insurance-card h3 {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+
+            .warranty-details {
+                gap: 12px;
+            }
+
+            .warranty-item {
+                font-size: 13px;
+                line-height: 1.3;
+            }
+
+            .claims-process {
+                gap: 20px;
+            }
+
+            .claims-step {
+                padding: 16px 20px;
+            }
+
+            .step-number {
+                font-size: 16px;
+                width: 32px;
+                height: 32px;
+                margin-bottom: 12px;
+            }
+
+            .step-title {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            .cert-list {
+                gap: 12px;
+            }
+
+            .cert-item {
+                font-size: 13px;
+                padding: 12px 16px;
+            }
+
+            /* Service Areas mobile optimization */
+            .service-areas {
+                padding: 80px 0;
+            }
+
+            .service-areas-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .service-areas-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+                line-height: 1.0;
+                margin-bottom: 24px;
+            }
+
+            .service-areas-subtitle {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 40px;
+                max-width: 100%;
+            }
+
+            .areas-list {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: left;
+            }
+
+            .area-group-title {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+
+            .area-list {
+                gap: 12px;
+            }
+
+            .area-list li {
+                font-size: 15px;
+                padding: 12px 20px;
+            }
+
+            .service-radius {
+                margin-top: 40px;
+                text-align: center;
+                font-size: 16px;
+                padding: 20px 24px;
+            }
+
+            /* Our Process mobile optimization */
+            .process {
+                padding: 80px 0;
+            }
+
+            .process-header {
+                margin-bottom: 60px;
+                text-align: center;
+            }
+
+            .process-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+                line-height: 1.0;
+                margin-bottom: 24px;
+            }
+
+            .process-subtitle {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 40px;
+                max-width: 100%;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            .process-grid::before {
+                display: none;
+            }
+
+            .process-step {
+                background: var(--gray-800);
+                border: 1px solid var(--gray-700);
+                border-radius: 12px;
+                padding: 30px 24px;
+                text-align: center;
+            }
+
+            .step-number {
+                font-size: 24px;
+                width: 60px;
+                height: 60px;
+                margin-bottom: 20px;
+            }
+
+            .step-title {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+
+            .step-description {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+
+            /* Demo footer mobile optimization */
+            .demo-footer {
+                padding: 40px 0;
+                margin-top: 60px;
+            }
+
+            .demo-footer-title {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+                margin-bottom: 16px;
+            }
+
+            .demo-footer-description {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+        }
+
+        /* Extra small mobile spacing */
+        @media (max-width: 480px) {
+            .services,
+            .portfolio,
+            .cta {
+                padding: 60px 0;
+            }
+
+            .stats {
+                padding: 40px 0;
+            }
+
+            .demo-footer {
+                padding: 30px 0;
+                margin-top: 40px;
+            }
+
+            /* Why Choose Us extra small mobile */
+            .why-choose {
+                padding: 60px 0;
+            }
+
+            .why-choose-content {
+                gap: 40px;
+            }
+
+            .why-choose-title {
+                font-size: clamp(2rem, 14vw, 3rem);
+                margin-bottom: 20px;
+            }
+
+            .why-choose-description {
+                font-size: 15px;
+                margin-bottom: 32px;
+            }
+
+            .why-choose-grid {
+                gap: 24px;
+            }
+
+            .why-choose-item {
+                padding: 20px 16px;
+            }
+
+            .why-choose-item h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .why-choose-item p {
+                font-size: 13px;
+            }
+
+            /* Insurance & Warranty extra small mobile */
+            .insurance-warranty {
+                padding: 60px 0;
+            }
+
+            .insurance-content {
+                gap: 40px;
+            }
+
+            .insurance-title {
+                font-size: clamp(2rem, 14vw, 3rem);
+                margin-bottom: 20px;
+            }
+
+            .insurance-description {
+                font-size: 15px;
+                margin-bottom: 32px;
+            }
+
+            .insurance-grid {
+                gap: 24px;
+            }
+
+            .insurance-card {
+                padding: 24px 20px;
+            }
+
+            .insurance-card h3 {
+                font-size: 16px;
+                margin-bottom: 14px;
+            }
+
+            .warranty-item {
+                font-size: 12px;
+            }
+
+            .claims-step {
+                padding: 14px 16px;
+            }
+
+            .step-number {
+                font-size: 14px;
+                width: 28px;
+                height: 28px;
+            }
+
+            .step-title {
+                font-size: 13px;
+            }
+
+            .cert-item {
+                font-size: 12px;
+                padding: 10px 14px;
+            }
+
+            /* Service Areas extra small mobile */
+            .service-areas {
+                padding: 60px 0;
+            }
+
+            .service-areas-content {
+                gap: 40px;
+            }
+
+            .service-areas-title {
+                font-size: clamp(2rem, 14vw, 3rem);
+                margin-bottom: 20px;
+            }
+
+            .service-areas-subtitle {
+                font-size: 15px;
+                margin-bottom: 32px;
+            }
+
+            .areas-list {
+                gap: 24px;
+            }
+
+            .area-group-title {
+                font-size: 16px;
+                margin-bottom: 14px;
+            }
+
+            .area-list {
+                gap: 10px;
+            }
+
+            .area-list li {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+
+            .service-radius {
+                margin-top: 32px;
+                font-size: 14px;
+                padding: 16px 20px;
+            }
+
+            /* Our Process extra small mobile */
+            .process {
+                padding: 60px 0;
+            }
+
+            .process-header {
+                margin-bottom: 50px;
+            }
+
+            .process-title {
+                font-size: clamp(2rem, 14vw, 3rem);
+                margin-bottom: 20px;
+            }
+
+            .process-subtitle {
+                font-size: 15px;
+                margin-bottom: 32px;
+            }
+
+            .process-grid {
+                gap: 24px;
+                margin-top: 32px;
+            }
+
+            .process-step {
+                padding: 24px 20px;
+            }
+
+            .step-number {
+                font-size: 20px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 16px;
+            }
+
+            .step-title {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .step-description {
+                font-size: 13px;
+            }
+
+            /* Reviews section enhanced mobile optimization */
+            .reviews {
+                padding: 60px 0 40px 0;
+            }
+
+            .reviews-header {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            .reviews-title {
+                font-size: clamp(2rem, 10vw, 3rem);
+                line-height: 1.1;
+                margin-bottom: 16px;
+            }
+
+            .reviews-subtitle {
+                font-size: 15px;
+                line-height: 1.4;
+                color: var(--gray-500);
+                max-width: 100%;
+            }
+
+            /* Mobile Section Swap: Hide reviews, show website services */
+            .reviews-desktop {
+                display: none;
+            }
+
+            .website-services-mobile {
+                display: block;
+            }
+
+            /* Website Services Mobile Optimization */
+            .website-services-title {
+                font-size: clamp(36px, 8vw, 60px);
+                margin-bottom: 25px;
+            }
+
+            .website-services-subtitle {
+                font-size: 16px;
+                margin-bottom: 40px;
+                padding: 0 20px;
+            }
+
+            .website-services-cta {
+                padding: 16px 32px;
+                font-size: 15px;
+            }
+
+            .review-card {
+                min-width: 260px;
+                max-width: 280px;
+                padding: 20px 16px;
+                margin-right: 16px;
+                flex-shrink: 0;
+                background: var(--gray-800);
+                border: 1px solid var(--gray-700);
+                border-radius: 12px;
+            }
+
+            .review-stars {
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: var(--red);
+            }
+
+            .review-text {
+                font-size: 13px;
+                line-height: 1.4;
+                margin-bottom: 12px;
+                color: var(--gray-200);
+            }
+
+            .review-author {
+                font-size: 12px;
+                color: var(--gray-400);
+                font-weight: 500;
+            }
+        }
+
         /* Touch device optimizations */
         @media (hover: none) and (pointer: coarse) {
             /* Remove hover effects on touch devices */
@@ -2387,6 +3094,19 @@
 
             .demo-banner {
                 transform: translateZ(0);
+            }
+
+            /* Disable problematic touch behaviors */
+            * {
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+
+            input, textarea, button {
+                -webkit-user-select: auto;
+                user-select: auto;
             }
         }
     </style>
@@ -2486,15 +3206,17 @@
         </div>
     </section>
 
-    <!-- Reviews -->
+    <!-- Reviews / Mobile Alternative -->
     <section class="reviews">
-        <div class="container">
-            <div class="reviews-header">
-                <h2 class="reviews-title fade-up">Client Reviews</h2>
-                <p class="reviews-subtitle fade-up">What our customers say about our work</p>
+        <!-- Desktop: Reviews -->
+        <div class="reviews-desktop">
+            <div class="container">
+                <div class="reviews-header">
+                    <h2 class="reviews-title fade-up">Client Reviews</h2>
+                    <p class="reviews-subtitle fade-up">What our customers say about our work</p>
+                </div>
             </div>
-        </div>
-        <div class="marquee">
+            <div class="marquee">
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation. The team was professional, clean, and finished ahead of schedule."</p>
@@ -2540,6 +3262,22 @@
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"Five years later and our roof still looks brand new. RoofStar stands behind their work and their warranty is legitimate. Highly recommended!"</p>
                 <div class="review-author">— Robert Kim, Centennial</div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Mobile: Website Services Alternative -->
+        <div class="website-services-mobile">
+            <div class="container">
+                <div class="website-services-content">
+                    <h2 class="website-services-title">
+                        <span class="line">I make websites</span>
+                        <span class="line">for <span class="blue">roofing</span></span>
+                        <span class="line">companies</span>
+                    </h2>
+                    <p class="website-services-subtitle">Premium websites that convert visitors into customers. Built specifically for roofing contractors who want to dominate their local market.</p>
+                    <a href="get-website.html" class="website-services-cta">Get Your Website</a>
+                </div>
             </div>
         </div>
     </section>
