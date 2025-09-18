@@ -114,8 +114,8 @@
         }
 
         .demo-banner.hidden {
-            opacity: 0;
             transform: translateY(-100%);
+            opacity: 0;
         }
 
         .demo-content {
@@ -459,6 +459,8 @@
             max-width: 480px;
             color: var(--gray-400);
             margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-cta-buttons {
@@ -2787,7 +2789,7 @@
             }
 
             // Demo banner fade on scroll
-            if (currentScrollY > 50) {
+            if (currentScrollY > 10) {
                 demoBanner.classList.add('hidden');
             } else {
                 demoBanner.classList.remove('hidden');

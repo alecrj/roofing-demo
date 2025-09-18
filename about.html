@@ -110,6 +110,7 @@
             z-index: 2000;
             height: 44px;
             overflow: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .demo-content {
@@ -136,8 +137,8 @@
         }
 
         .demo-banner.hidden {
-            opacity: 0;
             transform: translateY(-100%);
+            opacity: 0;
         }
 
         .container {
@@ -1588,7 +1589,7 @@
             }
 
             // Demo banner fade on scroll
-            if (currentScrollY > 50) {
+            if (currentScrollY > 10) {
                 demoBanner.classList.add('hidden');
             } else {
                 demoBanner.classList.remove('hidden');

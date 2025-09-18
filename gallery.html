@@ -110,6 +110,7 @@
             z-index: 2000;
             height: 44px;
             overflow: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .demo-content {
@@ -136,8 +137,8 @@
         }
 
         .demo-banner.hidden {
-            opacity: 0;
             transform: translateY(-100%);
+            opacity: 0;
         }
 
         .container {
@@ -364,6 +365,7 @@
             align-items: center;
             min-height: 100vh;
             position: relative;
+            text-align: center;
         }
 
         .hero-title {
@@ -387,6 +389,8 @@
             line-height: 1.7;
             max-width: 600px;
             color: var(--gray-400);
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* PORTFOLIO GRID */
@@ -1350,7 +1354,7 @@
             }
 
             // Demo banner fade on scroll
-            if (currentScrollY > 50) {
+            if (currentScrollY > 10) {
                 demoBanner.classList.add('hidden');
             } else {
                 demoBanner.classList.remove('hidden');
