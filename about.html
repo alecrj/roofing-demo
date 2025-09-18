@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About — RoofStar</title>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=ABC+Diatype:wght@400;500;700;900&family=Times+Now:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
     <style>
         * {
@@ -17,18 +23,98 @@
         }
 
         :root {
-            --black: #000000;
+            --black: #0a0a0a;
             --white: #ffffff;
+            --gray-100: #f5f5f5;
+            --gray-200: #e8e8e8;
+            --gray-300: #d1d1d1;
+            --gray-400: #a8a8a8;
+            --gray-500: #8a8a8a;
+            --gray-600: #6a6a6a;
+            --gray-700: #4a4a4a;
+            --gray-800: #2a2a2a;
+            --gray-900: #1a1a1a;
             --red: #ff0000;
-            --gray: #808080;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
 
         body {
-            font-family: 'ABC Diatype', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--white);
-            color: var(--black);
-            line-height: 1.2;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.4;
             overflow-x: hidden;
+            font-weight: 400;
+            padding-top: 44px;
+        }
+
+        /* CURSOR */
+        .cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease;
+        }
+
+        .cursor.large {
+            transform: scale(6);
+            mix-blend-mode: difference;
+        }
+
+        /* ANIMATIONS */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .fade-in {
+            opacity: 0;
+        }
+
+        /* DEMO BANNER */
+        .demo-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, var(--red) 0%, #ff3333 100%);
+            color: var(--white);
+            z-index: 2000;
+            height: 44px;
+            overflow: hidden;
+        }
+
+        .demo-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: marquee 25s linear infinite;
+        }
+
+        .demo-text {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 0 100px;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         .container {
@@ -41,16 +127,16 @@
         /* HEADER */
         .header {
             position: fixed;
-            top: 30px;
+            top: 74px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--gray-800);
             height: 56px;
             border-radius: 28px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             width: fit-content;
             min-width: auto;
@@ -59,11 +145,11 @@
         }
 
         .header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            border-color: rgba(0, 0, 0, 0.1);
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08), 0 3px 12px rgba(0, 0, 0, 0.06);
+            background: rgba(10, 10, 10, 0.98);
+            border-color: var(--gray-700);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4), 0 3px 12px rgba(0, 0, 0, 0.3);
             height: 48px;
-            top: 20px;
+            top: 64px;
             border-radius: 24px;
         }
 
@@ -82,11 +168,11 @@
         }
 
         .logo {
-            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-100) 100%);
             border-radius: 20px;
             padding: 8px 16px;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             height: 40px;
@@ -101,7 +187,7 @@
         .logo img {
             height: 24px;
             width: auto;
-            filter: brightness(0) invert(1);
+            filter: brightness(0);
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -117,7 +203,7 @@
             .nav {
                 display: flex;
                 gap: 2px;
-                background: rgba(0, 0, 0, 0.04);
+                background: rgba(255, 255, 255, 0.1);
                 border-radius: 20px;
                 padding: 4px;
                 transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -133,7 +219,7 @@
         }
 
         .nav a {
-            color: var(--black);
+            color: var(--gray-400);
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
@@ -163,10 +249,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: inherit;
             opacity: 0;
             transition: opacity 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: var(--white);
         }
 
         .nav a:hover::before {
@@ -174,16 +264,16 @@
         }
 
         .nav a.active {
-            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
-            color: var(--white);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-100) 100%);
+            color: var(--black);
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
         }
 
         .nav a.active::before {
             display: none;
         }
 
-        .contact-link {
+        .get-website-btn {
             color: var(--white);
             text-decoration: none;
             font-weight: 700;
@@ -201,14 +291,14 @@
             box-sizing: border-box;
         }
 
-        .header.scrolled .contact-link {
+        .header.scrolled .get-website-btn {
             padding: 6px 12px;
             font-size: 13px;
             border-radius: 16px;
             height: 32px;
         }
 
-        .contact-link::before {
+        .get-website-btn::before {
             content: '';
             position: absolute;
             top: 0;
@@ -220,11 +310,11 @@
             transition: opacity 0.3s ease;
         }
 
-        .contact-link:hover::before {
+        .get-website-btn:hover::before {
             opacity: 1;
         }
 
-        .contact-link:hover {
+        .get-website-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(255, 0, 0, 0.3);
         }
@@ -232,16 +322,17 @@
         /* HERO */
         .hero {
             padding: 200px 0 120px;
-            border-bottom: 1px solid var(--black);
+            border-bottom: 1px solid var(--gray-800);
         }
 
         .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(80px, 12vw, 180px);
-            font-weight: 900;
+            font-weight: 700;
             line-height: 0.9;
             letter-spacing: -0.04em;
             margin-bottom: 60px;
-            color: var(--black);
+            color: var(--white);
         }
 
         .hero-title .red {
@@ -251,15 +342,16 @@
         .hero-subtitle {
             font-size: 24px;
             font-weight: 400;
-            line-height: 1.3;
+            line-height: 1.4;
             max-width: 700px;
-            color: var(--gray);
+            color: var(--gray-600);
         }
 
         /* MISSION SECTION */
         .mission {
             padding: 200px 0;
-            border-bottom: 1px solid var(--black);
+            border-bottom: 1px solid var(--gray-800);
+            background: var(--gray-900);
         }
 
         .mission-content {
@@ -273,7 +365,7 @@
             font-size: 32px;
             font-weight: 400;
             line-height: 1.4;
-            color: var(--black);
+            color: var(--white);
         }
 
         .mission-stats {
@@ -282,7 +374,7 @@
         }
 
         .stat {
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--gray-700);
             padding-bottom: 20px;
         }
 
@@ -291,16 +383,17 @@
         }
 
         .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 48px;
             font-weight: 900;
-            color: var(--black);
+            color: var(--white);
             margin-bottom: 8px;
             line-height: 1;
         }
 
         .stat-label {
             font-size: 16px;
-            color: var(--gray);
+            color: var(--gray-500);
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
@@ -308,6 +401,7 @@
         /* TEAM SECTION */
         .team {
             padding: 200px 0;
+            background: var(--black);
         }
 
         .team-header {
@@ -315,11 +409,13 @@
         }
 
         .team-title {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(60px, 10vw, 140px);
-            font-weight: 900;
+            font-weight: 700;
             line-height: 0.9;
             letter-spacing: -0.03em;
             margin-bottom: 60px;
+            color: var(--white);
         }
 
         .team-subtitle {
@@ -327,7 +423,7 @@
             font-weight: 400;
             line-height: 1.4;
             max-width: 600px;
-            color: var(--gray);
+            color: var(--gray-600);
         }
 
         .team-grid {
@@ -352,8 +448,16 @@
 
         .member-photo {
             height: 600px;
-            background: var(--black);
+            background: var(--gray-900);
             overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        .team-member:hover .member-photo {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
         }
 
         .member-photo img {
@@ -369,24 +473,26 @@
 
         .member-role {
             font-size: 16px;
-            color: var(--gray);
+            color: var(--gray-500);
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
 
         .member-name {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(40px, 6vw, 80px);
-            font-weight: 900;
+            font-weight: 700;
             line-height: 0.9;
             margin-bottom: 40px;
             letter-spacing: -0.02em;
+            color: var(--white);
         }
 
         .member-bio {
             font-size: 18px;
             line-height: 1.5;
-            color: var(--gray);
+            color: var(--gray-600);
             margin-bottom: 60px;
             max-width: 400px;
         }
@@ -398,8 +504,8 @@
         .member-credentials li {
             padding: 8px 0;
             font-size: 16px;
-            color: var(--black);
-            border-bottom: 1px solid #eee;
+            color: var(--white);
+            border-bottom: 1px solid var(--gray-700);
         }
 
         .member-credentials li:last-child {
@@ -413,7 +519,8 @@
         /* VALUES SECTION */
         .values {
             padding: 200px 0;
-            border-top: 1px solid var(--black);
+            border-top: 1px solid var(--gray-800);
+            background: var(--gray-900);
         }
 
         .values-header {
@@ -421,10 +528,12 @@
         }
 
         .values-title {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(60px, 10vw, 140px);
-            font-weight: 900;
+            font-weight: 700;
             line-height: 0.9;
             letter-spacing: -0.03em;
+            color: var(--white);
         }
 
         .values-list {
@@ -432,31 +541,72 @@
         }
 
         .value-item {
-            border-bottom: 1px solid var(--black);
-            padding: 60px 0;
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 80px;
-            align-items: start;
+            background: var(--gray-800);
+            border: 1px solid var(--gray-700);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--red) 0%, #cc0000 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .value-item:hover::before {
+            opacity: 0.05;
+        }
+
+        .value-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .value-number {
+            background: var(--red);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 16px;
-            color: var(--gray);
-            font-weight: 400;
+            font-weight: 700;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
         }
 
         .value-title {
-            font-size: clamp(30px, 4vw, 60px);
-            font-weight: 900;
-            line-height: 1.1;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 700;
+            line-height: 1.2;
             letter-spacing: -0.02em;
+            color: var(--white);
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
         }
 
         .value-description {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.5;
-            color: var(--gray);
+            color: var(--gray-400);
+            position: relative;
+            z-index: 2;
         }
 
         /* RESPONSIVE */
@@ -480,9 +630,8 @@
             }
 
             .value-item {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                text-align: left;
+                padding: 30px 24px;
+                margin-bottom: 16px;
             }
 
             .team-grid {
@@ -518,19 +667,29 @@
     </style>
 </head>
 <body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+
     <!-- Header -->
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        <div class="demo-content">
+            <span class="demo-text">🚀 DEMO SITE - Get your professional roofing website made for a one-time fee of $299 - Contact Alec today! 📞</span>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container">
             <div class="header-inner">
                 <a href="index.html" class="logo">
-                    <img src="/Users/alec/Desktop/roof_site_assets/roofstar.png" alt="RoofStar">
+                    <img src="/Users/alec/Desktop/roof_site_assets/roofstar.png" alt="RoofStar" style="height: 40px; width: auto;">
                 </a>
                 <nav class="nav">
                     <a href="index.html">Home</a>
                     <a href="gallery.html">Portfolio</a>
                     <a href="#" class="active">About</a>
                 </nav>
-                <a href="tel:(303) 555-7663" class="contact-link">Contact</a>
+                <a href="get-website.html" class="get-website-btn">Get Your Website</a>
             </div>
         </div>
     </header>
@@ -538,8 +697,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title">Crafting<br><span class="red">Excellence</span></h1>
-            <p class="hero-subtitle">Denver's premier roofing craftsmen, dedicated to architectural precision and uncompromising quality since 2018.</p>
+            <h1 class="hero-title fade-up">Crafting<br><span class="red">Excellence</span></h1>
+            <p class="hero-subtitle fade-up">Denver's premier roofing craftsmen, dedicated to architectural precision and uncompromising quality since 2018.</p>
         </div>
     </section>
 
@@ -547,10 +706,10 @@
     <section class="mission">
         <div class="container">
             <div class="mission-content">
-                <div class="mission-text">
+                <div class="mission-text fade-up">
                     We believe exceptional roofing is both art and science—where traditional craftsmanship meets modern innovation.
                 </div>
-                <div class="mission-stats">
+                <div class="mission-stats fade-up">
                     <div class="stat">
                         <div class="stat-number">2018</div>
                         <div class="stat-label">Founded</div>
@@ -576,13 +735,13 @@
     <section class="team">
         <div class="container">
             <div class="team-header">
-                <h2 class="team-title">Our<br>Team</h2>
-                <p class="team-subtitle">Master craftsmen with decades of combined experience in luxury roofing and architectural precision.</p>
+                <h2 class="team-title fade-up">Our<br>Team</h2>
+                <p class="team-subtitle fade-up">Master craftsmen with decades of combined experience in luxury roofing and architectural precision.</p>
             </div>
 
             <div class="team-grid">
                 <!-- John Tompkins -->
-                <div class="team-member">
+                <div class="team-member fade-up">
                     <div class="member-photo">
                         <img src="/Users/alec/Desktop/roof_site_assets/john.jpg" alt="John Tompkins">
                     </div>
@@ -599,7 +758,7 @@
                 </div>
 
                 <!-- Sarah Smith -->
-                <div class="team-member">
+                <div class="team-member fade-up">
                     <div class="member-photo">
                         <img src="/Users/alec/Desktop/roof_site_assets/sarah.jpg" alt="Sarah Smith">
                     </div>
@@ -616,7 +775,7 @@
                 </div>
 
                 <!-- Leonard Goodman -->
-                <div class="team-member">
+                <div class="team-member fade-up">
                     <div class="member-photo">
                         <img src="/Users/alec/Desktop/roof_site_assets/leonard.jpg" alt="Leonard Goodman">
                     </div>
@@ -639,26 +798,26 @@
     <section class="values">
         <div class="container">
             <div class="values-header">
-                <h2 class="values-title">Our Values</h2>
+                <h2 class="values-title fade-up">Our Values</h2>
             </div>
 
             <ul class="values-list">
-                <li class="value-item">
+                <li class="value-item fade-up">
                     <div class="value-number">01</div>
                     <h3 class="value-title">Uncompromising Quality</h3>
                     <p class="value-description">Every project meets the highest standards of craftsmanship using only premium materials and proven techniques.</p>
                 </li>
-                <li class="value-item">
+                <li class="value-item fade-up">
                     <div class="value-number">02</div>
                     <h3 class="value-title">Architectural Precision</h3>
                     <p class="value-description">We approach each project with the attention to detail and precision of fine architecture.</p>
                 </li>
-                <li class="value-item">
+                <li class="value-item fade-up">
                     <div class="value-number">03</div>
                     <h3 class="value-title">Client Partnership</h3>
                     <p class="value-description">We work closely with clients to understand their vision and exceed their expectations.</p>
                 </li>
-                <li class="value-item">
+                <li class="value-item fade-up">
                     <div class="value-number">04</div>
                     <h3 class="value-title">Innovation</h3>
                     <p class="value-description">Continuously advancing our techniques while honoring traditional craftsmanship principles.</p>
@@ -668,7 +827,49 @@
     </section>
 
     <script>
-        // Header scroll effect
+        // GSAP Setup
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const hoverElements = document.querySelectorAll('a, button');
+
+        document.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        });
+
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('large'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('large'));
+        });
+
+        // Fade Up Animations
+        gsap.utils.toArray('.fade-up').forEach(element => {
+            gsap.fromTo(element,
+                {
+                    opacity: 0,
+                    y: 30
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // Header scroll effect with GSAP
         const header = document.querySelector('.header');
         let lastScrollY = window.scrollY;
 
@@ -681,7 +882,31 @@
                 header.classList.remove('scrolled');
             }
 
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                gsap.to(header, { y: '-100%', duration: 0.3 });
+            } else {
+                gsap.to(header, { y: '0%', duration: 0.3 });
+            }
+
             lastScrollY = currentScrollY;
+        });
+
+        // Smooth scrolling with GSAP
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: {
+                            y: target,
+                            offsetY: 80
+                        },
+                        ease: "power2.inOut"
+                    });
+                }
+            });
         });
     </script>
 </body>
