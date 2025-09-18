@@ -410,13 +410,15 @@
         /* CHARACTER ANIMATION STYLES */
         .hero-title .line {
             display: block;
-            overflow: hidden;
-            line-height: 0.9;
+            overflow: visible;
+            line-height: 1.1;
+            padding-bottom: 8px;
         }
 
         .hero-title .char {
             display: inline-block;
             transform: translateY(100%);
+            line-height: 1.1;
         }
 
         .hero-title .char.red {
@@ -429,6 +431,14 @@
             line-height: 1.6;
             max-width: 480px;
             color: var(--gray-400);
+            margin-bottom: 40px;
+        }
+
+        .hero-cta-buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .hero-stats {
@@ -1747,6 +1757,18 @@
                 padding: 120px 0 80px;
             }
 
+            .hero-cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-cta-buttons .btn-primary,
+            .hero-cta-buttons .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
             .stats {
                 padding: 80px 0;
             }
@@ -2048,6 +2070,11 @@
                         </span>
                     </h1>
                     <p class="hero-subtitle fade-up">Expert craftsmanship, premium materials, and unmatched service quality for residential and commercial roofing projects across the Denver metro area.</p>
+
+                    <div class="hero-cta-buttons fade-up">
+                        <a href="#" class="btn-primary demo-popup-trigger">Get Free Estimate</a>
+                        <a href="#" class="btn-secondary demo-popup-trigger">Call (303) 555-7663</a>
+                    </div>
                 </div>
                 <div class="hero-right">
                     <div class="hero-stats">
