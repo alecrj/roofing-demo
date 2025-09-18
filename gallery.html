@@ -718,6 +718,233 @@
                 text-align: center;
             }
         }
+
+        /* DEMO FOOTER */
+        .demo-footer {
+            background: linear-gradient(135deg, var(--red) 0%, #cc0000 100%);
+            color: var(--white);
+            padding: 60px 0;
+            margin-top: 100px;
+            border-top: 4px solid var(--white);
+        }
+
+        .demo-footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .demo-footer-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .demo-footer-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--gray-100);
+        }
+
+        .demo-footer-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-100);
+            margin-bottom: 0;
+        }
+
+        .demo-footer-cta {
+            text-align: center;
+        }
+
+        .demo-footer-btn {
+            background: var(--white);
+            color: var(--red);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 16px 32px;
+            border-radius: 12px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .demo-footer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-footer-guarantee {
+            font-size: 14px;
+            color: var(--gray-200);
+            font-weight: 500;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 768px) {
+            .demo-footer {
+                padding: 40px 0;
+                margin-top: 60px;
+            }
+
+            .demo-footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .demo-footer-description {
+                font-size: 15px;
+            }
+        }
+
+        /* DEMO POPUP MODAL */
+        .demo-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(5px);
+        }
+
+        .demo-popup-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: popupSlideIn 0.3s ease-out;
+        }
+
+        @keyframes popupSlideIn {
+            from {
+                transform: scale(0.8) translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .demo-popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 30px 0;
+            border-bottom: 1px solid var(--gray-200);
+            margin-bottom: 30px;
+        }
+
+        .demo-popup-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--black);
+            margin: 0;
+        }
+
+        .demo-popup-close {
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: var(--gray-600);
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .demo-popup-close:hover {
+            background: var(--gray-100);
+            color: var(--black);
+        }
+
+        .demo-popup-body {
+            padding: 0 30px 30px;
+        }
+
+        .demo-popup-body p {
+            color: var(--gray-700);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .demo-popup-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .demo-feature {
+            color: var(--black);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .demo-popup-cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .demo-cta-btn {
+            background: linear-gradient(135deg, var(--red) 0%, #cc0000 100%);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 16px 32px;
+            border-radius: 12px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .demo-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .demo-popup-content {
+                margin: 20px;
+                width: calc(100% - 40px);
+            }
+
+            .demo-popup-header,
+            .demo-popup-body {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .demo-popup-features {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -875,8 +1102,8 @@
                 <h2 class="cta-title fade-up">Ready to Transform<br>Your <span class="red">Roof?</span></h2>
                 <p class="cta-subtitle fade-up">Join hundreds of satisfied Denver homeowners who trust RoofStar for their roofing needs.</p>
                 <div class="cta-buttons fade-up">
-                    <a href="#" class="btn-primary">Get Free Estimate</a>
-                    <a href="tel:(303) 555-7663" class="btn-secondary">Call (303) 555-7663</a>
+                    <a href="#" class="btn-primary demo-popup-trigger">Get Free Estimate</a>
+                    <a href="#" class="btn-secondary demo-popup-trigger">Call (303) 555-7663</a>
                 </div>
             </div>
         </div>
@@ -1072,5 +1299,78 @@
             });
         });
     </script>
+
+    <!-- Demo Footer -->
+    <footer class="demo-footer">
+        <div class="container">
+            <div class="demo-footer-content">
+                <div class="demo-footer-text">
+                    <h3 class="demo-footer-title">🚀 This is a Demo Website</h3>
+                    <p class="demo-footer-subtitle">Want a professional roofing website like this for your business?</p>
+                    <p class="demo-footer-description">
+                        Contact <strong>Alec</strong> to have your own custom website made for your roofing company for <strong>$299</strong> in 24 hours guaranteed or you don't pay!
+                    </p>
+                </div>
+                <div class="demo-footer-cta">
+                    <a href="tel:(954) 614-5352" class="demo-footer-btn">Call Alec: (954) 614-5352</a>
+                    <p class="demo-footer-guarantee">24-Hour Delivery Guaranteed!</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Demo Popup Modal -->
+    <div class="demo-popup-overlay" id="demoPopup">
+        <div class="demo-popup-content">
+            <div class="demo-popup-header">
+                <h3>This is a Demo Website</h3>
+                <button class="demo-popup-close" id="closePopup">&times;</button>
+            </div>
+            <div class="demo-popup-body">
+                <p><strong>🚀 Want a website like this for your roofing company?</strong></p>
+                <p>Get your custom roofing website built for <strong>$299</strong> in 24 hours guaranteed, or you don't pay!</p>
+                <div class="demo-popup-features">
+                    <div class="demo-feature">✓ Professional Design</div>
+                    <div class="demo-feature">✓ Mobile Responsive</div>
+                    <div class="demo-feature">✓ 24-Hour Delivery</div>
+                    <div class="demo-feature">✓ Money-Back Guarantee</div>
+                </div>
+                <div class="demo-popup-cta">
+                    <a href="tel:(954) 614-5352" class="demo-cta-btn">Call Alec: (954) 614-5352</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo Popup Functionality
+        const demoPopup = document.getElementById('demoPopup');
+        const closePopup = document.getElementById('closePopup');
+        const demoTriggers = document.querySelectorAll('.demo-popup-trigger');
+
+        // Add click event to all demo trigger buttons
+        demoTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                demoPopup.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close popup
+        closePopup.addEventListener('click', () => {
+            demoPopup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close popup when clicking outside
+        demoPopup.addEventListener('click', (e) => {
+            if (e.target === demoPopup) {
+                demoPopup.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+
 </body>
 </html>
