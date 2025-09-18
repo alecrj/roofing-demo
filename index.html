@@ -151,6 +151,17 @@
             padding: 0;
         }
 
+        .header.compact {
+            transform: translateX(-50%) scale(0.8);
+            opacity: 0.7;
+            top: 54px;
+        }
+
+        .header.hidden {
+            transform: translateX(-50%) translateY(-120%) scale(0.6);
+            opacity: 0;
+        }
+
         .header.scrolled {
             background: rgba(10, 10, 10, 0.98);
             border-color: var(--gray-700);
@@ -158,6 +169,14 @@
             height: 48px;
             top: 64px;
             border-radius: 24px;
+        }
+
+        .header.scrolled.compact {
+            top: 44px;
+        }
+
+        .header.scrolled.hidden {
+            transform: translateX(-50%) translateY(-120%) scale(0.6);
         }
 
         .header-inner {
@@ -2302,25 +2321,52 @@
             });
         }
 
-        // Header scroll effect with GSAP and demo banner fade
+        // Enhanced header scroll effect with dynamic behavior
         const header = document.querySelector('.header');
         const demoBanner = document.querySelector('.demo-banner');
         let lastScrollY = window.scrollY;
+        let scrollTimer = null;
+        let isScrolling = false;
 
-        window.addEventListener('scroll', () => {
+        function resetHeader() {
+            header.classList.remove('compact', 'hidden');
+        }
+
+        function handleScroll() {
             const currentScrollY = window.scrollY;
+            const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+            const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+
+            // Clear existing timer
+            if (scrollTimer) {
+                clearTimeout(scrollTimer);
+            }
+
+            // Mark as scrolling
+            isScrolling = true;
 
             // Header scroll behavior
             if (currentScrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+                resetHeader(); // Always show header at top
+                lastScrollY = currentScrollY;
+                return;
             }
 
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                gsap.to(header, { y: '-100%', duration: 0.3 });
-            } else {
-                gsap.to(header, { y: '0%', duration: 0.3 });
+            // Dynamic header behavior based on scroll
+            if (scrollDirection === 'down' && currentScrollY > 200) {
+                if (scrollDelta > 5) { // Fast scroll down
+                    header.classList.remove('compact');
+                    header.classList.add('hidden');
+                } else if (currentScrollY > 300) { // Slow scroll down
+                    header.classList.add('compact');
+                    header.classList.remove('hidden');
+                }
+            } else if (scrollDirection === 'up') {
+                // Always show on scroll up
+                resetHeader();
             }
 
             // Demo banner fade on scroll
@@ -2330,8 +2376,18 @@
                 demoBanner.classList.remove('hidden');
             }
 
+            // Set timer to show header after scroll stops
+            scrollTimer = setTimeout(() => {
+                isScrolling = false;
+                if (currentScrollY > 200) {
+                    resetHeader(); // Show header when scrolling stops
+                }
+            }, 1500); // Show after 1.5 seconds of no scrolling
+
             lastScrollY = currentScrollY;
-        });
+        }
+
+        window.addEventListener('scroll', handleScroll);
 
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {

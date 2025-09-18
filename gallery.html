@@ -576,6 +576,84 @@
             color: #059669;
         }
 
+        /* CTA SECTION */
+        .cta-section {
+            padding: 120px 0;
+            background: var(--gray-900);
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .cta-title .red {
+            color: var(--red);
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--gray-400);
+            margin-bottom: 50px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: var(--white);
+            padding: 16px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(255, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 0, 0, 0.3);
+            background: #cc0000;
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
         /* RESPONSIVE */
         @media (max-width: 1024px) {
             .container {
@@ -603,6 +681,23 @@
 
             .portfolio {
                 padding: 80px 0;
+            }
+
+            .cta-section {
+                padding: 80px 0;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
             }
         }
     </style>
@@ -751,39 +846,19 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="project-section fade-up">
-                    <div class="project-info">
-                        <div class="project-number">Project 04</div>
-                        <h2 class="project-title">Commercial Roofing</h2>
-                        <p class="project-description">Complete commercial roof restoration transforming this industrial property with durable standing seam metal roofing for superior weather protection.</p>
-                        <ul class="project-details">
-                            <li><strong>Location:</strong> Thornton, CO</li>
-                            <li><strong>Materials:</strong> Standing Seam Metal</li>
-                            <li><strong>Timeline:</strong> 5 Days</li>
-                            <li><strong>Specialty:</strong> Commercial Restoration</li>
-                        </ul>
-                    </div>
-                    <div class="project-images">
-                        <div class="before-after-container">
-                            <div class="before-after-slider" data-project="4">
-                                <div class="before-image">
-                                    <img src="/var/folders/zw/wqd1gx6x1_d23tc29j8b7qcr0000gn/T/TemporaryItems/NSIRD_screencaptureui_sLOdkR/Screenshot 2025-01-18 at 5.40.52 PM.png" alt="Before Commercial Roofing">
-                                </div>
-                                <div class="after-image">
-                                    <img src="/var/folders/zw/wqd1gx6x1_d23tc29j8b7qcr0000gn/T/TemporaryItems/NSIRD_screencaptureui_sLOdkR/Screenshot 2025-01-18 at 5.40.55 PM.png" alt="After Commercial Roofing">
-                                </div>
-                                <div class="slider-handle">
-                                    <div class="slider-line"></div>
-                                    <div class="slider-button"></div>
-                                </div>
-                                <div class="image-labels">
-                                    <div class="label before">Before</div>
-                                    <div class="label after">After</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title fade-up">Ready to Transform<br>Your <span class="red">Roof?</span></h2>
+                <p class="cta-subtitle fade-up">Join hundreds of satisfied Denver homeowners who trust RoofStar for their roofing needs.</p>
+                <div class="cta-buttons fade-up">
+                    <a href="#" class="btn-primary">Get Free Estimate</a>
+                    <a href="tel:(303) 555-7663" class="btn-secondary">Call (303) 555-7663</a>
                 </div>
             </div>
         </div>
