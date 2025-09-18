@@ -407,6 +407,22 @@
             color: var(--red);
         }
 
+        /* CHARACTER ANIMATION STYLES */
+        .hero-title .line {
+            display: block;
+            overflow: hidden;
+            line-height: 0.9;
+        }
+
+        .hero-title .char {
+            display: inline-block;
+            transform: translateY(100%);
+        }
+
+        .hero-title .char.red {
+            color: var(--red);
+        }
+
         .hero-subtitle {
             font-size: 18px;
             font-weight: 400;
@@ -2017,7 +2033,20 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-left">
-                    <h1 class="hero-title fade-up">Denver's<br>Premier<br><span class="red">Roofing</span><br>Company</h1>
+                    <h1 class="hero-title">
+                        <span class="line">
+                            <span class="char">D</span><span class="char">e</span><span class="char">n</span><span class="char">v</span><span class="char">e</span><span class="char">r</span><span class="char">'</span><span class="char">s</span>
+                        </span>
+                        <span class="line">
+                            <span class="char">P</span><span class="char">r</span><span class="char">e</span><span class="char">m</span><span class="char">i</span><span class="char">e</span><span class="char">r</span>
+                        </span>
+                        <span class="line">
+                            <span class="char red">R</span><span class="char red">o</span><span class="char red">o</span><span class="char red">f</span><span class="char red">i</span><span class="char red">n</span><span class="char red">g</span>
+                        </span>
+                        <span class="line">
+                            <span class="char">C</span><span class="char">o</span><span class="char">m</span><span class="char">p</span><span class="char">a</span><span class="char">n</span><span class="char">y</span>
+                        </span>
+                    </h1>
                     <p class="hero-subtitle fade-up">Expert craftsmanship, premium materials, and unmatched service quality for residential and commercial roofing projects across the Denver metro area.</p>
                 </div>
                 <div class="hero-right">
@@ -2488,6 +2517,18 @@
     <script>
         // GSAP Setup
         gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Title Character Animation
+        const titleChars = document.querySelectorAll('.hero-title .char');
+        gsap.set(titleChars, { y: '100%' });
+
+        gsap.to(titleChars, {
+            y: '0%',
+            duration: 0.8,
+            ease: "power3.out",
+            stagger: 0.02,
+            delay: 0.3
+        });
 
         // Custom Cursor
         const cursor = document.querySelector('.cursor');
