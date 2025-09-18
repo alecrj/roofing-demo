@@ -415,7 +415,7 @@
 
         /* ABOUT HERO SECTION */
         .about-hero {
-            padding: 80px 0 120px;
+            padding: 120px 0 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -427,9 +427,9 @@
         .about-hero-content {
             display: flex;
             flex-direction: column;
-            gap: 80px;
+            gap: 60px;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -546,16 +546,16 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--gray-800);
             border-radius: 20px;
-            padding: 50px 40px;
+            padding: 40px;
             backdrop-filter: blur(20px);
-            max-width: 600px;
+            max-width: 800px;
             width: 100%;
         }
 
         .stats-header {
             text-align: center;
-            margin-bottom: 35px;
-            padding-bottom: 25px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
             border-bottom: 1px solid var(--gray-800);
         }
 
@@ -579,7 +579,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .stat-item {
@@ -597,7 +597,7 @@
         }
 
         .certifications {
-            padding-top: 25px;
+            padding-top: 20px;
             border-top: 1px solid var(--gray-800);
         }
 
@@ -1167,21 +1167,23 @@
 
         @media (max-width: 768px) {
             .about-hero {
-                padding: 100px 0 80px;
+                padding: 120px 0 80px;
+                min-height: 100vh;
             }
 
             .about-hero-content {
                 max-width: 100%;
-                gap: 50px;
+                gap: 40px;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
-                gap: 25px;
+                gap: 20px;
             }
 
             .company-stats {
                 padding: 30px 20px;
+                max-width: 100%;
             }
         }
     </style>
@@ -1219,11 +1221,6 @@
         <div class="container">
             <div class="about-hero-content">
                 <div class="about-hero-top">
-                    <div class="hero-logo fade-up">
-                        <div class="logo-container">
-                            <img src="./assets/roofstar.png" alt="RoofStar Logo" class="about-logo">
-                        </div>
-                    </div>
                     <div class="company-intro fade-up">
                         <span class="intro-label">ESTABLISHED 2018</span>
                         <h1 class="about-hero-title">Six Years of Roofing<br>Excellence in <span class="red">Denver</span></h1>
