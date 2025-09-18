@@ -107,7 +107,7 @@
             background: linear-gradient(90deg, var(--red) 0%, #ff3333 100%);
             color: var(--white);
             z-index: 2000;
-            height: 32px;
+            height: 28px;
             overflow: hidden;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
@@ -122,13 +122,21 @@
             display: flex;
             align-items: center;
             white-space: nowrap;
-            animation: marquee 25s linear infinite;
+            animation: marquee 40s linear infinite;
         }
 
         .demo-text {
             font-size: 14px;
             font-weight: 600;
             padding: 0 100px;
+        }
+
+        .text-white {
+            color: var(--white);
+        }
+
+        .text-yellow {
+            color: #FFD700;
         }
 
         @keyframes marquee {
@@ -151,10 +159,10 @@
         /* HEADER */
         .header {
             position: fixed;
-            top: 30px;
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1000;
+            z-index: 3000;
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
             border: 1px solid var(--gray-800);
@@ -1364,6 +1372,11 @@
             gap: 60px;
         }
 
+        .marquee::after {
+            content: '';
+            flex: 0 0 60px;
+        }
+
         .marquee:hover {
             animation-play-state: paused;
         }
@@ -2082,7 +2095,14 @@
     <!-- Demo Site Banner -->
     <div class="demo-banner">
         <div class="demo-content">
-            <span class="demo-text">🚀 DEMO SITE - Get your roofing website made for a one-time fee of $299 • Contact Alec to get started today</span>
+            <span class="demo-text">
+                <span class="text-white">DEMO SITE - Get your roofing website made for a one-time fee of $299 • Contact Alec to get started today</span>
+                <span class="text-yellow"> • DEMO SITE - Get your roofing website made for a one-time fee of $299 • Contact Alec to get started today • </span>
+                <span class="text-white">DEMO SITE - Get your roofing website made for a one-time fee of $299 • Contact Alec to get started today</span>
+                <span class="text-yellow"> • DEMO SITE - Get your roofing website made for a one-time fee of $299 • Contact Alec to get started today • </span>
+                <span class="text-white">DEMO SITE - Get your roofing website made for a one-time fee of $299 • Contact Alec to get started today</span>
+                <span class="text-yellow"> • DEMO SITE - Get your roofing website made for a one-time fee of $299 • Contact Alec to get started today • </span>
+            </span>
         </div>
     </div>
 
@@ -2187,6 +2207,22 @@
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation. The team was professional, clean, and finished ahead of schedule."</p>
                 <div class="review-author">— Sarah Johnson, Aurora</div>
+            </div>
+            <!-- Additional unique reviews for seamless loop -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Fantastic experience from start to finish. RoofStar's team was punctual, respectful, and delivered exactly what they promised. Our new roof looks incredible!"</p>
+                <div class="review-author">— Michael Rodriguez, Denver</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"After the hailstorm, RoofStar made the insurance process easy and stress-free. Quality materials, expert installation, and great customer service throughout."</p>
+                <div class="review-author">— Karen Thompson, Highlands Ranch</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Five years later and our roof still looks brand new. RoofStar stands behind their work and their warranty is legitimate. Highly recommended!"</p>
+                <div class="review-author">— Robert Kim, Centennial</div>
             </div>
         </div>
     </section>
