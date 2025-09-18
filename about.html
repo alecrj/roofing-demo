@@ -425,15 +425,16 @@
         }
 
         .about-hero-content {
-            display: grid;
-            grid-template-columns: 1fr 400px;
+            display: flex;
+            flex-direction: column;
             gap: 80px;
-            align-items: center;
             width: 100%;
-            max-width: 1400px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .about-hero-left {
+        .about-hero-top {
+            text-align: center;
             max-width: none;
         }
 
@@ -536,17 +537,19 @@
             align-items: center;
         }
 
-        .about-hero-right {
+        .about-hero-bottom {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
         }
 
         .company-stats {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--gray-800);
             border-radius: 20px;
-            padding: 40px 35px;
+            padding: 50px 40px;
             backdrop-filter: blur(20px);
+            max-width: 600px;
+            width: 100%;
         }
 
         .stats-header {
@@ -574,8 +577,8 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
             margin-bottom: 35px;
         }
 
@@ -1149,6 +1152,38 @@
                 font-size: 15px;
             }
         }
+
+        /* ABOUT HERO RESPONSIVE */
+        @media (max-width: 1024px) {
+            .about-hero-content {
+                max-width: 600px;
+                gap: 60px;
+            }
+
+            .company-stats {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 100px 0 80px;
+            }
+
+            .about-hero-content {
+                max-width: 100%;
+                gap: 50px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .company-stats {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1183,7 +1218,7 @@
     <section class="about-hero">
         <div class="container">
             <div class="about-hero-content">
-                <div class="about-hero-left">
+                <div class="about-hero-top">
                     <div class="hero-logo fade-up">
                         <div class="logo-container">
                             <img src="./assets/roofstar.png" alt="RoofStar Logo" class="about-logo">
@@ -1212,7 +1247,7 @@
 
                 </div>
 
-                <div class="about-hero-right">
+                <div class="about-hero-bottom">
                     <div class="company-stats fade-up">
                         <div class="stats-header">
                             <h3 class="stats-title">Our Track Record</h3>
