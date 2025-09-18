@@ -436,9 +436,16 @@
 
         .hero-cta-buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+        }
+
+        .hero-cta-buttons .btn-primary,
+        .hero-cta-buttons .btn-secondary {
+            padding: 12px 24px;
+            font-size: 14px;
+            white-space: nowrap;
         }
 
         .hero-stats {
@@ -1760,15 +1767,19 @@
             }
 
             .hero-cta-buttons {
-                flex-direction: column;
-                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
             }
 
             .hero-cta-buttons .btn-primary,
             .hero-cta-buttons .btn-secondary {
-                width: 100%;
-                max-width: 300px;
+                flex: 1;
+                min-width: 140px;
+                max-width: 180px;
                 text-align: center;
+                font-size: 13px;
+                padding: 10px 16px;
             }
 
             .stats {
