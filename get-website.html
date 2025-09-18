@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Professional Roofing Website | Premium Web Design Services</title>
+    <title>Alec Johnson — Web Designer for Roofing Companies</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <style>
         :root {
-            --primary-blue: #1e3a8a;
-            --trust-blue: #2563eb;
-            --safety-orange: #ea580c;
-            --construction-yellow: #fbbf24;
-            --professional-gray: #374151;
-            --light-gray: #f9fafb;
+            --black: #0a0a0a;
             --white: #ffffff;
-            --emergency-red: #dc2626;
-            --success: #10b981;
-            --dark-blue: #1e293b;
+            --gray-100: #f5f5f5;
+            --gray-200: #e8e8e8;
+            --gray-300: #d1d1d1;
+            --gray-400: #a8a8a8;
+            --gray-500: #8a8a8a;
+            --gray-600: #6a6a6a;
+            --gray-700: #4a4a4a;
+            --gray-800: #2a2a2a;
+            --gray-900: #1a1a1a;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
         }
 
         * {
@@ -24,594 +37,1021 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--professional-gray);
-            background-color: var(--white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.4;
+            overflow-x: hidden;
+            font-weight: 400;
         }
 
-        /* Emergency Alert Bar */
-        .emergency-bar {
-            background: linear-gradient(90deg, var(--emergency-red), #b91c1c);
-            color: white;
-            padding: 8px 0;
-            text-align: center;
-            font-weight: 600;
-            font-size: 14px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .emergency-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary-blue), var(--trust-blue));
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--construction-yellow);
-        }
-
-        .header-contact {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .phone-number {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--construction-yellow);
-            text-decoration: none;
-        }
-
-        .emergency-btn {
-            background: var(--safety-orange);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .emergency-btn:hover {
-            background: #c2410c;
-            transform: translateY(-1px);
-        }
-
-        /* Navigation */
-        nav {
+        /* CURSOR */
+        .cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
             background: var(--white);
-            padding: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 40px;
-            z-index: 999;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease;
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .cursor.large {
+            transform: scale(6);
+            mix-blend-mode: difference;
         }
 
-        .nav-list {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-list li {
-            margin: 0;
-        }
-
-        .nav-link {
-            display: block;
-            padding: 15px 20px;
-            text-decoration: none;
-            color: var(--professional-gray);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--trust-blue);
-            border-bottom-color: var(--safety-orange);
-            background-color: #f8fafc;
-        }
-
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 60px;
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--safety-orange), #c2410c);
-            border-radius: 15px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
+        /* NAVIGATION */
+        .nav {
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shimmer 3s ease-in-out infinite;
+            z-index: 1000;
+            padding: 20px 40px;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
         }
 
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(200%); }
-        }
-
-        .page-title {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            position: relative;
-            z-index: 1;
-        }
-
-        .page-subtitle {
-            font-size: 1.4rem;
-            max-width: 700px;
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            opacity: 0.95;
         }
 
-        /* Service Overview */
-        .service-overview {
-            margin-bottom: 80px;
-            text-align: center;
-        }
-
-        .overview-title {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 30px;
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
             font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.02em;
         }
 
-        .overview-description {
-            font-size: 1.2rem;
-            color: var(--professional-gray);
-            max-width: 800px;
-            margin: 0 auto 50px;
-            line-height: 1.8;
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
         }
 
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+        .nav-link {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
         }
 
-        .feature-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
+        .nav-link:hover {
+            color: var(--white);
+        }
+
+        .nav-link.active {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            background: var(--white);
+            color: var(--black);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
             transition: all 0.3s ease;
-            border-top: 4px solid var(--trust-blue);
+            letter-spacing: -0.01em;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
         }
 
-        .feature-icon {
+        /* LAYOUT */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding-top: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: clamp(40px, 8vw, 80px);
+            align-items: start;
+            width: 100%;
+            padding-top: 80px;
+        }
+
+        .hero-text {
+            max-width: none;
+        }
+
+        .hero-intro {
+            font-size: 18px;
+            color: var(--gray-600);
+            margin-bottom: 40px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--white);
+            margin-bottom: 60px;
+            letter-spacing: -0.03em;
+            word-break: break-word;
+        }
+
+        .hero-title .line {
+            display: block;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .hero-title .char {
+            display: inline-block;
+            transform: translateY(100%);
+            max-width: 100%;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 60px;
+            max-width: 500px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            background: var(--white);
+            color: var(--black);
+            padding: 20px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .hero-price-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        /* SIDEBAR */
+        .hero-sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .profile-card {
+            background: var(--gray-800);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .profile-image {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--trust-blue), var(--primary-blue));
             border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
-            color: white;
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .feature-description {
-            color: var(--professional-gray);
-            line-height: 1.6;
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            background: linear-gradient(135deg, var(--light-gray), #e5e7eb);
-            padding: 80px 40px;
-            border-radius: 20px;
-            margin-bottom: 80px;
-            text-align: center;
-        }
-
-        .pricing-title {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .price-display {
-            font-size: 4rem;
-            color: var(--safety-orange);
-            font-weight: 700;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--white);
             margin-bottom: 20px;
         }
 
-        .price-description {
-            font-size: 1.2rem;
-            color: var(--professional-gray);
-            margin-bottom: 40px;
+        .profile-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
         }
 
-        .pricing-features {
-            max-width: 600px;
-            margin: 0 auto 40px;
+        .profile-title {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat {
             text-align: left;
         }
 
-        .pricing-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e5e7eb;
-            position: relative;
-            padding-left: 30px;
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            display: block;
+            letter-spacing: -0.02em;
         }
 
-        .pricing-features li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            color: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .cta-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .cta-btn {
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
+        .stat-label {
+            font-size: 12px;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 120px 0;
+            background: var(--gray-900);
+        }
+
+        .features-header {
+            margin-bottom: 100px;
+        }
+
+        .features-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+        }
+
+        .features-subtitle {
+            font-size: 20px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+
+        .feature {
+            padding: 40px 0;
+            border-top: 1px solid var(--gray-700);
+        }
+
+        .feature-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .feature-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-description {
             font-size: 16px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* PROCESS SECTION */
+        .process {
+            padding: 120px 0;
+        }
+
+        .process-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .process-text {
+            position: sticky;
+            top: 120px;
+        }
+
+        .process-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+        }
+
+        .process-subtitle {
+            font-size: 20px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .step {
+            padding: 60px 0;
+            border-top: 1px solid var(--gray-800);
+        }
+
+        .step:last-child {
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .step-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            color: var(--gray-700);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -0.04em;
+        }
+
+        .step-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .step-description {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            padding: 120px 0;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .pricing-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+        }
+
+        .pricing-subtitle {
+            font-size: 20px;
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 80px;
+        }
+
+        .price-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(4rem, 12vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -0.04em;
+        }
+
+        .price-label {
+            font-size: 16px;
+            color: var(--gray-400);
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .pricing-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+            text-align: left;
+        }
+
+        .pricing-feature {
+            font-size: 16px;
+            color: var(--gray-300);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .pricing-feature::before {
+            content: '✓';
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .pricing-cta {
+            display: inline-flex;
+            align-items: center;
+            background: var(--white);
+            color: var(--black);
+            padding: 20px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            padding: 120px 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .contact-text {
+            position: sticky;
+            top: 120px;
+        }
+
+        .contact-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+        }
+
+        .contact-subtitle {
+            font-size: 20px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .contact-method {
+            padding: 40px;
+            background: var(--gray-800);
+            border-radius: 12px;
             transition: all 0.3s ease;
         }
 
-        .cta-primary {
-            background: var(--construction-yellow);
-            color: var(--primary-blue);
+        .contact-method:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .cta-primary:hover {
-            background: #e6a500;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+        .contact-method-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
         }
 
-        .cta-secondary {
-            background: var(--safety-orange);
-            color: white;
+        .contact-method-info {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 20px;
         }
 
-        .cta-secondary:hover {
-            background: #c2410c;
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--professional-gray);
-            color: white;
-            padding: 40px 20px 20px;
-            margin-top: 50px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h3 {
-            color: var(--construction-yellow);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #d1d5db;
+        .contact-method-link {
+            color: var(--white);
             text-decoration: none;
-            line-height: 1.8;
+            font-weight: 600;
+            font-size: 18px;
+            border-bottom: 2px solid var(--white);
+            padding-bottom: 2px;
+            transition: opacity 0.3s ease;
         }
 
-        .footer-section a:hover {
-            color: var(--construction-yellow);
+        .contact-method-link:hover {
+            opacity: 0.7;
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #4b5563;
-            color: #9ca3af;
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr 250px;
+                gap: clamp(30px, 6vw, 60px);
+            }
         }
 
-        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .process-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-sidebar {
+                position: static;
+                order: -1;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .pricing-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
+            .container {
+                padding: 0 20px;
             }
 
-            .nav-list {
-                flex-direction: column;
+            .nav {
+                padding: 15px 20px;
             }
 
-            .page-title {
-                font-size: 2.5rem;
+            .nav-menu {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 80px;
+            }
+
+            .section {
+                min-height: auto;
+            }
+
+            .features,
+            .process,
+            .pricing,
+            .contact {
+                padding: 80px 0;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .process-steps {
+                gap: 60px;
+            }
+
+            .step {
+                padding: 40px 0;
+            }
+
+            .step-number {
+                font-size: 60px;
             }
 
             .price-display {
-                font-size: 3rem;
+                font-size: clamp(3rem, 10vw, 5rem);
             }
+
+            .hero-title {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+                line-height: 1.2;
+            }
+
+            .hero-price {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+        }
+
+        /* ANIMATIONS */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .fade-in {
+            opacity: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Emergency Alert Bar -->
-    <div class="emergency-bar">
-        <div class="emergency-content">
-            <span>STORM DAMAGE? EMERGENCY REPAIRS AVAILABLE 24/7</span>
-            <a href="tel:[PHONE]" style="color: var(--construction-yellow); text-decoration: none; font-weight: bold; margin-left: 20px;">CALL NOW: [PHONE]</a>
-        </div>
-    </div>
-
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">[BUSINESS NAME]</div>
-            <div class="header-contact">
-                <a href="tel:[PHONE]" class="phone-number">[PHONE]</a>
-                <a href="contact.html" class="emergency-btn">GET FREE ESTIMATE</a>
-            </div>
-        </div>
-    </header>
+    <!-- Cursor -->
+    <div class="cursor"></div>
 
     <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <ul class="nav-list">
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">ALEC JOHNSON</a>
+            <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="gallery.html" class="nav-link">Portfolio</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="get-website.html" class="nav-link active" style="color: var(--safety-orange); font-weight: 700;">Get Your Website</a></li>
+                <li><a href="#contact" class="nav-link active">Contact</a></li>
             </ul>
+            <a href="#pricing" class="nav-cta">Get Started</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Page Header -->
-        <section class="page-header">
-            <h1 class="page-title">Get Your Professional Roofing Website</h1>
-            <p class="page-subtitle">Join successful roofing contractors who generate leads and grow their business with our premium website design service.</p>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-intro fade-up">Web Designer & Developer</div>
 
-        <!-- Service Overview -->
-        <section class="service-overview">
-            <h2 class="overview-title">Professional Websites for Roofing Contractors</h2>
-            <p class="overview-description">
-                We specialize in creating high-converting websites specifically for roofing contractors. Our designs focus on lead generation,
-                showcasing your work, and building trust with potential customers. Every website is mobile-optimized, fast-loading,
-                and designed to turn visitors into customers.
-            </p>
-        </section>
+                    <h1 class="hero-title">
+                        <span class="line">
+                            <span class="char">I</span>
+                            <span class="char"> </span>
+                            <span class="char">m</span>
+                            <span class="char">a</span>
+                            <span class="char">k</span>
+                            <span class="char">e</span>
+                            <span class="char"> </span>
+                            <span class="char">w</span>
+                            <span class="char">e</span>
+                            <span class="char">b</span>
+                            <span class="char">s</span>
+                            <span class="char">i</span>
+                            <span class="char">t</span>
+                            <span class="char">e</span>
+                            <span class="char">s</span>
+                        </span>
+                        <span class="line">
+                            <span class="char">f</span>
+                            <span class="char">o</span>
+                            <span class="char">r</span>
+                            <span class="char"> </span>
+                            <span class="char">r</span>
+                            <span class="char">o</span>
+                            <span class="char">o</span>
+                            <span class="char">f</span>
+                            <span class="char">i</span>
+                            <span class="char">n</span>
+                            <span class="char">g</span>
+                        </span>
+                        <span class="line">
+                            <span class="char">c</span>
+                            <span class="char">o</span>
+                            <span class="char">m</span>
+                            <span class="char">p</span>
+                            <span class="char">a</span>
+                            <span class="char">n</span>
+                            <span class="char">i</span>
+                            <span class="char">e</span>
+                            <span class="char">s</span>
+                        </span>
+                    </h1>
 
-        <!-- Features Grid -->
-        <section class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">WEB</div>
-                <h3 class="feature-title">Custom Design</h3>
-                <p class="feature-description">Unique, professional design tailored specifically for your roofing business. No templates - every site is custom built.</p>
-            </div>
+                    <p class="hero-subtitle fade-up">Premium websites that convert visitors into customers. Built specifically for roofing contractors who want to dominate their local market.</p>
 
-            <div class="feature-card">
-                <div class="feature-icon">MOB</div>
-                <h3 class="feature-title">Mobile Optimized</h3>
-                <p class="feature-description">Fully responsive design that looks perfect on all devices. Most roofing leads come from mobile searches.</p>
-            </div>
+                    <a href="#pricing" class="hero-cta fade-up">Start Your Project</a>
+                </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">SEO</div>
-                <h3 class="feature-title">SEO Ready</h3>
-                <p class="feature-description">Built with search engine optimization in mind. Get found by customers searching for roofing services in your area.</p>
-            </div>
+                <div class="hero-sidebar">
+                    <div class="profile-card fade-up">
+                        <div class="profile-image">A</div>
+                        <h3 class="profile-name">Alec Johnson</h3>
+                        <p class="profile-title">Web Designer</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">24hr</span>
+                                <span class="stat-label">Delivery</span>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">LEA</div>
-                <h3 class="feature-title">Lead Generation</h3>
-                <p class="feature-description">Contact forms, call buttons, and conversion-focused design elements to turn visitors into customers.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">FAS</div>
-                <h3 class="feature-title">Fast Loading</h3>
-                <p class="feature-description">Optimized for speed and performance. Fast websites rank better and convert more visitors.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">SUP</div>
-                <h3 class="feature-title">Ongoing Support</h3>
-                <p class="feature-description">We provide training and ongoing support to help you manage and update your new website.</p>
-            </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section class="pricing-section">
-            <h2 class="pricing-title">Complete Website Package</h2>
-            <div class="price-display">$399</div>
-            <p class="price-description">One-time setup fee. No monthly hosting fees for the first year.</p>
-
-            <ul class="pricing-features">
-                <li>Custom roofing website design</li>
-                <li>Mobile-responsive layout</li>
-                <li>Professional content writing</li>
-                <li>Contact forms and lead capture</li>
-                <li>Gallery section for your work</li>
-                <li>Services and about pages</li>
-                <li>SEO optimization</li>
-                <li>Social media integration</li>
-                <li>Google My Business setup help</li>
-                <li>Training on managing your site</li>
-                <li>30 days of support included</li>
-                <li>Free hosting for first year</li>
-            </ul>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <h2 class="cta-title">Ready to Grow Your Roofing Business?</h2>
-            <p class="cta-subtitle">Join successful roofing contractors who are generating more leads and growing their business with professional websites.</p>
-
-            <div class="cta-buttons">
-                <a href="mailto:[YOUR_EMAIL]?subject=Website Quote Request" class="cta-btn cta-primary">Get Your Quote</a>
-                <a href="tel:[YOUR_PHONE]" class="cta-btn cta-secondary">Call: [YOUR_PHONE]</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Web Design Services</h3>
-                <p>Professional website design for roofing contractors. Custom designs that generate leads and grow your business.</p>
-                <p><strong>Price:</strong> $399 setup</p>
-                <p><strong>Includes:</strong> Design, hosting, support</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>What's Included</h3>
-                <p>Custom Design</p>
-                <p>Mobile Optimization</p>
-                <p>Lead Generation Forms</p>
-                <p>SEO Optimization</p>
-                <p>Free Hosting (1 Year)</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:[YOUR_EMAIL]">[YOUR_EMAIL]</a></p>
-                <p>Phone: <a href="tel:[YOUR_PHONE]">[YOUR_PHONE]</a></p>
-                <p>Get started in 7-10 business days</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Why Choose Us</h3>
-                <p>Roofing industry specialists</p>
-                <p>Proven lead generation results</p>
-                <p>Fast turnaround time</p>
-                <p>Ongoing support included</p>
+                    <div class="fade-up" style="text-align: center;">
+                        <div class="hero-price">$299</div>
+                        <div class="hero-price-label">One-time fee</div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>&copy; 2024 Professional Roofing Websites. Specialized web design for roofing contractors.</p>
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <div class="features-header fade-up">
+                <h2 class="features-title">What you get</h2>
+                <p class="features-subtitle">Everything you need to attract more customers and grow your roofing business online.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature fade-up">
+                    <div class="feature-number">01</div>
+                    <h3 class="feature-title">Custom Design</h3>
+                    <p class="feature-description">Unique website design tailored specifically for your roofing business. No templates, no shortcuts.</p>
+                </div>
+
+                <div class="feature fade-up">
+                    <div class="feature-number">02</div>
+                    <h3 class="feature-title">Mobile Responsive</h3>
+                    <p class="feature-description">Perfect experience on all devices. Most of your customers will find you on their phones.</p>
+                </div>
+
+                <div class="feature fade-up">
+                    <div class="feature-number">03</div>
+                    <h3 class="feature-title">Lead Generation</h3>
+                    <p class="feature-description">Built-in contact forms and call-to-action buttons designed to convert visitors into customers.</p>
+                </div>
+
+                <div class="feature fade-up">
+                    <div class="feature-number">04</div>
+                    <h3 class="feature-title">SEO Optimized</h3>
+                    <p class="feature-description">Optimized for search engines so customers can find you when they search for roofing services.</p>
+                </div>
+
+                <div class="feature fade-up">
+                    <div class="feature-number">05</div>
+                    <h3 class="feature-title">Fast Loading</h3>
+                    <p class="feature-description">Optimized for speed and performance. Fast websites rank better and convert more visitors.</p>
+                </div>
+
+                <div class="feature fade-up">
+                    <div class="feature-number">06</div>
+                    <h3 class="feature-title">Free Hosting</h3>
+                    <p class="feature-description">Hosting included forever. No monthly fees, no hidden costs, no surprises.</p>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section">
+        <div class="container">
+            <div class="process-content">
+                <div class="process-text fade-up">
+                    <h2 class="process-title">How it works</h2>
+                    <p class="process-subtitle">A simple, streamlined process to get your website live in 24 hours.</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step fade-up">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">You Order</h3>
+                        <p class="step-description">Tell me about your roofing business, services, and what you want to achieve with your website.</p>
+                    </div>
+
+                    <div class="step fade-up">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">I Build</h3>
+                        <p class="step-description">I create your custom website with professional design, compelling copy, and lead generation forms.</p>
+                    </div>
+
+                    <div class="step fade-up">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title">You Launch</h3>
+                        <p class="step-description">Your website goes live within 24 hours, complete with hosting and everything you need.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing section" id="pricing">
+        <div class="container">
+            <div class="pricing-content">
+                <h2 class="pricing-title fade-up">Simple pricing</h2>
+                <p class="pricing-subtitle fade-up">One price, everything included. No monthly fees, no hidden costs.</p>
+
+                <div class="fade-up">
+                    <div class="price-display">$299</div>
+                    <div class="price-label">One-time payment</div>
+                </div>
+
+                <div class="pricing-features fade-up">
+                    <div class="pricing-feature">Custom website design</div>
+                    <div class="pricing-feature">Mobile responsive layout</div>
+                    <div class="pricing-feature">Professional copywriting</div>
+                    <div class="pricing-feature">Lead generation forms</div>
+                    <div class="pricing-feature">SEO optimization</div>
+                    <div class="pricing-feature">Free hosting forever</div>
+                    <div class="pricing-feature">24-hour delivery</div>
+                    <div class="pricing-feature">SSL certificate</div>
+                </div>
+
+                <a href="#contact" class="pricing-cta fade-up">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-text fade-up">
+                    <h2 class="contact-title">Let's work together</h2>
+                    <p class="contact-subtitle">Ready to get started? Contact me today and get your website live in 24 hours.</p>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-method fade-up">
+                        <h3 class="contact-method-title">Email</h3>
+                        <p class="contact-method-info">Get started instantly</p>
+                        <a href="mailto:alec@roofingwebsites.com" class="contact-method-link">alec@roofingwebsites.com</a>
+                    </div>
+
+                    <div class="contact-method fade-up">
+                        <h3 class="contact-method-title">Phone</h3>
+                        <p class="contact-method-info">Let's discuss your project</p>
+                        <a href="tel:+1234567890" class="contact-method-link">(123) 456-7890</a>
+                    </div>
+
+                    <div class="contact-method fade-up">
+                        <h3 class="contact-method-title">Text</h3>
+                        <p class="contact-method-info">Quick questions welcome</p>
+                        <a href="sms:+1234567890" class="contact-method-link">Send a message</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // GSAP Setup
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const hoverElements = document.querySelectorAll('a, button');
+
+        document.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        });
+
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('large'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('large'));
+        });
+
+        // Hero Title Animation
+        const titleChars = document.querySelectorAll('.hero-title .char');
+        gsap.set(titleChars, { y: '100%' });
+
+        gsap.to(titleChars, {
+            y: '0%',
+            duration: 0.8,
+            ease: "power3.out",
+            stagger: 0.02,
+            delay: 0.5
+        });
+
+        // Fade Up Animations
+        gsap.utils.toArray('.fade-up').forEach(element => {
+            gsap.fromTo(element,
+                {
+                    opacity: 0,
+                    y: 30
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: {
+                            y: target,
+                            offsetY: 80
+                        },
+                        ease: "power2.inOut"
+                    });
+                }
+            });
+        });
+
+        // Navigation Scroll Effect
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                gsap.to(nav, { y: '-100%', duration: 0.3 });
+            } else {
+                gsap.to(nav, { y: '0%', duration: 0.3 });
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    </script>
 </body>
 </html>
