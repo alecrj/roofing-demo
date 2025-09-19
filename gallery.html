@@ -996,11 +996,7 @@
                 flex: 1;
                 justify-content: center;
                 align-items: center;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                width: calc(100vw - 120px);
-                max-width: 300px;
+                margin: 0 12px;
             }
 
             .page-card {
@@ -1044,6 +1040,18 @@
                 background: linear-gradient(135deg, #cc0000 0%, #aa0000 100%);
                 transform: translateY(-1px);
                 box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+            }
+
+            /* Mobile Nav Logo */
+            .mobile-nav-logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .mobile-nav-logo img {
+                height: 40px;
+                width: auto;
             }
         }
 
@@ -1502,13 +1510,16 @@
 
     <!-- Clean Mobile Navigation -->
     <div class="mobile-nav-bar">
-        <button class="mobile-hamburger" aria-label="Menu">☰</button>
+        <div class="mobile-nav-logo">
+            <img src="./assets/roofstarwhite.png" alt="RoofStar">
+        </div>
         <div class="mobile-page-cards">
             <a href="index.html" class="page-card">Home</a>
             <a href="gallery.html" class="page-card active">Portfolio</a>
             <a href="about.html" class="page-card">About</a>
             <a href="get-website.html" class="page-card get-website">Get Website</a>
         </div>
+        <button class="mobile-hamburger" aria-label="Menu">☰</button>
     </div>
 
     <!-- Mobile Menu Overlay -->
