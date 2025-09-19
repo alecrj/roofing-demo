@@ -374,6 +374,18 @@
                 transform: translateY(-1px);
                 box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
             }
+
+            /* Mobile Hero Logo */
+            .mobile-hero-logo {
+                text-align: center;
+                margin: 10px auto 20px auto;
+            }
+
+            .mobile-hero-logo img {
+                height: 120px;
+                width: auto;
+                max-width: 100%;
+            }
         }
 
 
@@ -422,6 +434,19 @@
 
         .mobile-menu-close:hover {
             background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-logo {
+            margin-bottom: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .mobile-nav {
@@ -477,7 +502,8 @@
             }
 
             .mobile-nav-bar,
-            .mobile-page-cards {
+            .mobile-page-cards,
+            .mobile-hero-logo {
                 display: none !important;
             }
 
@@ -1199,7 +1225,7 @@
         /* DEMO PROMO BAR */
         .demo-promo-bar {
             background: linear-gradient(135deg, var(--red) 0%, #cc0000 100%);
-            padding: 20px 0;
+            padding: 12px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             width: 100vw;
@@ -1211,7 +1237,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 24px;
         }
 
         .demo-promo-text {
@@ -1220,37 +1246,37 @@
 
         .demo-promo-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--white);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             line-height: 1.2;
         }
 
         .demo-promo-subtitle {
-            font-size: 16px;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.9);
-            line-height: 1.4;
+            line-height: 1.3;
             margin: 0;
         }
 
         .demo-promo-btn {
             background: var(--white);
             color: var(--red);
-            padding: 16px 32px;
-            border-radius: 25px;
+            padding: 10px 24px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 14px;
             transition: all 0.3s ease;
             white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         .demo-promo-btn:hover {
             background: rgba(255, 255, 255, 0.95);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         /* SERVICES - CLEAN LAYOUT */
@@ -2031,7 +2057,7 @@
         @media (max-width: 768px) {
             .hero {
                 min-height: 100vh;
-                padding: 120px 0 60px;
+                padding: 80px 0 60px;
             }
 
             .hero-content {
@@ -2545,20 +2571,21 @@
             .demo-promo-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 24px;
+                gap: 16px;
             }
 
             .demo-promo-title {
-                font-size: 20px;
+                font-size: 16px;
+                margin-bottom: 2px;
             }
 
             .demo-promo-subtitle {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             .demo-promo-btn {
-                padding: 14px 28px;
-                font-size: 15px;
+                padding: 8px 20px;
+                font-size: 13px;
             }
         }
 
@@ -3288,6 +3315,9 @@
     <div class="mobile-menu-overlay">
         <div class="mobile-menu-content">
             <button class="mobile-menu-close" aria-label="Close Menu">×</button>
+            <div class="mobile-menu-logo">
+                <img src="./assets/roofstar.png" alt="RoofStar" style="height: 50px; width: auto;">
+            </div>
             <nav class="mobile-nav">
                 <a href="index.html" class="active">Home</a>
                 <a href="gallery.html">Portfolio</a>
@@ -3302,6 +3332,9 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-left">
+                    <div class="mobile-hero-logo">
+                        <img src="./assets/roofstarwhite.png" alt="RoofStar">
+                    </div>
                     <h1 class="hero-title">
                         <span class="line">
                             <span class="char">D</span><span class="char">e</span><span class="char">n</span><span class="char">v</span><span class="char">e</span><span class="char">r</span><span class="char">'</span><span class="char">s</span>

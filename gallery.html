@@ -309,6 +309,19 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        .mobile-menu-logo {
+            margin-bottom: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
         .mobile-nav {
             display: flex;
             flex-direction: column;
@@ -1502,6 +1515,9 @@
     <div class="mobile-menu-overlay">
         <div class="mobile-menu-content">
             <button class="mobile-menu-close" aria-label="Close Menu">×</button>
+            <div class="mobile-menu-logo">
+                <img src="./assets/roofstar.png" alt="RoofStar" style="height: 50px; width: auto;">
+            </div>
             <nav class="mobile-nav">
                 <a href="index.html">Home</a>
                 <a href="gallery.html" class="active">Portfolio</a>
