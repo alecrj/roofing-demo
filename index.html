@@ -276,49 +276,43 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Simple mobile nav - just hamburger in top left when compact */
+        /* Clean Mobile Navigation - Separate from Desktop */
         @media (max-width: 768px) {
+            /* Hide desktop pill nav completely on mobile */
             .header {
-                min-top: 40px; /* Never go above marquee banner */
+                display: none !important;
             }
 
-            .header.mobile-compact {
-                position: fixed !important;
-                top: 45px !important;
-                left: 0px !important;
-                right: auto !important;
-                width: auto !important;
-                height: auto !important;
-                transform: none !important;
-                background: none !important;
-                backdrop-filter: none !important;
-                border: none !important;
-                border-radius: 0 !important;
+            /* Create clean mobile nav */
+            .mobile-nav-bar {
+                position: fixed;
+                top: 45px;
+                left: 15px;
                 z-index: 1500;
+                transition: opacity 0.3s ease-in-out;
             }
 
-            .header.mobile-compact .header-inner {
-                min-height: auto !important;
-                padding: 0 !important;
-                justify-content: flex-start !important;
+            .mobile-nav-bar.hidden {
+                opacity: 0;
+                pointer-events: none;
             }
 
-            .header.mobile-compact .logo {
-                display: none !important;
+            .mobile-hamburger {
+                background: var(--red);
+                color: var(--white);
+                border: none;
+                border-radius: 8px;
+                padding: 12px;
+                font-size: 18px;
+                cursor: pointer;
+                box-shadow: 0 2px 12px rgba(255, 0, 0, 0.3);
+                transition: all 0.3s ease;
             }
 
-            .header.mobile-compact .mobile-menu-toggle {
-                background: var(--red) !important;
-                border-radius: 8px !important;
-                padding: 10px !important;
-                font-size: 16px !important;
-                color: var(--white) !important;
-                box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
-                border: none !important;
-            }
-
-            .header.mobile-compact .get-website-btn {
-                display: none !important;
+            .mobile-hamburger:hover {
+                background: #cc0000;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 16px rgba(255, 0, 0, 0.4);
             }
         }
 
@@ -3203,6 +3197,11 @@
         </div>
     </header>
 
+    <!-- Clean Mobile Navigation -->
+    <div class="mobile-nav-bar">
+        <button class="mobile-hamburger" aria-label="Menu">☰</button>
+    </div>
+
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay">
         <div class="mobile-menu-content">
@@ -3757,8 +3756,15 @@
             delay: 0.3
         });
 
-        // Custom Cursor - Desktop Only
-        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        // Custom Cursor - Desktop Only (Enhanced Detection)
+        function isDesktopDevice() {
+            // Multiple checks to ensure we're on a desktop with mouse
+            return window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+                   !('ontouchstart' in window) &&
+                   window.innerWidth > 768;
+        }
+
+        if (isDesktopDevice()) {
             const cursor = document.querySelector('.cursor');
             const hoverElements = document.querySelectorAll('a, button');
 
@@ -3785,6 +3791,14 @@
                 document.addEventListener('mouseup', () => {
                     cursor.classList.remove('clicking');
                 });
+            }
+        }
+
+        // Hide cursor element completely on mobile/touch devices
+        if (!isDesktopDevice()) {
+            const cursor = document.querySelector('.cursor');
+            if (cursor) {
+                cursor.style.display = 'none';
             }
         }
 
@@ -4033,46 +4047,41 @@
             });
         });
 
-        // Smart Stay mobile nav behavior - keeps below banner
+        // Clean Mobile Navigation
         (function() {
             if (window.innerWidth <= 768) {
-                const header = document.querySelector('.header');
-                let lastScrollY = 0;
-                let ticking = false;
+                const mobileNavBar = document.querySelector('.mobile-nav-bar');
+                let scrollTimeout;
 
-                function updateNav() {
+                function handleScroll() {
                     const scrollY = window.pageYOffset;
 
-                    if (scrollY > 100 && scrollY > lastScrollY) {
-                        // Scrolling down - compact mode (but stay below banner)
-                        header.classList.add('mobile-compact');
-                    } else if (scrollY < lastScrollY || scrollY <= 80) {
-                        // Scrolling up or near top - full mode (but not above banner)
-                        header.classList.remove('mobile-compact');
-                    }
+                    if (scrollY > 100) {
+                        // Hide nav when scrolling
+                        mobileNavBar.classList.add('hidden');
 
-                    lastScrollY = scrollY;
-                    ticking = false;
+                        // Clear existing timeout
+                        clearTimeout(scrollTimeout);
+
+                        // Show nav after 2 seconds of no scrolling
+                        scrollTimeout = setTimeout(() => {
+                            mobileNavBar.classList.remove('hidden');
+                        }, 2000);
+                    } else {
+                        // Near top - always visible
+                        mobileNavBar.classList.remove('hidden');
+                        clearTimeout(scrollTimeout);
+                    }
                 }
 
-                function requestTick() {
-                    if (!ticking) {
-                        requestAnimationFrame(updateNav);
-                        ticking = true;
-                    }
-                }
+                window.addEventListener('scroll', handleScroll);
 
-                window.addEventListener('scroll', requestTick);
-
-                // Reset on resize
-                window.addEventListener('resize', () => {
-                    if (window.innerWidth > 768) {
-                        header.classList.remove('mobile-compact');
-                    }
+                // Mobile hamburger menu
+                const mobileHamburger = document.querySelector('.mobile-hamburger');
+                mobileHamburger.addEventListener('click', () => {
+                    mobileMenuOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 });
-
-                // Initialize
-                updateNav();
             }
         })();
 
