@@ -131,7 +131,7 @@
             display: flex;
             align-items: center;
             white-space: nowrap;
-            animation: marquee 12s linear infinite;
+            animation: marquee 40s linear infinite;
         }
 
         .demo-text {
@@ -1196,6 +1196,63 @@
             font-weight: 500;
         }
 
+        /* DEMO PROMO BAR */
+        .demo-promo-bar {
+            background: linear-gradient(135deg, var(--red) 0%, #cc0000 100%);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100vw;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .demo-promo-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .demo-promo-text {
+            flex: 1;
+        }
+
+        .demo-promo-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .demo-promo-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .demo-promo-btn {
+            background: var(--white);
+            color: var(--red);
+            padding: 16px 32px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .demo-promo-btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
         /* SERVICES - CLEAN LAYOUT */
         .services {
             padding: 200px 0;
@@ -1597,54 +1654,71 @@
             color: var(--gray-600);
         }
 
-        .marquee {
+        /* REVIEWS SCROLLER */
+        .reviews-scroller {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .reviews-track {
             display: flex;
-            animation: scroll 30s linear infinite;
-            gap: 60px;
+            gap: 40px;
+            animation: reviews-scroll 30s linear infinite;
+            width: max-content;
         }
 
-        .marquee::after {
-            content: '';
-            flex: 0 0 60px;
-        }
-
-        .marquee:hover {
+        .reviews-track:hover {
             animation-play-state: paused;
         }
 
-        @keyframes scroll {
+        @keyframes reviews-scroll {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(-50%);
             }
         }
 
         .review-card {
-            min-width: 400px;
+            flex-shrink: 0;
+            width: 350px;
             background: var(--gray-800);
             border: 1px solid var(--gray-700);
             border-radius: 12px;
-            padding: 30px;
+            padding: 24px;
             backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            background: var(--gray-700);
+            border-color: var(--gray-600);
+            transform: translateY(-2px);
         }
 
         .review-stars {
             color: var(--red);
-            font-size: 20px;
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
         }
 
         .review-text {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.5;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             color: var(--white);
+            font-style: italic;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .review-author {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray-400);
             font-weight: 500;
         }
@@ -2466,6 +2540,26 @@
             .hero-title .char {
                 transition: transform 0.3s ease;
             }
+
+            /* Demo promo bar mobile */
+            .demo-promo-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .demo-promo-title {
+                font-size: 20px;
+            }
+
+            .demo-promo-subtitle {
+                font-size: 14px;
+            }
+
+            .demo-promo-btn {
+                padding: 14px 28px;
+                font-size: 15px;
+            }
         }
 
         /* Landscape phone optimization */
@@ -3070,28 +3164,28 @@
             }
 
 
+            /* Reviews scroller mobile */
+            .reviews-track {
+                gap: 20px;
+                animation: reviews-scroll 25s linear infinite;
+            }
+
             .review-card {
-                min-width: 260px;
-                max-width: 280px;
-                padding: 20px 16px;
-                margin-right: 16px;
-                flex-shrink: 0;
-                background: var(--gray-800);
-                border: 1px solid var(--gray-700);
-                border-radius: 12px;
+                width: 280px;
+                padding: 18px;
             }
 
             .review-stars {
-                font-size: 16px;
-                margin-bottom: 10px;
+                font-size: 13px;
+                margin-bottom: 12px;
                 color: var(--red);
             }
 
             .review-text {
-                font-size: 13px;
+                font-size: 14px;
                 line-height: 1.4;
                 margin-bottom: 12px;
-                color: var(--gray-200);
+                -webkit-line-clamp: 4;
             }
 
             .review-author {
@@ -3257,54 +3351,91 @@
                     <p class="reviews-subtitle fade-up">What our customers say about our work</p>
                 </div>
             </div>
-            <div class="marquee">
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation. The team was professional, clean, and finished ahead of schedule."</p>
-                <div class="review-author">— Sarah Johnson, Aurora</div>
+            <div class="reviews-scroller">
+                <div class="reviews-track">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation."</p>
+                        <div class="review-author">— Sarah Johnson, Aurora</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Best roofing company in Denver! They handled our storm damage repair perfectly."</p>
+                        <div class="review-author">— Mike Chen, Westminster</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Incredible attention to detail. The team was professional and finished ahead of schedule."</p>
+                        <div class="review-author">— Lisa Martinez, Littleton</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Professional from start to finish. Our new roof has transformed our home's curb appeal."</p>
+                        <div class="review-author">— David Thompson, Thornton</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"RoofStar exceeded our expectations. The quality of work is exceptional and reliable."</p>
+                        <div class="review-author">— Jennifer Wilson, Aurora</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Fantastic experience! The team delivered exactly what they promised."</p>
+                        <div class="review-author">— Michael Rodriguez, Denver</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"After the hailstorm, RoofStar made the insurance process easy and stress-free."</p>
+                        <div class="review-author">— Karen Thompson, Highlands Ranch</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Five years later and our roof still looks brand new. Highly recommended!"</p>
+                        <div class="review-author">— Robert Kim, Centennial</div>
+                    </div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation."</p>
+                        <div class="review-author">— Sarah Johnson, Aurora</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Best roofing company in Denver! They handled our storm damage repair perfectly."</p>
+                        <div class="review-author">— Mike Chen, Westminster</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Incredible attention to detail. The team was professional and finished ahead of schedule."</p>
+                        <div class="review-author">— Lisa Martinez, Littleton</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Professional from start to finish. Our new roof has transformed our home's curb appeal."</p>
+                        <div class="review-author">— David Thompson, Thornton</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"RoofStar exceeded our expectations. The quality of work is exceptional and reliable."</p>
+                        <div class="review-author">— Jennifer Wilson, Aurora</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Fantastic experience! The team delivered exactly what they promised."</p>
+                        <div class="review-author">— Michael Rodriguez, Denver</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"After the hailstorm, RoofStar made the insurance process easy and stress-free."</p>
+                        <div class="review-author">— Karen Thompson, Highlands Ranch</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Five years later and our roof still looks brand new. Highly recommended!"</p>
+                        <div class="review-author">— Robert Kim, Centennial</div>
+                    </div>
+                </div>
             </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Best roofing company in Denver! They handled our storm damage repair perfectly and worked directly with our insurance. Couldn't be happier with the results."</p>
-                <div class="review-author">— Mike Chen, Westminster</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Incredible attention to detail. John and his team replaced our entire roof in just 3 days and left our property cleaner than when they started."</p>
-                <div class="review-author">— Lisa Martinez, Littleton</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Professional from start to finish. Fair pricing, excellent communication, and beautiful work. Our new roof has completely transformed our home's curb appeal."</p>
-                <div class="review-author">— David Thompson, Thornton</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"RoofStar exceeded our expectations. The quality of work is exceptional and their warranty gives us complete peace of mind. Highly recommend!"</p>
-                <div class="review-author">— Jennifer Wilson, Aurora</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Outstanding work! RoofStar completely transformed our home with their metal roof installation. The team was professional, clean, and finished ahead of schedule."</p>
-                <div class="review-author">— Sarah Johnson, Aurora</div>
-            </div>
-            <!-- Additional unique reviews for seamless loop -->
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Fantastic experience from start to finish. RoofStar's team was punctual, respectful, and delivered exactly what they promised. Our new roof looks incredible!"</p>
-                <div class="review-author">— Michael Rodriguez, Denver</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"After the hailstorm, RoofStar made the insurance process easy and stress-free. Quality materials, expert installation, and great customer service throughout."</p>
-                <div class="review-author">— Karen Thompson, Highlands Ranch</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text">"Five years later and our roof still looks brand new. RoofStar stands behind their work and their warranty is legitimate. Highly recommended!"</p>
-                <div class="review-author">— Robert Kim, Centennial</div>
-            </div>
-        </div>
         </div>
 
     </section>
@@ -3345,6 +3476,19 @@
                         <p class="step-description">Final inspection and 25-year warranty with ongoing maintenance support.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Website Promotional Bar -->
+    <section class="demo-promo-bar">
+        <div class="container">
+            <div class="demo-promo-content">
+                <div class="demo-promo-text">
+                    <h3 class="demo-promo-title">Demo Website</h3>
+                    <p class="demo-promo-subtitle">Get your own professional roofing website made for <strong>$299</strong> flat one-time fee • Delivered in 24 hours</p>
+                </div>
+                <a href="get-website.html" class="demo-promo-btn">Get Your Website</a>
             </div>
         </div>
     </section>
