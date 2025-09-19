@@ -1523,24 +1523,8 @@
             <a href="about.html" class="page-card">About</a>
             <a href="get-website.html" class="page-card get-website">Get Website</a>
         </div>
-        <button class="mobile-hamburger" aria-label="Menu">☰</button>
     </div>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu-content">
-            <button class="mobile-menu-close" aria-label="Close Menu">×</button>
-            <div class="mobile-menu-logo">
-                <img src="./assets/roofstar.png" alt="RoofStar" style="height: 50px; width: auto;">
-            </div>
-            <nav class="mobile-nav">
-                <a href="index.html">Home</a>
-                <a href="gallery.html" class="active">Portfolio</a>
-                <a href="about.html">About</a>
-            </nav>
-            <a href="get-website.html" class="mobile-get-website-btn">Get Your Website</a>
-        </div>
-    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -2019,14 +2003,6 @@
             });
         });
 
-        // Mobile hamburger menu functionality
-        const mobileHamburger = document.querySelector('.mobile-hamburger');
-        if (mobileHamburger) {
-            mobileHamburger.addEventListener('click', () => {
-                mobileMenuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
     </script>
 
 </body>
