@@ -1009,13 +1009,27 @@
             }
 
             .hero-title {
-                font-size: clamp(0.95rem, 3.5vw, 1.3rem);
-                line-height: 1.6;
+                font-size: clamp(0.8rem, 3vw, 1.1rem);
+                line-height: 1.7;
                 margin-bottom: 24px;
                 text-align: center;
-                padding: 0 25px;
-                word-spacing: -3px;
-                letter-spacing: -0.5px;
+                padding: 0 30px;
+                word-spacing: -4px;
+                letter-spacing: -0.8px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            /* For very small screens, break into lines properly */
+            @media (max-width: 320px) {
+                .hero-title {
+                    white-space: normal;
+                    font-size: clamp(0.7rem, 4vw, 0.9rem);
+                    line-height: 1.4;
+                    word-spacing: -2px;
+                    letter-spacing: -0.3px;
+                }
             }
 
             .hero-subtitle {
