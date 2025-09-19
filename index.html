@@ -272,10 +272,56 @@
             transition: background 0.3s ease;
         }
 
-
         .mobile-menu-toggle:hover {
             background: rgba(255, 255, 255, 0.1);
         }
+
+        /* Simple mobile nav - just hamburger in top left when compact */
+        @media (max-width: 768px) {
+            .header {
+                min-top: 40px; /* Never go above marquee banner */
+            }
+
+            .header.mobile-compact {
+                position: fixed !important;
+                top: 45px !important;
+                left: 0px !important;
+                right: auto !important;
+                width: auto !important;
+                height: auto !important;
+                transform: none !important;
+                background: none !important;
+                backdrop-filter: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                z-index: 1500;
+            }
+
+            .header.mobile-compact .header-inner {
+                min-height: auto !important;
+                padding: 0 !important;
+                justify-content: flex-start !important;
+            }
+
+            .header.mobile-compact .logo {
+                display: none !important;
+            }
+
+            .header.mobile-compact .mobile-menu-toggle {
+                background: var(--red) !important;
+                border-radius: 8px !important;
+                padding: 10px !important;
+                font-size: 16px !important;
+                color: var(--white) !important;
+                box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+                border: none !important;
+            }
+
+            .header.mobile-compact .get-website-btn {
+                display: none !important;
+            }
+        }
+
 
         .mobile-menu-overlay {
             position: fixed;
@@ -3986,6 +4032,49 @@
                 document.body.style.overflow = 'auto';
             });
         });
+
+        // Smart Stay mobile nav behavior - keeps below banner
+        (function() {
+            if (window.innerWidth <= 768) {
+                const header = document.querySelector('.header');
+                let lastScrollY = 0;
+                let ticking = false;
+
+                function updateNav() {
+                    const scrollY = window.pageYOffset;
+
+                    if (scrollY > 100 && scrollY > lastScrollY) {
+                        // Scrolling down - compact mode (but stay below banner)
+                        header.classList.add('mobile-compact');
+                    } else if (scrollY < lastScrollY || scrollY <= 80) {
+                        // Scrolling up or near top - full mode (but not above banner)
+                        header.classList.remove('mobile-compact');
+                    }
+
+                    lastScrollY = scrollY;
+                    ticking = false;
+                }
+
+                function requestTick() {
+                    if (!ticking) {
+                        requestAnimationFrame(updateNav);
+                        ticking = true;
+                    }
+                }
+
+                window.addEventListener('scroll', requestTick);
+
+                // Reset on resize
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        header.classList.remove('mobile-compact');
+                    }
+                });
+
+                // Initialize
+                updateNav();
+            }
+        })();
 
     </script>
 
