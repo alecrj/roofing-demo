@@ -1511,64 +1511,6 @@
             border-bottom: 1px solid var(--black);
         }
 
-        /* Mobile/Desktop visibility for reviews section */
-        .reviews-desktop {
-            display: block;
-        }
-
-        .website-services-mobile {
-            display: none;
-        }
-
-        /* Website Services Mobile Alternative Styling */
-        .website-services-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .website-services-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(60px, 10vw, 140px);
-            font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -0.03em;
-            margin-bottom: 40px;
-            color: var(--white);
-        }
-
-        .website-services-title .line {
-            display: block;
-        }
-
-        .website-services-title .blue {
-            color: var(--blue);
-        }
-
-        .website-services-subtitle {
-            font-size: 20px;
-            color: var(--gray-600);
-            margin-bottom: 50px;
-            line-height: 1.6;
-        }
-
-        .website-services-cta {
-            display: inline-block;
-            background: var(--blue);
-            color: var(--white);
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .website-services-cta:hover {
-            background: var(--white);
-            color: var(--blue);
-            transform: translateY(-2px);
-        }
 
         .reviews-header {
             text-align: center;
@@ -3062,31 +3004,6 @@
                 max-width: 100%;
             }
 
-            /* Mobile Section Swap: Hide reviews, show website services */
-            .reviews-desktop {
-                display: none;
-            }
-
-            .website-services-mobile {
-                display: block;
-            }
-
-            /* Website Services Mobile Optimization */
-            .website-services-title {
-                font-size: clamp(36px, 8vw, 60px);
-                margin-bottom: 25px;
-            }
-
-            .website-services-subtitle {
-                font-size: 16px;
-                margin-bottom: 40px;
-                padding: 0 20px;
-            }
-
-            .website-services-cta {
-                padding: 16px 32px;
-                font-size: 15px;
-            }
 
             .review-card {
                 min-width: 260px;
@@ -3261,10 +3178,8 @@
         </div>
     </section>
 
-    <!-- Reviews / Mobile Alternative -->
+    <!-- Reviews -->
     <section class="reviews">
-        <!-- Desktop: Reviews -->
-        <div class="reviews-desktop">
             <div class="container">
                 <div class="reviews-header">
                     <h2 class="reviews-title fade-up">Client Reviews</h2>
@@ -3321,20 +3236,6 @@
         </div>
         </div>
 
-        <!-- Mobile: Website Services Alternative -->
-        <div class="website-services-mobile">
-            <div class="container">
-                <div class="website-services-content">
-                    <h2 class="website-services-title">
-                        <span class="line">I make websites</span>
-                        <span class="line">for <span class="blue">roofing</span></span>
-                        <span class="line">companies</span>
-                    </h2>
-                    <p class="website-services-subtitle">Premium websites that convert visitors into customers. Built specifically for roofing contractors who want to dominate their local market.</p>
-                    <a href="get-website.html" class="website-services-cta">Get Your Website</a>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Process -->
