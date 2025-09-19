@@ -105,6 +105,7 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
         }
 
         .nav-logo {
@@ -140,21 +141,51 @@
             color: var(--white);
         }
 
-        .nav-cta {
-            background: var(--white);
-            color: var(--black);
-            padding: 12px 24px;
-            border-radius: 6px;
+        .nav-back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
             text-decoration: none;
-            font-size: 14px;
             font-weight: 600;
+            font-size: 14px;
+            padding: 12px 24px;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            letter-spacing: -0.01em;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 140px;
+            text-align: center;
         }
 
-        .nav-cta:hover {
+        .nav-back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .nav-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-work-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: var(--white);
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-width: 140px;
+        }
+
+        .nav-work-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
         }
 
         /* LAYOUT */
@@ -952,6 +983,29 @@
                 display: none;
             }
 
+            .nav-back-btn {
+                font-size: 12px;
+                padding: 10px 18px;
+                min-width: 120px;
+            }
+
+            .nav-center {
+                position: static;
+                transform: none;
+                flex: 1;
+                justify-content: center;
+            }
+
+            .nav-center img {
+                height: 100px !important;
+            }
+
+            .nav-work-btn {
+                font-size: 12px;
+                padding: 10px 18px;
+                min-width: 120px;
+            }
+
 
             .section {
                 min-height: auto;
@@ -1413,15 +1467,15 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo">ALEC</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="gallery.html" class="nav-link">Portfolio</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link active" id="nav-get-website">Get Your Website</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
-            <a href="#pricing" class="nav-cta">Get Started</a>
+            <a href="index.html" class="nav-back-btn">
+                ← Back to Demo
+            </a>
+            <div class="nav-center">
+                <img src="./assets/alecrj1.png" alt="Alec RJ" style="height: 140px; width: auto;">
+            </div>
+            <button class="nav-work-btn" id="nav-work-with-me">
+                Work with Me
+            </button>
         </div>
     </nav>
 
@@ -1860,6 +1914,15 @@
             // Open popup when nav Get Your Website is clicked
             if (navGetWebsite && popupOverlay) {
                 navGetWebsite.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openPopup();
+                });
+            }
+
+            // Open popup when "Work with Me" button is clicked
+            const navWorkWithMe = document.getElementById('nav-work-with-me');
+            if (navWorkWithMe && popupOverlay) {
+                navWorkWithMe.addEventListener('click', function(e) {
                     e.preventDefault();
                     openPopup();
                 });
