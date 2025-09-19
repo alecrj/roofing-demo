@@ -3323,24 +3323,8 @@
             <a href="about.html" class="page-card">About</a>
             <a href="get-website.html" class="page-card get-website">Get Website</a>
         </div>
-        <button class="mobile-hamburger" aria-label="Menu">☰</button>
     </div>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu-content">
-            <button class="mobile-menu-close" aria-label="Close Menu">×</button>
-            <div class="mobile-menu-logo">
-                <img src="./assets/roofstar.png" alt="RoofStar" style="height: 50px; width: auto;">
-            </div>
-            <nav class="mobile-nav">
-                <a href="index.html" class="active">Home</a>
-                <a href="gallery.html">Portfolio</a>
-                <a href="about.html">About</a>
-            </nav>
-            <a href="get-website.html" class="mobile-get-website-btn">Get Your Website</a>
-        </div>
-    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -3634,38 +3618,6 @@
         </div>
     </section>
 
-    <!-- Services -->
-    <section class="services">
-        <div class="container">
-            <div class="services-header">
-                <h2 class="services-title fade-up">Services</h2>
-                <p class="services-subtitle fade-up">Comprehensive roofing solutions with uncompromising quality and craftsmanship</p>
-            </div>
-            <div class="services-grid">
-                <div class="services-step fade-up">
-                    <div class="services-number">01</div>
-                    <div class="services-content">
-                        <h3 class="services-step-title">Professional Installation</h3>
-                        <p class="services-step-description">Expert roofing installations using premium materials with professional project management and comprehensive 25-year warranty coverage.</p>
-                    </div>
-                </div>
-                <div class="services-step fade-up">
-                    <div class="services-number">02</div>
-                    <div class="services-content">
-                        <h3 class="services-step-title">Emergency Repairs</h3>
-                        <p class="services-step-description">24/7 emergency response for storm damage and urgent repairs with immediate assessment and direct insurance coordination.</p>
-                    </div>
-                </div>
-                <div class="services-step fade-up">
-                    <div class="services-number">03</div>
-                    <div class="services-content">
-                        <h3 class="services-step-title">Insurance Assistance</h3>
-                        <p class="services-step-description">Expert insurance claim support with experienced teams dedicated to maximizing coverage for your roofing project.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Materials Showcase -->
     <section class="materials">
@@ -4240,12 +4192,6 @@
 
                 window.addEventListener('scroll', handleScroll);
 
-                // Mobile hamburger menu
-                const mobileHamburger = document.querySelector('.mobile-hamburger');
-                mobileHamburger.addEventListener('click', () => {
-                    mobileMenuOverlay.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
             }
         })();
 

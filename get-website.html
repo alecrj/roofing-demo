@@ -122,119 +122,6 @@
             list-style: none;
         }
 
-        /* MOBILE MENU */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 24px;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-        }
-
-        .mobile-menu-toggle:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            display: none;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .mobile-menu-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .mobile-menu-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            padding: 40px 20px;
-        }
-
-        .mobile-menu-close {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 30px;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-        }
-
-        .mobile-menu-close:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .mobile-nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 28px;
-            font-weight: 600;
-            text-align: center;
-            padding: 15px 30px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mobile-nav a:hover,
-        .mobile-nav a.active {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent);
-        }
-
-        .mobile-get-website-btn {
-            background: var(--white);
-            color: var(--black);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mobile-get-website-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
-        }
 
         .nav-link {
             color: var(--gray-400);
@@ -868,6 +755,159 @@
             color: var(--white);
         }
 
+        /* Popup Modal Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            display: none;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .popup-content {
+            background: var(--gray-900);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--gray-800);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gray-800);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: var(--gray-700);
+            transform: scale(1.1);
+        }
+
+        .popup-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .popup-subtitle {
+            font-size: 16px;
+            color: var(--gray-400);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .popup-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .popup-form .form-group {
+            margin-bottom: 0;
+        }
+
+        .popup-form .form-submit {
+            margin-top: 10px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border: none;
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .popup-form .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Popup Mobile Responsive */
+        @media (max-width: 768px) {
+            .popup-content {
+                padding: 30px 20px;
+                margin: 20px;
+                max-height: 85vh;
+            }
+
+            .popup-title {
+                font-size: 24px;
+            }
+
+            .popup-subtitle {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .popup-form {
+                gap: 15px;
+            }
+
+            .popup-close {
+                top: 15px;
+                right: 15px;
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .popup-content {
+                padding: 25px 15px;
+                margin: 10px;
+                border-radius: 15px;
+            }
+
+            .popup-title {
+                font-size: 22px;
+            }
+
+            .popup-form .form-submit {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 1200px) {
             .hero-content {
@@ -912,9 +952,6 @@
                 display: none;
             }
 
-            .mobile-menu-toggle {
-                display: block;
-            }
 
             .section {
                 min-height: auto;
@@ -1276,15 +1313,6 @@
                 font-size: 16px;
             }
 
-            .mobile-nav a {
-                font-size: 24px;
-                padding: 12px 24px;
-            }
-
-            .mobile-get-website-btn {
-                font-size: 16px;
-                padding: 14px 28px;
-            }
 
             /* Optimize character animations for mobile performance */
             .hero-title .char {
@@ -1330,20 +1358,6 @@
                 padding: 80px 0 60px;
             }
 
-            .mobile-menu-content {
-                padding: 20px;
-                justify-content: flex-start;
-                padding-top: 80px;
-            }
-
-            .mobile-nav {
-                gap: 20px;
-            }
-
-            .mobile-nav a {
-                font-size: 20px;
-                padding: 10px 20px;
-            }
         }
 
         /* Touch device optimizations */
@@ -1404,26 +1418,13 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="gallery.html" class="nav-link">Portfolio</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link active">Get Your Website</a></li>
+                <li><a href="#contact" class="nav-link active" id="nav-get-website">Get Your Website</a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
             <a href="#pricing" class="nav-cta">Get Started</a>
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu-content">
-            <button class="mobile-menu-close" aria-label="Close Menu">×</button>
-            <nav class="mobile-nav">
-                <a href="index.html">Home</a>
-                <a href="gallery.html">Portfolio</a>
-                <a href="about.html">About</a>
-                <a href="get-website.html" class="active">Get Your Website</a>
-            </nav>
-            <a href="#pricing" class="mobile-get-website-btn">Get Started</a>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero section">
@@ -1612,7 +1613,6 @@
                     <div class="pricing-feature">SSL certificate</div>
                 </div>
 
-                <a href="#contact" class="pricing-cta fade-up">Get Your Website</a>
             </div>
         </div>
     </section>
@@ -1778,60 +1778,127 @@
             lastScrollY = currentScrollY;
         });
 
-        // Mobile Menu Functionality
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
-
-        // Open mobile menu
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenuOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        // Close mobile menu
-        if (mobileMenuClose) {
-            mobileMenuClose.addEventListener('click', () => {
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        }
-
-        // Close mobile menu when clicking outside
-        if (mobileMenuOverlay) {
-            mobileMenuOverlay.addEventListener('click', (e) => {
-                if (e.target === mobileMenuOverlay) {
-                    mobileMenuOverlay.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
-
-        // Close mobile menu when clicking on navigation links
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
     </script>
 
-    <!-- Smooth scroll for Get Started button -->
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" id="popup-close">&times;</button>
+            <h2 class="popup-title">Get Your Website</h2>
+            <p class="popup-subtitle">Ready to get started? Fill out the form below and get your website live in 24 hours.</p>
+
+            <form class="popup-form" id="popup-form">
+                <div class="form-group">
+                    <label for="popup-name">Your Name *</label>
+                    <input type="text" id="popup-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="popup-business">Business Name *</label>
+                    <input type="text" id="popup-business" name="business" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="popup-phone">Phone Number *</label>
+                    <input type="tel" id="popup-phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="popup-email">Email Address *</label>
+                    <input type="email" id="popup-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="popup-colors">Preferred Color Scheme</label>
+                    <input type="text" id="popup-colors" name="colors" placeholder="e.g., Blue and white, Red and black">
+                </div>
+
+                <div class="form-group">
+                    <label for="popup-assets">Logo/Images Upload</label>
+                    <input type="file" id="popup-assets" name="assets" multiple accept="image/*,.pdf,.ai,.eps">
+                    <small>Upload your logo, job photos, or any brand assets</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="popup-certifications">Certifications & Awards</label>
+                    <textarea id="popup-certifications" name="certifications" rows="3" placeholder="List any industry certifications, awards, licenses, or credentials (e.g., GAF Master Elite, Better Business Bureau A+, Angie's List Super Service Award, etc.)"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="popup-message">Additional Details</label>
+                    <textarea id="popup-message" name="message" rows="4" placeholder="Tell me about your roofing business, services, target area, or any specific requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Get My Website - $299</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup Form Functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const getStartedBtn = document.getElementById('get-started-btn');
-            const contactSection = document.getElementById('contact');
+            const navGetWebsite = document.getElementById('nav-get-website');
+            const popupOverlay = document.getElementById('popup-overlay');
+            const popupClose = document.getElementById('popup-close');
+            const popupForm = document.getElementById('popup-form');
 
-            if (getStartedBtn && contactSection) {
+            // Function to open popup
+            function openPopup() {
+                popupOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Open popup when Get Started button is clicked
+            if (getStartedBtn && popupOverlay) {
                 getStartedBtn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    contactSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    openPopup();
+                });
+            }
+
+            // Open popup when nav Get Your Website is clicked
+            if (navGetWebsite && popupOverlay) {
+                navGetWebsite.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openPopup();
+                });
+            }
+
+            // Close popup when close button is clicked
+            if (popupClose && popupOverlay) {
+                popupClose.addEventListener('click', function() {
+                    popupOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Close popup when clicking outside the content
+            if (popupOverlay) {
+                popupOverlay.addEventListener('click', function(e) {
+                    if (e.target === popupOverlay) {
+                        popupOverlay.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+                    popupOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Handle form submission (you can customize this)
+            if (popupForm) {
+                popupForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Add your form submission logic here
+                    alert('Thank you! Your form has been submitted. We\'ll get back to you within 24 hours.');
+                    popupOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
                 });
             }
         });
