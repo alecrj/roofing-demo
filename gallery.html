@@ -1485,7 +1485,7 @@
             <a href="index.html" class="page-card">Home</a>
             <a href="gallery.html" class="page-card active">Portfolio</a>
             <a href="about.html" class="page-card">About</a>
-            <a href="get-website.html" class="page-card get-website">Get Website</a>
+            <a href="get-website.html" class="page-card get-website">Get Your Website</a>
         </div>
     </div>
 
@@ -1907,39 +1907,37 @@
             }
         });
 
-        // Mobile Menu Functionality
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        // Clean Mobile Navigation
+        (function() {
+            if (window.innerWidth <= 768) {
+                const mobileNavBar = document.querySelector('.mobile-nav-bar');
+                let scrollTimeout;
 
-        // Open mobile menu
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+                function handleScroll() {
+                    const scrollY = window.pageYOffset;
 
-        // Close mobile menu
-        mobileMenuClose.addEventListener('click', () => {
-            mobileMenuOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
+                    if (scrollY > 100) {
+                        // Hide nav when scrolling
+                        mobileNavBar.classList.add('hidden');
 
-        // Close mobile menu when clicking outside
-        mobileMenuOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileMenuOverlay) {
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                        // Clear existing timeout
+                        clearTimeout(scrollTimeout);
+
+                        // Show nav after 2 seconds of no scrolling
+                        scrollTimeout = setTimeout(() => {
+                            mobileNavBar.classList.remove('hidden');
+                        }, 2000);
+                    } else {
+                        // Near top - always visible
+                        mobileNavBar.classList.remove('hidden');
+                        clearTimeout(scrollTimeout);
+                    }
+                }
+
+                window.addEventListener('scroll', handleScroll);
+
             }
-        });
-
-        // Close mobile menu when clicking a link
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav a, .mobile-get-website-btn');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
+        })();
 
     </script>
 
