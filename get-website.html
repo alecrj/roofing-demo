@@ -51,40 +51,6 @@
             font-weight: 400;
         }
 
-        /* CURSOR */
-        .cursor {
-            position: fixed;
-            width: 24px;
-            height: 24px;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.15s ease;
-            left: 0;
-            top: 0;
-            transform: translate(-50%, -50%);
-        }
-
-        .cursor::before {
-            content: '★';
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 20px;
-            color: var(--accent);
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-            transition: all 0.15s ease;
-            line-height: 1;
-        }
-
-        .cursor.large {
-            transform: translate(-50%, -50%) scale(1.5);
-        }
-
-        .cursor.clicking::before {
-            color: var(--white);
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-            transform: scale(0.8);
-        }
 
         /* NAVIGATION */
         .nav {
@@ -1468,8 +1434,6 @@
     </style>
 </head>
 <body>
-    <!-- Cursor -->
-    <div class="cursor"></div>
 
     <!-- Navigation -->
     <nav class="nav">
@@ -1754,23 +1718,6 @@
         // GSAP Setup
         gsap.registerPlugin(ScrollTrigger);
 
-        // Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        const hoverElements = document.querySelectorAll('a, button');
-
-        document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, {
-                x: e.clientX,
-                y: e.clientY,
-                duration: 0.1,
-                ease: "power2.out"
-            });
-        });
-
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('large'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('large'));
-        });
 
         // Hero Title Animation
         const titleChars = document.querySelectorAll('.hero-title .char');
